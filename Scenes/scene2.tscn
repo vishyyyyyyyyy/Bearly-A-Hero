@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjpc3qpekowva"]
+[gd_scene load_steps=9 format=3 uid="uid://cjpc3qpekowva"]
 
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_grqhd"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="2_tgdfv"]
@@ -17,11 +17,32 @@ size = Vector2(62, 725)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grqhd"]
 size = Vector2(1299, 152)
 
+[sub_resource type="GDScript" id="GDScript_grqhd"]
+script/source = "extends Area2D
+
+var entered = false
+
+func _on_body_entered(body: CharacterBody2D) -> void:
+	entered = true # Replace with function body.
+
+
+
+
+func _on_body_exited(body: CharacterBody2D) -> void:
+	entered = false # Replace with function body.
+
+func _process(delta):
+	if entered == true:
+		get_tree().change_scene_to_file(\"res://Scenes/scene3.tscn\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgdfv"]
+size = Vector2(298, 381.5)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Forest1280x720" type="Sprite2D" parent="."]
 position = Vector2(642, 368)
-scale = Vector2(1, 1)
 texture = ExtResource("1_grqhd")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -41,7 +62,6 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/StaticBody2D"]
 position = Vector2(-31, 364)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2tlwn")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Node2D2"]
@@ -51,17 +71,14 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/StaticBody2D2"]
 position = Vector2(1314, 374)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2tlwn")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D2/StaticBody2D2"]
 position = Vector2(635, 253)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_grqhd")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D2/StaticBody2D2"]
 position = Vector2(654, 793)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_grqhd")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_tgdfv")]
@@ -76,3 +93,13 @@ limit_top = 5
 limit_right = 1280
 limit_bottom = 720
 editor_draw_limits = true
+
+[node name="Area2D" type="Area2D" parent="."]
+script = SubResource("GDScript_grqhd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1260, 532)
+shape = SubResource("RectangleShape2D_tgdfv")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
