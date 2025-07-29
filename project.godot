@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bearly A Hero"
-run/main_scene="uid://w8jo6s7j04yc"
+run/main_scene="uid://cjpc3qpekowva"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+
+[layer_names]
+
+2d_physics/layer_1="Bear"
+2d_physics/layer_2="Walls"
+2d_physics/layer_3="Trigger"
 
 [rendering]
 
