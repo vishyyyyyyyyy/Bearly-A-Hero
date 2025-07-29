@@ -27,5 +27,5 @@ func _process(_delta):  # You forgot to include `_delta` here
 	if direction.x != 0:
 		anim.flip_h = direction.x < 0
 
-	#move the character (if needed)
-	#position += direction.normalized() * 100 * _delta  # Adjust speed as needed
+	#move the character
+	position += direction.normalized() * 100 * _delta  # Adjust speed as needed
