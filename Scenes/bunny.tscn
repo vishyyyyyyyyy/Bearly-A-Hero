@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://b38qsufa5piu7"]
+
+[ext_resource type="Texture2D" uid="uid://bsrlu0cadjmwn" path="res://graphics/Bunny/BunnyCry.png" id="1_trndf"]
+[ext_resource type="Texture2D" uid="uid://8fadrl76bwao" path="res://graphics/Bunny/BunnyHop.png" id="2_mgo8a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d72s3"]
+atlas = ExtResource("1_trndf")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhi84"]
+atlas = ExtResource("1_trndf")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8l4s"]
+atlas = ExtResource("2_mgo8a")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsufv"]
+atlas = ExtResource("2_mgo8a")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2088k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d72s3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhi84")
+}],
+"loop": true,
+"name": &"cry",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8l4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsufv")
+}],
+"loop": true,
+"name": &"hop",
+"speed": 5.0
+}]
+
+[node name="bunny" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2088k")
+animation = &"cry"
+autoplay = "hop"
+frame_progress = 0.331402

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://4kd10tcopd33"]
+
+[ext_resource type="Texture2D" uid="uid://b7gac5floqxmx" path="res://graphics/Bird/BirdRich.png" id="1_p7j28"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdcwr"]
+atlas = ExtResource("1_p7j28")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdros"]
+atlas = ExtResource("1_p7j28")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uvt44"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdcwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdros")
+}],
+"loop": true,
+"name": &"hop",
+"speed": 5.0
+}]
+
+[node name="richBird" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uvt44")
+animation = &"hop"
+autoplay = "hop"
+frame_progress = 0.460348

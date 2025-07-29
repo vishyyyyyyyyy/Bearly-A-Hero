@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://wd7rs51l584p"]
+
+[ext_resource type="Texture2D" uid="uid://i2wn83vjk3ph" path="res://graphics/Deer/DeerCry.png" id="1_p8yaq"]
+[ext_resource type="Texture2D" uid="uid://cnsaehxcn5cpv" path="res://graphics/Deer/DeerWalk.png" id="2_cy77b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy77b"]
+atlas = ExtResource("1_p8yaq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bidkm"]
+atlas = ExtResource("1_p8yaq")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1qjj"]
+atlas = ExtResource("1_p8yaq")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si0bx"]
+atlas = ExtResource("2_cy77b")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lriq"]
+atlas = ExtResource("2_cy77b")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_si0bx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy77b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bidkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1qjj")
+}],
+"loop": true,
+"name": &"cry",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si0bx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lriq")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[node name="deerCry" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_si0bx")
+animation = &"walk"
+frame_progress = 0.47612
