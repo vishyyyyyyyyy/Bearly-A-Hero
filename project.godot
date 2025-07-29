@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bearly A Hero"
-run/main_scene="uid://dejs7fyatuaui"
+run/main_scene="uid://w8jo6s7j04yc"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

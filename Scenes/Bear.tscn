@@ -186,8 +186,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ct84p"]
-size = Vector2(41.0951, 28.0977)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ct84p"]
+radius = 13.9846
+height = 52.7763
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(611, 330)
@@ -197,8 +198,9 @@ script = ExtResource("1_ct84p")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-13.3265, -1.97429)
 sprite_frames = SubResource("SpriteFrames_wwo73")
-animation = &"RobberCrouch"
+animation = &"RobberIdle"
+frame_progress = 0.645939
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-14.6247, -3.84833)
-shape = SubResource("RectangleShape2D_ct84p")
+[node name="CollisionShape_RobberIdle" type="CollisionShape2D" parent="."]
+position = Vector2(-15.3008, -1.31619)
+shape = SubResource("CapsuleShape2D_ct84p")
