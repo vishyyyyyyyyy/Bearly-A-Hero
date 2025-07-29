@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dw81vqr8fdt4l"]
+[gd_scene load_steps=13 format=3 uid="uid://dw81vqr8fdt4l"]
 
 [ext_resource type="Texture2D" uid="uid://bvwai7tysst01" path="res://graphics/Cave.png" id="1_fvrk5"]
 [ext_resource type="Script" uid="uid://cbyv6r88enr42" path="res://Scenes/S1cave.gd" id="1_kpbna"]
 [ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="3_gc3nt"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_kpbna"]
+[ext_resource type="Script" uid="uid://brjh424hgsq77" path="res://Scenes/scene1to2.gd" id="5_ofyxu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmg1m"]
 size = Vector2(73, 764)
@@ -50,6 +51,9 @@ _data = {
 &"RESET": SubResource("Animation_2ngrw"),
 &"S1-text1": SubResource("Animation_ofyxu")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ngrw"]
+size = Vector2(235, 220)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_kpbna")
@@ -107,4 +111,13 @@ autostart = true
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_kpbna")]
 position = Vector2(231, 575)
 
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("5_ofyxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1274, 554)
+shape = SubResource("RectangleShape2D_2ngrw")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
