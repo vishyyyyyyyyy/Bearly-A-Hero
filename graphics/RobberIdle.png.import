@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0jq0tsl5721j"
-path="res://.godot/imported/RobberIdle.png-13d9ff5a7d92c5e90b65bd45bb0184e4.ctex"
+uid="uid://dj42tt0u6vnil"
+path="res://.godot/imported/RobberIdle.png-79adf3969061986fe3fd42c3b166d751.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Bear/RobberIdle.png"
-dest_files=["res://.godot/imported/RobberIdle.png-13d9ff5a7d92c5e90b65bd45bb0184e4.ctex"]
+source_file="res://graphics/RobberIdle.png"
+dest_files=["res://.godot/imported/RobberIdle.png-79adf3969061986fe3fd42c3b166d751.ctex"]
 
 [params]
 

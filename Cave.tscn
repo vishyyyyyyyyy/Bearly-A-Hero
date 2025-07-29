@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dw81vqr8fdt4l"]
+
+[ext_resource type="Texture2D" uid="uid://bvwai7tysst01" path="res://graphics/Cave.png" id="1_sgkkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltkk0"]
+size = Vector2(1324, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmg1m"]
+size = Vector2(73, 764)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arvwu"]
+size = Vector2(1360.5, 155)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Cave" type="Sprite2D" parent="."]
+position = Vector2(647.5, 354.5)
+scale = Vector2(1.02109, 1.04028)
+texture = ExtResource("1_sgkkg")
+
+[node name="bottomWall" type="CollisionShape2D" parent="."]
+position = Vector2(650, 733.5)
+shape = SubResource("RectangleShape2D_ltkk0")
+
+[node name="leftWall" type="CollisionShape2D" parent="."]
+position = Vector2(4, 354)
+shape = SubResource("RectangleShape2D_tmg1m")
+
+[node name="topWall" type="CollisionShape2D" parent="."]
+position = Vector2(645.5, 28.5)
+shape = SubResource("RectangleShape2D_arvwu")
