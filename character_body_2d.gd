@@ -1,11 +1,11 @@
-extends Node2D
+extends CharacterBody2D  # You MUST extend CharacterBody2D for `move_and_slide()` to work
 
 @onready var anim = $AnimatedSprite2D
 
 func _ready():
 	anim.play("RobberIdle")
 
-func _process(_delta):  # You forgot to include `_delta` here
+func _process(_delta):
 	var direction = Vector2.ZERO
 
 	if Input.is_action_pressed("ui_right"):
@@ -17,15 +17,19 @@ func _process(_delta):  # You forgot to include `_delta` here
 	if Input.is_action_pressed("ui_up"):
 		direction.y -= 1
 
-	# Play animation based on key pressed
+	# Play animation
 	if direction == Vector2.ZERO:
 		anim.play("RobberIdle")
 	else:
 		anim.play("RobberRun")
 
-	# Flip the sprite only if moving left or right
+	# Flip sprite
 	if direction.x != 0:
 		anim.flip_h = direction.x < 0
 
-	#move the character
-	position += direction.normalized() * 100 * _delta  # Adjust speed as needed
+	# Normalize direction to prevent faster diagonal movement
+	direction = direction.normalized()
+
+	# Set velocity and move
+	velocity = direction * 300
+	move_and_slide()
