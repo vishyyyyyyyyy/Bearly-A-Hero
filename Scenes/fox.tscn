@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://cfv6amdx6oo42"]
+
+[ext_resource type="Texture2D" uid="uid://dfuqkv702m6ci" path="res://graphics/Fox/FoxAttack.png" id="1_e6g21"]
+[ext_resource type="Texture2D" uid="uid://casu8l1nr0ymm" path="res://graphics/Fox/FoxIdle.png" id="2_yj2lq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1jln"]
+atlas = ExtResource("1_e6g21")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hww6"]
+atlas = ExtResource("1_e6g21")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llyw2"]
+atlas = ExtResource("1_e6g21")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myukr"]
+atlas = ExtResource("1_e6g21")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbn5l"]
+atlas = ExtResource("2_yj2lq")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xrd0"]
+atlas = ExtResource("2_yj2lq")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ii5gc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1jln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hww6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llyw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myukr")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbn5l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xrd0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="fox" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ii5gc")
+animation = &"attack"
+autoplay = "default"
+frame = 3
+frame_progress = 0.902443

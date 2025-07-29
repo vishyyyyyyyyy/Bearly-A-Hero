@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://bwb2t01jk7iby"]
+
+[ext_resource type="Texture2D" uid="uid://ki1aa5ds0d6g" path="res://graphics/Bird/BirdCry.png" id="1_mcegt"]
+[ext_resource type="Texture2D" uid="uid://cshne0g0i7eg6" path="res://graphics/Bird/BirdHop.png" id="2_dnvpi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl8r2"]
+atlas = ExtResource("1_mcegt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr33m"]
+atlas = ExtResource("1_mcegt")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xf4a6"]
+atlas = ExtResource("1_mcegt")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfwoh"]
+atlas = ExtResource("2_dnvpi")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_om1ab"]
+atlas = ExtResource("2_dnvpi")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oc6qe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl8r2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr33m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xf4a6")
+}],
+"loop": true,
+"name": &"cry",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfwoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_om1ab")
+}],
+"loop": true,
+"name": &"hop",
+"speed": 5.0
+}]
+
+[node name="bird" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oc6qe")
+animation = &"hop"
+autoplay = "hop"
+frame_progress = 0.841059

@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd7qbvy188ngf"]
+
+[ext_resource type="Texture2D" uid="uid://d3rwxnffkn3ce" path="res://graphics/Dog/GuardDog.png" id="1_t106u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdb55"]
+atlas = ExtResource("1_t106u")
+region = Rect2(0, 0, 100, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vwex"]
+atlas = ExtResource("1_t106u")
+region = Rect2(100, 0, 100, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7hiqf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdb55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vwex")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t106u"]
+size = Vector2(51, 48)
+
+[node name="guardDog1" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_7hiqf")
+autoplay = "default"
+frame_progress = 0.753735
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, -27)
+shape = SubResource("RectangleShape2D_t106u")
