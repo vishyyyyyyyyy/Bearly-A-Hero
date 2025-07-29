@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dejs7fyatuaui"]
+[gd_scene load_steps=30 format=3 uid="uid://dejs7fyatuaui"]
 
 [ext_resource type="Script" uid="uid://b61imirmbijns" path="res://character_body_2d.gd" id="1_ct84p"]
 [ext_resource type="Texture2D" uid="uid://bhf8rh44vmyvl" path="res://graphics/Bear/BearCaught.png" id="2_wj35n"]
@@ -186,14 +186,19 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ct84p"]
+size = Vector2(41.0951, 28.0977)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(611, 330)
 scale = Vector2(6.07813, 6.07813)
 script = ExtResource("1_ct84p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-13.3265, -1.97429)
 sprite_frames = SubResource("SpriteFrames_wwo73")
 animation = &"RobberCrouch"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-14.6247, -3.84833)
+shape = SubResource("RectangleShape2D_ct84p")
