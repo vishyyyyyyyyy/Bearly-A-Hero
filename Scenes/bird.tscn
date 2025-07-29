@@ -55,6 +55,6 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_oc6qe")
-animation = &"hop"
+animation = &"cry"
 autoplay = "hop"
-frame_progress = 0.0292877
+frame_progress = 0.142249
