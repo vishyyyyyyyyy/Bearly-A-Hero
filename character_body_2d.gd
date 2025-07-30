@@ -2,10 +2,15 @@ extends CharacterBody2D  # You MUST extend CharacterBody2D for `move_and_slide()
 
 @onready var anim = $AnimatedSprite2D
 
+var can_move = false
+
 func _ready():
 	anim.play("RobberIdle")
 
 func _process(_delta):
+	if not can_move:
+		anim.play("RobberIdle")
+		return
 	var direction = Vector2.ZERO
 
 	if Input.is_action_pressed("ui_right"):
