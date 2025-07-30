@@ -187,8 +187,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ct84p"]
-radius = 13.9846
-height = 52.7763
+radius = 9.37788
+height = 33.563
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(611, 330)
@@ -198,9 +198,8 @@ script = ExtResource("1_ct84p")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-13.3265, -1.97429)
 sprite_frames = SubResource("SpriteFrames_wwo73")
-animation = &"RobberIdle"
-frame_progress = 0.645939
+animation = &"BearCaught"
 
 [node name="CollisionShape_RobberIdle" type="CollisionShape2D" parent="."]
-position = Vector2(-15.3008, -1.31619)
+position = Vector2(-15.7943, 0.329048)
 shape = SubResource("CapsuleShape2D_ct84p")
