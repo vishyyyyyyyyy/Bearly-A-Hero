@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgqnyjn7miwjw"]
+
+[ext_resource type="Script" uid="uid://7vmlr0vnfgqd" path="res://Scenes/scarf.gd" id="1_ifaqn"]
+[ext_resource type="Texture2D" uid="uid://myvbhfm7yko7" path="res://graphics/Scarf.png" id="2_cnj51"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xvw7m"]
+radius = 17.1172
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_ifaqn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cnj51")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xvw7m")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

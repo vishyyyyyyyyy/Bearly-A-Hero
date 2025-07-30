@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8puxkiffjboj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdyau"]
+size = Vector2(1167, 320)
+
+[node name="kill" type="Area2D"]
+collision_layer = 2
+
+[node name="killcoll" type="CollisionShape2D" parent="."]
+position = Vector2(584.5, 560)
+shape = SubResource("RectangleShape2D_mdyau")
+
+[node name="killTimer" type="Timer" parent="."]
+wait_time = 0.6
