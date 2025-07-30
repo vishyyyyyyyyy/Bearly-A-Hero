@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://cjpc3qpekowva"]
 
+[ext_resource type="Script" uid="uid://dkdmvroj10i3s" path="res://Scenes/scene2.gd" id="1_48edw"]
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_grqhd"]
-[ext_resource type="Script" uid="uid://bgqieahioaa2a" path="res://Scenes/scene_2.gd" id="1_rsg50"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="2_tgdfv"]
 [ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="3_2tlwn"]
 [ext_resource type="Texture2D" uid="uid://dm7yvjyl45om8" path="res://graphics/pfp/textplaceholder.png" id="4_48edw"]
@@ -35,6 +35,33 @@ func _process(delta):
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgdfv"]
 size = Vector2(298, 381.5)
+
+[sub_resource type="Animation" id="Animation_ge1nq"]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Text1:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_13otf"]
 resource_name = "S2-text1"
@@ -76,33 +103,6 @@ tracks/2/keys = {
 "values": [0.0, 1.0, 1.0]
 }
 
-[sub_resource type="Animation" id="Animation_ge1nq"]
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Text1:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1lp82"]
 _data = {
 &"RESET": SubResource("Animation_ge1nq"),
@@ -110,7 +110,7 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_rsg50")
+script = ExtResource("1_48edw")
 
 [node name="Forest1280x720" type="Sprite2D" parent="."]
 position = Vector2(642, 368)

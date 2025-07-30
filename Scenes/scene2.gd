@@ -6,7 +6,7 @@ func _ready():
 	$Text1.visible = true
 	$Pfpplaceholder.visible = true
 	$Robberpfp.visible = true
-hi
+
 
 func _on_timer_1_timeout():
 	$Text1.visible = false

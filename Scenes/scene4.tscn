@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=3 uid="uid://dfxe5di3iq7b3"]
+
+[ext_resource type="Script" uid="uid://db8yfhry4natd" path="res://Scenes/scene4.gd" id="1_m0rmm"]
+[ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="2_xciik"]
+[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_r8h1c"]
+[ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="5_pmgys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tlwn"]
+size = Vector2(62, 725)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grqhd"]
+size = Vector2(1299, 152)
+
+[sub_resource type="GDScript" id="GDScript_grqhd"]
+script/source = "extends Area2D
+
+var entered = false
+
+func _on_body_entered(body: CharacterBody2D) -> void:
+	entered = true # Replace with function body.
+
+
+
+
+func _on_body_exited(body: CharacterBody2D) -> void:
+	entered = false # Replace with function body.
+
+func _process(delta):
+	if entered == true:
+		get_tree().change_scene_to_file(\"res://Scenes/scene5.tscn\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgdfv"]
+size = Vector2(298, 381.5)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_m0rmm")
+
+[node name="Forest1280x720" type="Sprite2D" parent="."]
+position = Vector2(642, 368)
+texture = ExtResource("2_xciik")
+
+[node name="Borders" type="Node2D" parent="."]
+position = Vector2(-272, 365)
+scale = Vector2(0.7, 0.7)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders"]
+position = Vector2(388.571, -521.429)
+scale = Vector2(1.42857, 1.42857)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(-25, 364)
+shape = SubResource("RectangleShape2D_2tlwn")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Borders"]
+position = Vector2(388.571, -521.429)
+scale = Vector2(1.42857, 1.42857)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D2"]
+position = Vector2(1314, 374)
+shape = SubResource("RectangleShape2D_2tlwn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/StaticBody2D2"]
+position = Vector2(635, 253)
+shape = SubResource("RectangleShape2D_grqhd")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders/StaticBody2D2"]
+position = Vector2(654, 793)
+shape = SubResource("RectangleShape2D_grqhd")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_r8h1c")]
+position = Vector2(1236, 578)
+scale = Vector2(4, 4)
+collision_mask = 2
+
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(-14.25, -4.25)
+limit_left = 0
+limit_top = 5
+limit_right = 1280
+limit_bottom = 720
+editor_draw_limits = true
+
+[node name="Area2D" type="Area2D" parent="."]
+script = SubResource("GDScript_grqhd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-104, 531)
+shape = SubResource("RectangleShape2D_tgdfv")
+
+[node name="Text1" type="Label" parent="."]
+offset_left = 273.0
+offset_top = 90.0
+offset_right = 996.0
+offset_bottom = 129.0
+theme_override_fonts/font = ExtResource("5_pmgys")
+theme_override_font_sizes/font_size = 32
+text = "Leave the scarf in the cave. "
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://br6dyd418vm4q"]
+
+[ext_resource type="Script" uid="uid://brnjal0t7o1hq" path="res://Scenes/scene5.gd" id="1_6ja15"]
+[ext_resource type="Texture2D" uid="uid://bvwai7tysst01" path="res://graphics/Cave.png" id="2_ucdt6"]
+[ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="3_0a3l8"]
+[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="4_6ve1g"]
+[ext_resource type="Script" uid="uid://brjh424hgsq77" path="res://Scenes/scene1to2.gd" id="5_bfk1v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmg1m"]
+size = Vector2(73, 764)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltkk0"]
+size = Vector2(1324, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arvwu"]
+size = Vector2(1360.5, 444)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ngrw"]
+size = Vector2(235, 220)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_6ja15")
+
+[node name="Cave" type="Sprite2D" parent="."]
+position = Vector2(647.5, 354.5)
+scale = Vector2(1.02109, 1.04028)
+texture = ExtResource("2_ucdt6")
+
+[node name="border" type="Node2D" parent="."]
+
+[node name="Area2D2" type="StaticBody2D" parent="border"]
+position = Vector2(650, 733.5)
+
+[node name="leftWall" type="CollisionShape2D" parent="border/Area2D2"]
+position = Vector2(-646, -379.5)
+shape = SubResource("RectangleShape2D_tmg1m")
+
+[node name="Area2D" type="StaticBody2D" parent="border"]
+position = Vector2(650, 733.5)
+
+[node name="bottomWall" type="CollisionShape2D" parent="border/Area2D"]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_ltkk0")
+
+[node name="Area2D3" type="StaticBody2D" parent="border"]
+
+[node name="topWall" type="CollisionShape2D" parent="border/Area2D3"]
+position = Vector2(645.5, 173)
+shape = SubResource("RectangleShape2D_arvwu")
+
+[node name="S5-text1" type="Label" parent="."]
+offset_left = 51.0
+offset_top = 699.0
+offset_right = 444.0
+offset_bottom = 723.0
+theme_override_fonts/font = ExtResource("3_0a3l8")
+theme_override_font_sizes/font_size = 16
+text = "to drop the scarf, press the spacebar."
+max_lines_visible = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_6ve1g")]
+position = Vector2(1303, 573)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("5_bfk1v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1589, 358)
+shape = SubResource("RectangleShape2D_2ngrw")
+
+[node name="Node" type="Node" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
