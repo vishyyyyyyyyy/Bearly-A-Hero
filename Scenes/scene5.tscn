@@ -53,6 +53,7 @@ position = Vector2(645.5, 173)
 shape = SubResource("RectangleShape2D_arvwu")
 
 [node name="S5-text2" type="Label" parent="."]
+visible = false
 offset_left = 497.0
 offset_top = 250.0
 offset_right = 841.0
@@ -62,7 +63,6 @@ theme_override_font_sizes/font_size = 32
 text = "Exit the cave."
 
 [node name="S5-text1" type="Label" parent="."]
-visible = false
 offset_left = 11.0
 offset_top = 696.0
 offset_right = 491.0
@@ -71,11 +71,6 @@ theme_override_fonts/font = ExtResource("3_0a3l8")
 theme_override_font_sizes/font_size = 16
 text = "to drop the scarf, press the spacebar."
 max_lines_visible = 1
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-autostart = true
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_6ve1g")]
 position = Vector2(1242, 573)
@@ -100,6 +95,5 @@ texture = ExtResource("6_ucdt6")
 position = Vector2(1284, 566)
 shape = SubResource("RectangleShape2D_ucdt6")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="ExitTrigger" to="ExitTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="ExitTrigger" to="ExitTrigger" method="_on_body_exited"]
