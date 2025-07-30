@@ -1,12 +1,12 @@
 extends Area2D
 
 var entered = false
-var scarf_dropped = false
+var headphone_dropped = false
 
 @onready var wall_shape = $"../ExitBlocker/WallShape"  # adjust path as needed
 
-func set_scarf_dropped():
-	scarf_dropped = true
+func set_headphone_dropped():
+	headphone_dropped = true
 	wall_shape.disabled = true  # remove physical wall
 	check_exit_condition()
 
@@ -20,5 +20,5 @@ func _on_body_exited(body: Node2D) -> void:
 		entered = false
 
 func check_exit_condition():
-	if entered and scarf_dropped:
+	if entered and headphone_dropped:
 		get_tree().change_scene_to_file("res://Scenes/scene6.tscn")

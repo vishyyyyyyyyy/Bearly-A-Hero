@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ckild5a21347h" path="res://graphics/Tree.png" id="5_sdtto"]
 [ext_resource type="Texture2D" uid="uid://corngptc2fj0u" path="res://graphics/Bush.png" id="6_s1noh"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="Forest1280x720" type="Sprite2D" parent="."]
 position = Vector2(641, 363)
@@ -55,7 +55,6 @@ scale = Vector2(1.75697, 1.68491)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bush/StaticBody2D4"]
 position = Vector2(90.9274, 36.6775)
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(-13.8661, -2.27666, -11.1087, -7.43678, -5.15865, -11.3069, -0.369522, -11.3069, 4.12935, -8.01013, 6.16109, -4.57005, 9.49896, -5.14339, 13.9978, -4.71339, 18.7869, -1.41665, 20.6736, 0.87674, 20.3833, 7.75689, 16.465, 12.917, -16.9137, 13.0603, -20.3967, 8.76025, -20.3967, 5.89352, -16.1881, 2.59677, -11.9795, 2.59677)
 
 [node name="Tree2" type="Sprite2D" parent="."]

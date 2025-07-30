@@ -33,7 +33,7 @@ func _process(delta):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgdfv"]
 size = Vector2(298, 381.5)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_m0rmm")
 
 [node name="Forest1280x720" type="Sprite2D" parent="."]

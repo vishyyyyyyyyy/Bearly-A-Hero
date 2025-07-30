@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bvwai7tysst01" path="res://graphics/Cave.png" id="2_x3mfn"]
 [ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="3_gtu06"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="4_bc5k0"]
-[ext_resource type="Script" uid="uid://dawplquo04j5m" path="res://Scenes/scene5to6.gd" id="5_v2wpj"]
+[ext_resource type="Script" uid="uid://sb12jr4gj5il" path="res://Scenes/scene8to9.gd" id="5_x3mfn"]
 [ext_resource type="Texture2D" uid="uid://myvbhfm7yko7" path="res://graphics/Scarf.png" id="6_g20id"]
 [ext_resource type="Texture2D" uid="uid://cjurf5c35o134" path="res://graphics/Headphone.png" id="7_x3mfn"]
 
@@ -77,7 +77,7 @@ max_lines_visible = 1
 position = Vector2(1242, 573)
 
 [node name="ExitTrigger" type="Area2D" parent="."]
-script = ExtResource("5_v2wpj")
+script = ExtResource("5_x3mfn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTrigger"]
 position = Vector2(1319, 566.5)

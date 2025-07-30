@@ -109,7 +109,7 @@ _data = {
 &"S2-text1": SubResource("Animation_13otf")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_48edw")
 
 [node name="Forest1280x720" type="Sprite2D" parent="."]
