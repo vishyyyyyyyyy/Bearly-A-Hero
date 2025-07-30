@@ -235,7 +235,7 @@ texture = ExtResource("6_47jpj")
 wait_time = 3.0
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 
 [node name="Timer1" type="Timer" parent="."]
 wait_time = 3.0
