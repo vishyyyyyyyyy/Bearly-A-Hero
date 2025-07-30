@@ -9,6 +9,7 @@ var bodyCounter = 0
 func _ready() -> void:
 	var killColl = get_node("kill/killcoll")
 	killColl.disabled = true
+	$CharacterBody2D.can_move = true
 	
 	# Ensure they are one-shot so we can alternate
 	timer.one_shot = true
