@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://br6dyd418vm4q"]
+[gd_scene load_steps=13 format=3 uid="uid://cr333lqk6tmyl"]
 
-[ext_resource type="Script" uid="uid://brnjal0t7o1hq" path="res://Scenes/scene5.gd" id="1_6ja15"]
-[ext_resource type="Texture2D" uid="uid://bvwai7tysst01" path="res://graphics/Cave.png" id="2_ucdt6"]
-[ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="3_0a3l8"]
-[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="4_6ve1g"]
-[ext_resource type="Script" uid="uid://dawplquo04j5m" path="res://Scenes/scene5to6.gd" id="5_ucdt6"]
-[ext_resource type="Texture2D" uid="uid://myvbhfm7yko7" path="res://graphics/Scarf.png" id="6_ucdt6"]
+[ext_resource type="Script" uid="uid://dojutmxyli238" path="res://Scenes/scene8.gd" id="1_x3mfn"]
+[ext_resource type="Texture2D" uid="uid://bvwai7tysst01" path="res://graphics/Cave.png" id="2_x3mfn"]
+[ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="3_gtu06"]
+[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="4_bc5k0"]
+[ext_resource type="Script" uid="uid://dawplquo04j5m" path="res://Scenes/scene5to6.gd" id="5_v2wpj"]
+[ext_resource type="Texture2D" uid="uid://myvbhfm7yko7" path="res://graphics/Scarf.png" id="6_g20id"]
+[ext_resource type="Texture2D" uid="uid://cjurf5c35o134" path="res://graphics/Headphone.png" id="7_x3mfn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmg1m"]
 size = Vector2(73, 764)
@@ -23,12 +24,12 @@ size = Vector2(88.5, 293)
 size = Vector2(50, 294.5)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_6ja15")
+script = ExtResource("1_x3mfn")
 
 [node name="Cave" type="Sprite2D" parent="."]
 position = Vector2(647.5, 354.5)
 scale = Vector2(1.02109, 1.04028)
-texture = ExtResource("2_ucdt6")
+texture = ExtResource("2_x3mfn")
 
 [node name="border" type="Node2D" parent="."]
 
@@ -58,7 +59,7 @@ offset_left = 497.0
 offset_top = 250.0
 offset_right = 841.0
 offset_bottom = 303.0
-theme_override_fonts/font = ExtResource("3_0a3l8")
+theme_override_fonts/font = ExtResource("3_gtu06")
 theme_override_font_sizes/font_size = 32
 text = "Exit the cave."
 
@@ -67,16 +68,16 @@ offset_left = 11.0
 offset_top = 696.0
 offset_right = 491.0
 offset_bottom = 720.0
-theme_override_fonts/font = ExtResource("3_0a3l8")
+theme_override_fonts/font = ExtResource("3_gtu06")
 theme_override_font_sizes/font_size = 16
 text = "to drop the item, press the spacebar."
 max_lines_visible = 1
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_6ve1g")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_bc5k0")]
 position = Vector2(1242, 573)
 
 [node name="ExitTrigger" type="Area2D" parent="."]
-script = ExtResource("5_ucdt6")
+script = ExtResource("5_v2wpj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTrigger"]
 position = Vector2(1319, 566.5)
@@ -87,13 +88,18 @@ shape = SubResource("RectangleShape2D_2ngrw")
 [node name="Scarf" type="Sprite2D" parent="."]
 position = Vector2(616, 665)
 scale = Vector2(2.1875, 2.40625)
-texture = ExtResource("6_ucdt6")
+texture = ExtResource("6_g20id")
 
 [node name="ExitBlocker" type="StaticBody2D" parent="."]
 
 [node name="WallShape" type="CollisionShape2D" parent="ExitBlocker"]
 position = Vector2(1284, 566)
 shape = SubResource("RectangleShape2D_ucdt6")
+
+[node name="Headphone" type="Sprite2D" parent="."]
+position = Vector2(728, 679)
+scale = Vector2(2.55469, 2.55469)
+texture = ExtResource("7_x3mfn")
 
 [connection signal="body_entered" from="ExitTrigger" to="ExitTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="ExitTrigger" to="ExitTrigger" method="_on_body_exited"]

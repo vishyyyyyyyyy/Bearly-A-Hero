@@ -1,19 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyr4fpwt12eee"]
+[gd_scene load_steps=7 format=3 uid="uid://cu8vyobrwc57u"]
 
-[ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_nnvjd"]
-[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="2_dl8gu"]
-[ext_resource type="Texture2D" uid="uid://myvbhfm7yko7" path="res://graphics/Scarf.png" id="3_kgx2y"]
-[ext_resource type="PackedScene" uid="uid://b38qsufa5piu7" path="res://Scenes/bunny.tscn" id="4_msh5e"]
-[ext_resource type="Texture2D" uid="uid://ckild5a21347h" path="res://graphics/Tree.png" id="5_cvehr"]
-[ext_resource type="Texture2D" uid="uid://corngptc2fj0u" path="res://graphics/Bush.png" id="6_sljpu"]
+[ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_x0o73"]
+[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="2_a4tfd"]
+[ext_resource type="Texture2D" uid="uid://myvbhfm7yko7" path="res://graphics/Scarf.png" id="3_mccsk"]
+[ext_resource type="PackedScene" uid="uid://b38qsufa5piu7" path="res://Scenes/bunny.tscn" id="4_uwn14"]
+[ext_resource type="Texture2D" uid="uid://ckild5a21347h" path="res://graphics/Tree.png" id="5_sdtto"]
+[ext_resource type="Texture2D" uid="uid://corngptc2fj0u" path="res://graphics/Bush.png" id="6_s1noh"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Forest1280x720" type="Sprite2D" parent="."]
 position = Vector2(641, 363)
-texture = ExtResource("1_nnvjd")
+texture = ExtResource("1_x0o73")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_dl8gu")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_a4tfd")]
 position = Vector2(143, 539)
 scale = Vector2(4, 4)
 
@@ -28,16 +28,16 @@ editor_draw_limits = true
 [node name="Scarf" type="Sprite2D" parent="."]
 position = Vector2(1099, 503)
 scale = Vector2(2.1875, 2.40625)
-texture = ExtResource("3_kgx2y")
+texture = ExtResource("3_mccsk")
 
-[node name="bunny" parent="." instance=ExtResource("4_msh5e")]
+[node name="bunny" parent="." instance=ExtResource("4_uwn14")]
 position = Vector2(1209, 591)
 scale = Vector2(2, 2)
 
 [node name="Tree" type="Sprite2D" parent="."]
 position = Vector2(325, 345)
 scale = Vector2(6.89063, 6.97656)
-texture = ExtResource("5_cvehr")
+texture = ExtResource("5_sdtto")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tree"]
 
@@ -47,7 +47,7 @@ polygon = PackedVector2Array(-10.449, -21.9306, -10.5941, -15.1937, -6.82086, -1
 [node name="Bush" type="Sprite2D" parent="."]
 position = Vector2(518, 616)
 scale = Vector2(3.92188, 4.14063)
-texture = ExtResource("6_sljpu")
+texture = ExtResource("6_s1noh")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Bush"]
 position = Vector2(-49.2112, -65.4491)
@@ -55,12 +55,13 @@ scale = Vector2(1.75697, 1.68491)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bush/StaticBody2D4"]
 position = Vector2(90.9274, 36.6775)
+scale = Vector2(1, 1)
 polygon = PackedVector2Array(-13.8661, -2.27666, -11.1087, -7.43678, -5.15865, -11.3069, -0.369522, -11.3069, 4.12935, -8.01013, 6.16109, -4.57005, 9.49896, -5.14339, 13.9978, -4.71339, 18.7869, -1.41665, 20.6736, 0.87674, 20.3833, 7.75689, 16.465, 12.917, -16.9137, 13.0603, -20.3967, 8.76025, -20.3967, 5.89352, -16.1881, 2.59677, -11.9795, 2.59677)
 
 [node name="Tree2" type="Sprite2D" parent="."]
 position = Vector2(729, 400)
 scale = Vector2(6.07031, 7.11719)
-texture = ExtResource("5_cvehr")
+texture = ExtResource("5_sdtto")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Tree2"]
 position = Vector2(-66.5534, -7.72778)
@@ -74,7 +75,7 @@ polygon = PackedVector2Array(-8.41723, -22.3606, -8.41723, -15.4804, -4.93424, -
 [node name="Bush2" type="Sprite2D" parent="."]
 position = Vector2(948, 591)
 scale = Vector2(4.90625, 4.60938)
-texture = ExtResource("6_sljpu")
+texture = ExtResource("6_s1noh")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Bush2"]
 position = Vector2(-126.981, -53.3695)

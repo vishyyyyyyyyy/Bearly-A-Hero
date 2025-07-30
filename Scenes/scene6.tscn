@@ -238,12 +238,13 @@ texture = ExtResource("4_xsymu")
 
 [node name="Text1" type="Label" parent="."]
 offset_left = 260.0
-offset_top = 90.0
+offset_top = 73.0
 offset_right = 1088.0
-offset_bottom = 129.0
+offset_bottom = 124.0
 theme_override_fonts/font = ExtResource("5_kmfjc")
 theme_override_font_sizes/font_size = 24
-text = "\"Deer was wearing new headphones yesterday.\""
+text = "\"Deer was wearing new headphones
+ yesterday.\""
 visible_characters = 0
 visible_ratio = 0.0
 

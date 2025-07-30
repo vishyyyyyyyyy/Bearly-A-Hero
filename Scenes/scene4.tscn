@@ -97,7 +97,7 @@ offset_right = 996.0
 offset_bottom = 129.0
 theme_override_fonts/font = ExtResource("5_pmgys")
 theme_override_font_sizes/font_size = 32
-text = "Leave the scarf in the cave. "
+text = "Drop the item off at the cave. "
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
