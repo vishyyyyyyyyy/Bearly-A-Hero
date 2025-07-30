@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://dw81vqr8fdt4l"]
 
-[ext_resource type="Texture2D" uid="uid://bvwai7tysst01" path="res://graphics/Cave.png" id="1_fvrk5"]
-[ext_resource type="Script" uid="uid://cbyv6r88enr42" path="res://Scenes/S1cave.gd" id="1_kpbna"]
-[ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="3_gc3nt"]
-[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_kpbna"]
-[ext_resource type="Script" uid="uid://brjh424hgsq77" path="res://Scenes/scene1to2.gd" id="5_ofyxu"]
+[ext_resource type="Script" uid="uid://cbyv6r88enr42" path="res://Scenes/S1cave.gd" id="1_2ni1t"]
+[ext_resource type="Texture2D" uid="uid://bvwai7tysst01" path="res://graphics/Cave.png" id="2_2nq82"]
+[ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="3_cx2iu"]
+[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="4_o5784"]
+[ext_resource type="Script" uid="uid://brjh424hgsq77" path="res://Scenes/scene1to2.gd" id="5_2w676"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmg1m"]
 size = Vector2(73, 764)
@@ -56,12 +56,12 @@ _data = {
 size = Vector2(235, 220)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_kpbna")
+script = ExtResource("1_2ni1t")
 
 [node name="Cave" type="Sprite2D" parent="."]
 position = Vector2(647.5, 354.5)
 scale = Vector2(1.02109, 1.04028)
-texture = ExtResource("1_fvrk5")
+texture = ExtResource("2_2nq82")
 
 [node name="border" type="Node2D" parent="."]
 
@@ -90,7 +90,7 @@ offset_left = 359.0
 offset_top = 342.0
 offset_right = 967.0
 offset_bottom = 396.0
-theme_override_fonts/font = ExtResource("3_gc3nt")
+theme_override_fonts/font = ExtResource("3_cx2iu")
 theme_override_font_sizes/font_size = 32
 text = "\"It's your job to steal.\""
 max_lines_visible = 1
@@ -108,11 +108,11 @@ wait_time = 5.0
 one_shot = true
 autostart = true
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_kpbna")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_o5784")]
 position = Vector2(231, 575)
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("5_ofyxu")
+script = ExtResource("5_2w676")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1274, 554)
