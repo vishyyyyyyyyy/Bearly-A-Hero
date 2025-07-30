@@ -1,4 +1,4 @@
-# 🐻 Bear Adventure Game (Godot)
+# 🐻 Bearly a Hero
 
 A cute 2D game made with Godot where you play as a mischievous bear who once stole from the poor.
 After uncovering the corrupt actions of the wealthy, he decides to turn his skills toward helping the forest community.
