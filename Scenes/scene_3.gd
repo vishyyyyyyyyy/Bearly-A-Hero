@@ -7,6 +7,7 @@ var bodyCounter = 0
 
 
 func _ready() -> void:
+	$CharacterBody2D.can_move = true
 	var killColl = get_node("kill/killcoll")
 	killColl.disabled = true
 	
