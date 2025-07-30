@@ -3,6 +3,7 @@ extends Node2D
 func _ready():
 	$Scarf.visible = false
 	$"S5-text1".visible = true
+	$CharacterBody2D.can_move = true
 
 func _input(event):
 	if Input.is_action_just_pressed("drop_scarf"):

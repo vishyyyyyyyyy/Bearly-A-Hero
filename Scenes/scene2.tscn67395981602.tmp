@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cjpc3qpekowva"]
+[gd_scene load_steps=18 format=3 uid="uid://cjpc3qpekowva"]
 
 [ext_resource type="Script" uid="uid://dkdmvroj10i3s" path="res://Scenes/scene2.gd" id="1_48edw"]
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_grqhd"]
@@ -108,6 +108,15 @@ _data = {
 &"RESET": SubResource("Animation_ge1nq"),
 &"S2-text1": SubResource("Animation_13otf")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48edw"]
+size = Vector2(39, 241)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47jpj"]
+size = Vector2(138.5, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13otf"]
+size = Vector2(193, 47)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_48edw")
@@ -231,6 +240,9 @@ position = Vector2(155.75, 128)
 scale = Vector2(4.46094, 4.46094)
 texture = ExtResource("6_47jpj")
 
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 3.0
+
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 2.0
 
@@ -239,7 +251,22 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
+[node name="BearBlocker" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BearBlocker"]
+position = Vector2(131.5, 582.5)
+shape = SubResource("RectangleShape2D_48edw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="BearBlocker"]
+position = Vector2(77.75, 676)
+shape = SubResource("RectangleShape2D_47jpj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BearBlocker"]
+position = Vector2(85, 455)
+shape = SubResource("RectangleShape2D_13otf")
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Timer1" to="." method="_on_timer_1_timeout"]

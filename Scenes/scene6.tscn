@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ckdlm3llxil3c"]
+[gd_scene load_steps=16 format=3 uid="uid://ckdlm3llxil3c"]
 
 [ext_resource type="Script" uid="uid://dkdmvroj10i3s" path="res://Scenes/scene2.gd" id="1_ixcn2"]
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="2_hyvpu"]
@@ -62,6 +62,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Text2:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Text3:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_13otf"]
 resource_name = "S2-text1"
@@ -103,10 +127,51 @@ tracks/2/keys = {
 "values": [0.0, 1.0, 1.0]
 }
 
+[sub_resource type="Animation" id="Animation_ixcn2"]
+resource_name = "S6-text"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Text2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Text3:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1lp82"]
 _data = {
 &"RESET": SubResource("Animation_ge1nq"),
-&"S2-text1": SubResource("Animation_13otf")
+&"S2-text1": SubResource("Animation_13otf"),
+&"S6-text": SubResource("Animation_ixcn2")
 }
 
 [node name="Node2D" type="Node2D"]
@@ -178,7 +243,7 @@ offset_right = 1088.0
 offset_bottom = 129.0
 theme_override_fonts/font = ExtResource("5_kmfjc")
 theme_override_font_sizes/font_size = 24
-text = "\"I saw Bunny with a scarf last week.\""
+text = "\"Deer was wearing new headphones yesterday.\""
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -186,7 +251,7 @@ visible_ratio = 0.0
 libraries = {
 &"": SubResource("AnimationLibrary_1lp82")
 }
-autoplay = "S2-text1"
+autoplay = "S6-text"
 
 [node name="Text2" type="Label" parent="."]
 visible = false
@@ -197,6 +262,8 @@ offset_bottom = 129.0
 theme_override_fonts/font = ExtResource("5_kmfjc")
 theme_override_font_sizes/font_size = 24
 text = "\"I want it...\""
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Text2"]
 libraries = {
@@ -212,7 +279,7 @@ offset_right = 794.0
 offset_bottom = 141.0
 theme_override_fonts/font = ExtResource("5_kmfjc")
 theme_override_font_sizes/font_size = 32
-text = "Find Bunny.
+text = "Find Deer.
 "
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Text3"]
