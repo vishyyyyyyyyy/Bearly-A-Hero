@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=10 format=3 uid="uid://dyr4fpwt12eee"]
+=======
+[gd_scene load_steps=12 format=3 uid="uid://dyr4fpwt12eee"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_nnvjd"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="2_dl8gu"]
@@ -6,15 +10,23 @@
 [ext_resource type="PackedScene" uid="uid://b38qsufa5piu7" path="res://Scenes/bunny.tscn" id="4_msh5e"]
 [ext_resource type="Texture2D" uid="uid://ckild5a21347h" path="res://graphics/Tree.png" id="5_cvehr"]
 [ext_resource type="Texture2D" uid="uid://corngptc2fj0u" path="res://graphics/Bush.png" id="6_sljpu"]
+<<<<<<< Updated upstream
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gtq7m"]
 size = Vector2(27.1383, 51.0829)
+=======
+[ext_resource type="PackedScene" uid="uid://cgqnyjn7miwjw" path="res://Scenes/scarf.tscn" id="7_sljpu"]
+[ext_resource type="PackedScene" uid="uid://c8puxkiffjboj" path="res://Scenes/kill.tscn" id="8_gtq7m"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wdaeh"]
 size = Vector2(41.6372, 24.047)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88hlr"]
 size = Vector2(35.7007, 21.3572)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdaeh"]
+size = Vector2(1163, 305)
 
 [node name="Node2D" type="Node2D"]
 
@@ -76,6 +88,7 @@ texture = ExtResource("5_cvehr")
 position = Vector2(-66.5534, -7.72778)
 scale = Vector2(1.13514, 0.980242)
 
+<<<<<<< Updated upstream
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tree2/StaticBody2D2"]
 position = Vector2(58.195, 9.60359)
 shape = SubResource("RectangleShape2D_gtq7m")
@@ -93,3 +106,55 @@ scale = Vector2(1.40446, 1.51356)
 position = Vector2(26.9932, 40.3494)
 scale = Vector2(1, 0.999999)
 shape = SubResource("RectangleShape2D_88hlr")
+=======
+[node name="TreeCollision2D" type="CollisionPolygon2D" parent="Tree2/StaticBody2D2"]
+position = Vector2(58.9204, 7.59687)
+scale = Vector2(0.999997, 0.999999)
+polygon = PackedVector2Array(-8.41723, -22.3606, -8.41723, -15.4804, -4.93424, -12.0403, -9.43311, -7.31019, -8.70748, -1.43337, -5.95011, 1.1467, -10.449, 4.30011, -10.449, 9.89026, -7.54648, 13.0437, -1.7415, 13.0437, -1.59637, 15.3371, 2.46712, 15.1937, 2.75736, 13.3303, 7.1111, 13.0437, 10.449, 8.17022, 10.3038, 4.73013, 5.51473, -0.430012, 7.83672, -3.15342, 7.83672, -8.8869, 3.33787, -13.4737, 5.51473, -16.6271, 6.53061, -22.3606, -0.580498, -24.7973)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="hideCollisions" type="Node" parent="."]
+
+[node name="tree1" type="Area2D" parent="hideCollisions"]
+collision_layer = 2
+
+[node name="tree1coll" type="CollisionShape2D" parent="hideCollisions/tree1"]
+position = Vector2(278, 305)
+scale = Vector2(6.89065, 6.97657)
+shape = SubResource("CapsuleShape2D_cvehr")
+
+[node name="remaining" type="Area2D" parent="hideCollisions"]
+
+[node name="tree2coll" type="CollisionShape2D" parent="hideCollisions/remaining"]
+position = Vector2(773, 341)
+scale = Vector2(6.89065, 6.97657)
+shape = SubResource("CapsuleShape2D_cvehr")
+
+[node name="bushcoll" type="CollisionShape2D" parent="hideCollisions/remaining"]
+position = Vector2(491, 691)
+scale = Vector2(6.7362, 6.45992)
+shape = SubResource("CapsuleShape2D_sljpu")
+
+[node name="Area2D" parent="." instance=ExtResource("7_sljpu")]
+position = Vector2(1036, 498)
+scale = Vector2(2, 2)
+
+[node name="safeTimer" type="Timer" parent="."]
+wait_time = 2.5
+
+[node name="kill" parent="." instance=ExtResource("8_gtq7m")]
+
+[node name="killColl" type="CollisionShape2D" parent="kill"]
+position = Vector2(582.5, 565.5)
+shape = SubResource("RectangleShape2D_wdaeh")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="hideCollisions/tree1" to="." method="_on_tree_1_body_entered"]
+[connection signal="body_exited" from="hideCollisions/tree1" to="." method="_on_tree_1_body_exited"]
+[connection signal="body_entered" from="hideCollisions/remaining" to="." method="_on_remaining_body_entered"]
+[connection signal="body_exited" from="hideCollisions/remaining" to="." method="_on_remaining_body_exited"]
+[connection signal="timeout" from="safeTimer" to="." method="_on_safe_timer_timeout"]
+>>>>>>> Stashed changes
