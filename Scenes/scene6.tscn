@@ -30,7 +30,7 @@ func _on_body_exited(body: CharacterBody2D) -> void:
 
 func _process(delta):
 	if entered == true:
-		get_tree().change_scene_to_file(\"res://Scenes/scene3.tscn\")
+		get_tree().change_scene_to_file(\"res://Scenes/scene7.tscn\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgdfv"]
