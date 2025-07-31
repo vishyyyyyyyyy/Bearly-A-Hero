@@ -6,7 +6,7 @@ func _ready():
 	$CharacterBody2D.can_move = true
 
 func _input(event):
-	if Input.is_action_just_pressed("drop_scarf"):
+	if Input.is_action_just_pressed("drop_object"):
 		drop_headphone()
 
 func drop_headphone(): 
