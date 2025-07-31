@@ -26,6 +26,9 @@ func _on_tree_1_body_entered(body: CharacterBody2D) -> void:
 func _on_tree_1_body_exited(body: CharacterBody2D) -> void:
 	bodyCounter -= 1 # Replace with function body.
 	print(bodyCounter)
+	if bodyCounter == 1:
+		Engine.time_scale = 0.5
+		$kill/killTimer.start()
 	
 func _on_remaining_body_entered(body: CharacterBody2D) -> void:
 	bodyCounter += 1 # Replace with function body.
@@ -34,6 +37,9 @@ func _on_remaining_body_entered(body: CharacterBody2D) -> void:
 func _on_remaining_body_exited(body: CharacterBody2D) -> void:
 	bodyCounter -= 1 # Replace with function body.
 	print(bodyCounter)
+	if bodyCounter == 1:
+		Engine.time_scale = 0.5
+		$kill/killTimer.start()
 	
 func _on_kill_body_entered(body: CharacterBody2D) -> void:
 	bodyCounter += 1 # Replace with function body.
