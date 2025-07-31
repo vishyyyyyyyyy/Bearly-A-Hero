@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://bktecu0t4p7aw"]
+[gd_scene load_steps=15 format=3 uid="uid://cglhsk0s2j72d"]
 
-[ext_resource type="Script" uid="uid://dkdmvroj10i3s" path="res://Scenes/scene2.gd" id="1_l6hoo"]
+[ext_resource type="Script" path="res://Scenes/scene2.gd" id="1_l6hoo"]
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="2_mpm33"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_qiljm"]
 [ext_resource type="Texture2D" uid="uid://dm7yvjyl45om8" path="res://graphics/pfp/textplaceholder.png" id="4_y8xla"]

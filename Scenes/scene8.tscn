@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cr333lqk6tmyl"]
+[gd_scene load_steps=13 format=3 uid="uid://dcsmady4ecn2k"]
 
 [ext_resource type="Script" uid="uid://dojutmxyli238" path="res://Scenes/scene8.gd" id="1_x3mfn"]
 [ext_resource type="Texture2D" uid="uid://bvwai7tysst01" path="res://graphics/Cave.png" id="2_x3mfn"]

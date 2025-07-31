@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cg1ich3guub0x"]
+[gd_scene load_steps=16 format=3 uid="uid://buji06yxa6v0t"]
 
 [ext_resource type="Script" uid="uid://dkdmvroj10i3s" path="res://Scenes/scene2.gd" id="1_lxaoe"]
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="2_obagw"]
@@ -174,7 +174,7 @@ _data = {
 &"S6-text": SubResource("Animation_ixcn2")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_lxaoe")
 
 [node name="Forest1280x720" type="Sprite2D" parent="."]
