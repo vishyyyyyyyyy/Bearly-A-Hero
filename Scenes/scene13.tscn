@@ -1,0 +1,317 @@
+[gd_scene load_steps=16 format=3 uid="uid://cg1ich3guub0x"]
+
+[ext_resource type="Script" uid="uid://dkdmvroj10i3s" path="res://Scenes/scene2.gd" id="1_lxaoe"]
+[ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="2_obagw"]
+[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_t88gw"]
+[ext_resource type="Texture2D" uid="uid://dm7yvjyl45om8" path="res://graphics/pfp/textplaceholder.png" id="4_46vg4"]
+[ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="5_gsmet"]
+[ext_resource type="Texture2D" uid="uid://ceuwssco6htey" path="res://graphics/pfp/pfpplaceholder.png" id="6_gutu8"]
+[ext_resource type="Texture2D" uid="uid://cxlhmv0fg77x2" path="res://graphics/pfp/robberpfp.png" id="7_103le"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tlwn"]
+size = Vector2(62, 725)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grqhd"]
+size = Vector2(1299, 152)
+
+[sub_resource type="GDScript" id="GDScript_grqhd"]
+script/source = "extends Area2D
+
+var entered = false
+
+func _on_body_entered(body: CharacterBody2D) -> void:
+	entered = true # Replace with function body.
+
+
+
+
+func _on_body_exited(body: CharacterBody2D) -> void:
+	entered = false # Replace with function body.
+
+func _process(delta):
+	if entered == true:
+		get_tree().change_scene_to_file(\"res://Scenes/scene7.tscn\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgdfv"]
+size = Vector2(298, 381.5)
+
+[sub_resource type="Animation" id="Animation_ge1nq"]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Text1:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Text2:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Text3:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_13otf"]
+resource_name = "S2-text1"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Text2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Text1:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_ixcn2"]
+resource_name = "S6-text"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Text2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Text3:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1lp82"]
+_data = {
+&"RESET": SubResource("Animation_ge1nq"),
+&"S2-text1": SubResource("Animation_13otf"),
+&"S6-text": SubResource("Animation_ixcn2")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_lxaoe")
+
+[node name="Forest1280x720" type="Sprite2D" parent="."]
+position = Vector2(642, 368)
+texture = ExtResource("2_obagw")
+
+[node name="Borders" type="Node2D" parent="."]
+position = Vector2(-272, 365)
+scale = Vector2(0.7, 0.7)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders"]
+position = Vector2(388.571, -521.429)
+scale = Vector2(1.42857, 1.42857)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(-25, 364)
+shape = SubResource("RectangleShape2D_2tlwn")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Borders"]
+position = Vector2(388.571, -521.429)
+scale = Vector2(1.42857, 1.42857)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D2"]
+position = Vector2(1314, 374)
+shape = SubResource("RectangleShape2D_2tlwn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/StaticBody2D2"]
+position = Vector2(635, 253)
+shape = SubResource("RectangleShape2D_grqhd")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders/StaticBody2D2"]
+position = Vector2(654, 793)
+shape = SubResource("RectangleShape2D_grqhd")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_t88gw")]
+position = Vector2(125, 585)
+scale = Vector2(4, 4)
+collision_mask = 2
+
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(-14.25, -4.25)
+limit_left = 0
+limit_top = 5
+limit_right = 1280
+limit_bottom = 720
+editor_draw_limits = true
+
+[node name="Area2D" type="Area2D" parent="."]
+script = SubResource("GDScript_grqhd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1260, 532)
+shape = SubResource("RectangleShape2D_tgdfv")
+
+[node name="Textplaceholder" type="Sprite2D" parent="."]
+position = Vector2(665.905, 40.0625)
+scale = Vector2(9.36309, 5.56445)
+texture = ExtResource("4_46vg4")
+
+[node name="Text1" type="Label" parent="."]
+offset_left = 260.0
+offset_top = 73.0
+offset_right = 1088.0
+offset_bottom = 124.0
+theme_override_fonts/font = ExtResource("5_gsmet")
+theme_override_font_sizes/font_size = 24
+text = "\"Deer was wearing new headphones
+ yesterday.\""
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Text1"]
+libraries = {
+&"": SubResource("AnimationLibrary_1lp82")
+}
+autoplay = "S6-text"
+
+[node name="Text2" type="Label" parent="."]
+visible = false
+offset_left = 260.0
+offset_top = 90.0
+offset_right = 718.0
+offset_bottom = 129.0
+theme_override_fonts/font = ExtResource("5_gsmet")
+theme_override_font_sizes/font_size = 24
+text = "\"I want it...\""
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Text2"]
+libraries = {
+&"": SubResource("AnimationLibrary_1lp82")
+}
+autoplay = "S2-text1"
+
+[node name="Text3" type="Label" parent="."]
+visible = false
+offset_left = 545.0
+offset_top = 90.0
+offset_right = 794.0
+offset_bottom = 141.0
+theme_override_fonts/font = ExtResource("5_gsmet")
+theme_override_font_sizes/font_size = 32
+text = "Find Deer.
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Text3"]
+libraries = {
+&"": SubResource("AnimationLibrary_1lp82")
+}
+autoplay = "S2-text1"
+
+[node name="Pfpplaceholder" type="Sprite2D" parent="."]
+position = Vector2(158.75, 91)
+scale = Vector2(2.98437, 2.98437)
+texture = ExtResource("6_gutu8")
+
+[node name="Robberpfp" type="Sprite2D" parent="."]
+position = Vector2(155.75, 128)
+scale = Vector2(4.46094, 4.46094)
+texture = ExtResource("7_103le")
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Timer1" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer1" to="." method="_on_timer_1_timeout"]
