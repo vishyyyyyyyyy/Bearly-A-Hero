@@ -54,16 +54,16 @@ func _on_kill_body_exited(body: CharacterBody2D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	var deerSprite = get_node("deerCry/AnimatedSprite2D")
-	deerSprite.flip_h = false
+	var birdSprite = get_node("bird/AnimatedSprite2D")
+	birdSprite.flip_h = false
 	var killColl = get_node("kill/killcoll")
 	killColl.disabled = false
 	
 	safe_timer.start()  # Start the next phase after timer ends
 
 func _on_safe_timer_timeout() -> void:
-	var deerSprite = get_node("deerCry/AnimatedSprite2D")
-	deerSprite.flip_h = true
+	var birdSprite = get_node("bird/AnimatedSprite2D")
+	birdSprite.flip_h = true
 	var killColl = get_node("kill/killcoll")
 	killColl.disabled = true
 	

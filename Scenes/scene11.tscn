@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_hwkn7"]
 [ext_resource type="Texture2D" uid="uid://ckild5a21347h" path="res://graphics/Tree.png" id="4_7pdyc"]
 [ext_resource type="Texture2D" uid="uid://corngptc2fj0u" path="res://graphics/Bush.png" id="5_j3yrj"]
-[ext_resource type="PackedScene" uid="uid://c6x2phybxh6hv" path="res://Scenes/headphones.tscn" id="6_c4aij"]
 [ext_resource type="PackedScene" uid="uid://bwb2t01jk7iby" path="res://Scenes/bird.tscn" id="7_0pfso"]
+[ext_resource type="PackedScene" uid="uid://dpwb4om1w4xnv" path="res://Scenes/teddyBear.tscn" id="7_fasun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdtto"]
 size = Vector2(1167, 320)
@@ -46,7 +46,7 @@ limit_bottom = 720
 editor_draw_limits = true
 
 [node name="Tree" type="Sprite2D" parent="."]
-position = Vector2(344, 318)
+position = Vector2(227, 298)
 scale = Vector2(6.89063, 6.97656)
 texture = ExtResource("4_7pdyc")
 
@@ -57,7 +57,7 @@ position = Vector2(0.290248, -2.38419e-07)
 polygon = PackedVector2Array(-10.449, -21.9306, -10.5941, -15.1937, -6.82086, -11.7536, -11.3197, -6.88018, -11.4648, -2.58007, -7.6916, 1.1467, -12.0453, 4.87346, -12.0453, 11.1803, -9.4331, 12.757, -2.32199, 13.0437, -1.59637, 16.0538, 3.33786, 15.6237, 3.33787, 13.0437, 7.98185, 13.0437, 11.7551, 7.88354, 11.7551, 3.44009, 6.09523, -0.430012, 8.56236, -2.58007, 8.70748, -8.74356, 3.33787, -13.4737, 6.24036, -16.4838, 6.53061, -22.3606, -1.7415, -23.9373)
 
 [node name="Bush" type="Sprite2D" parent="."]
-position = Vector2(707, 614)
+position = Vector2(903, 611)
 scale = Vector2(3.83399, 3.83399)
 texture = ExtResource("5_j3yrj")
 
@@ -66,7 +66,7 @@ position = Vector2(-49.2112, -65.4491)
 scale = Vector2(1.75697, 1.68491)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bush/StaticBody2D4"]
-position = Vector2(27.8607, 40.2375)
+position = Vector2(28.8998, 40.0827)
 scale = Vector2(0.789794, 0.856617)
 polygon = PackedVector2Array(-13.8661, -2.27666, -12.9429, -7.07137, -5.15865, -11.3069, -0.369522, -11.3069, 4.12935, -8.01013, 6.16109, -4.57005, 9.49896, -5.14339, 13.9978, -4.71339, 18.7869, -1.41665, 20.6736, 0.87674, 20.3833, 7.75689, 19.3971, 11.0001, 16.465, 12.917, -16.9137, 13.0603, -20.6604, 10.4981, -20.3967, 5.89352, -16.1881, 2.59677, -11.9795, 2.59677)
 
@@ -90,14 +90,14 @@ autostart = true
 collision_layer = 2
 
 [node name="tree1coll" type="CollisionShape2D" parent="hideCollisions/tree1"]
-position = Vector2(278, 305)
+position = Vector2(171, 263)
 scale = Vector2(6.89065, 6.97657)
 shape = SubResource("CapsuleShape2D_s1noh")
 
 [node name="remaining" type="Area2D" parent="hideCollisions"]
 
 [node name="bushcoll" type="CollisionShape2D" parent="hideCollisions/remaining"]
-position = Vector2(646, 618)
+position = Vector2(849, 626)
 scale = Vector2(6.7362, 6.45992)
 shape = SubResource("CapsuleShape2D_gwvaf")
 
@@ -105,6 +105,7 @@ shape = SubResource("CapsuleShape2D_gwvaf")
 wait_time = 2.5
 
 [node name="Borders" type="Node2D" parent="."]
+visible = false
 position = Vector2(-272, 365)
 scale = Vector2(0.7, 0.7)
 
@@ -132,13 +133,13 @@ shape = SubResource("RectangleShape2D_m8b5x")
 position = Vector2(654, 793)
 shape = SubResource("RectangleShape2D_m8b5x")
 
-[node name="Area2D" parent="." instance=ExtResource("6_c4aij")]
-position = Vector2(969, 492)
-scale = Vector2(2, 2)
-
 [node name="bird" parent="." instance=ExtResource("7_0pfso")]
 position = Vector2(1166, 604)
 scale = Vector2(2.5, 2.5)
+
+[node name="Area2D" parent="." instance=ExtResource("7_fasun")]
+position = Vector2(1117, 465)
+scale = Vector2(2, 2)
 
 [connection signal="body_entered" from="kill" to="." method="_on_kill_body_entered"]
 [connection signal="body_exited" from="kill" to="." method="_on_kill_body_exited"]
