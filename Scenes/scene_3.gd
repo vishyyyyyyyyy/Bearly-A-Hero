@@ -11,8 +11,6 @@ func _ready() -> void:
 	$CharacterBody2D.can_move = true
 	var killColl = get_node("kill/killcoll")
 	killColl.disabled = true
-	var nextScene = get_node("Area2D2/CollisionShape2D")
-	nextScene.disabled = true
 
 	
 	# Ensure they are one-shot so we can alternate
@@ -70,7 +68,3 @@ func _on_safe_timer_timeout() -> void:
 	
 	timer.start()  # Loop back to the first phase
 	
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	var nextScene = get_node("Area2D2/CollisionShape2D")
-	nextScene.disabled = false

@@ -135,10 +135,10 @@ scale = Vector2(2, 2)
 [node name="safeTimer" type="Timer" parent="."]
 wait_time = 2.5
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="SceneTrigger" type="Area2D" parent="."]
 script = ExtResource("8_gtq7m")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
 position = Vector2(-34, 578)
 shape = SubResource("RectangleShape2D_sljpu")
 
@@ -180,5 +180,5 @@ shape = SubResource("RectangleShape2D_88hlr")
 [connection signal="body_exited" from="hideCollisions/remaining" to="." method="_on_remaining_body_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="safeTimer" to="." method="_on_safe_timer_timeout"]
-[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]
+[connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
+[connection signal="body_exited" from="SceneTrigger" to="SceneTrigger" method="_on_body_exited"]

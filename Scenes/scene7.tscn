@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_x0o73"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="2_a4tfd"]
 [ext_resource type="Texture2D" uid="uid://ckild5a21347h" path="res://graphics/Tree.png" id="5_sdtto"]
-[ext_resource type="PackedScene" uid="uid://c6x2phybxh6hv" path="res://Scenes/headphones.tscn" id="6_mccsk"]
+[ext_resource type="PackedScene" path="res://Scenes/headphones.tscn" id="6_mccsk"]
 [ext_resource type="Texture2D" uid="uid://corngptc2fj0u" path="res://graphics/Bush.png" id="6_s1noh"]
 [ext_resource type="PackedScene" uid="uid://wd7rs51l584p" path="res://Scenes/deer_cry.tscn" id="7_uwn14"]
 
@@ -25,7 +25,7 @@ size = Vector2(62, 725)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8b5x"]
 size = Vector2(1299, 152)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_a4tfd")
 
 [node name="Forest1280x720" type="Sprite2D" parent="."]
