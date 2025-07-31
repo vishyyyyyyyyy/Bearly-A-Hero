@@ -21,4 +21,4 @@ func _on_body_exited(body: Node2D) -> void:
 
 func check_exit_condition():
 	if entered and headphone_dropped:
-		get_tree().change_scene_to_file("res://Scenes/scene6.tscn")
+		get_tree().change_scene_to_file("res://Scenes/scene9.tscn")

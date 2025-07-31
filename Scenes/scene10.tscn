@@ -1,13 +1,13 @@
 [gd_scene load_steps=15 format=3 uid="uid://cqrw7i240jv3l"]
 
-[ext_resource type="Script" uid="uid://cwppctljlttxw" path="res://Scenes/scene11.gd" id="1_fasun"]
-[ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="2_6rj5b"]
-[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_hwkn7"]
-[ext_resource type="Texture2D" uid="uid://ckild5a21347h" path="res://graphics/Tree.png" id="4_7pdyc"]
-[ext_resource type="Texture2D" uid="uid://corngptc2fj0u" path="res://graphics/Bush.png" id="5_j3yrj"]
-[ext_resource type="PackedScene" uid="uid://bwb2t01jk7iby" path="res://Scenes/bird.tscn" id="7_0pfso"]
-[ext_resource type="PackedScene" uid="uid://dpwb4om1w4xnv" path="res://Scenes/teddyBear.tscn" id="7_fasun"]
-[ext_resource type="Script" uid="uid://ft6woyvohtsh" path="res://Scenes/scene11to12.gd" id="8_6rj5b"]
+[ext_resource type="Script" uid="uid://cwppctljlttxw" path="res://Scenes/scene10.gd" id="1_gyshp"]
+[ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="2_kkdld"]
+[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_afadj"]
+[ext_resource type="Texture2D" uid="uid://ckild5a21347h" path="res://graphics/Tree.png" id="4_dg4i2"]
+[ext_resource type="Texture2D" uid="uid://corngptc2fj0u" path="res://graphics/Bush.png" id="5_cwodq"]
+[ext_resource type="PackedScene" uid="uid://bwb2t01jk7iby" path="res://Scenes/bird.tscn" id="6_to5ag"]
+[ext_resource type="PackedScene" uid="uid://dpwb4om1w4xnv" path="res://Scenes/teddyBear.tscn" id="7_raxr8"]
+[ext_resource type="Script" uid="uid://ft6woyvohtsh" path="res://Scenes/scene11to12.gd" id="8_88nbp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdtto"]
 size = Vector2(1167, 320)
@@ -30,13 +30,13 @@ size = Vector2(1299, 152)
 size = Vector2(214, 266.5)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_fasun")
+script = ExtResource("1_gyshp")
 
 [node name="Forest1280x720" type="Sprite2D" parent="."]
 position = Vector2(641, 363)
-texture = ExtResource("2_6rj5b")
+texture = ExtResource("2_kkdld")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_hwkn7")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_afadj")]
 z_index = 10
 position = Vector2(142, 555)
 scale = Vector2(4, 4)
@@ -52,7 +52,7 @@ editor_draw_limits = true
 [node name="Tree" type="Sprite2D" parent="."]
 position = Vector2(227, 298)
 scale = Vector2(6.89063, 6.97656)
-texture = ExtResource("4_7pdyc")
+texture = ExtResource("4_dg4i2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tree"]
 
@@ -63,7 +63,7 @@ polygon = PackedVector2Array(-10.449, -21.9306, -10.5941, -15.1937, -6.82086, -1
 [node name="Bush" type="Sprite2D" parent="."]
 position = Vector2(903, 611)
 scale = Vector2(3.83399, 3.83399)
-texture = ExtResource("5_j3yrj")
+texture = ExtResource("5_cwodq")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Bush"]
 position = Vector2(-49.2112, -65.4491)
@@ -109,7 +109,6 @@ shape = SubResource("CapsuleShape2D_gwvaf")
 wait_time = 2.5
 
 [node name="Borders" type="Node2D" parent="."]
-visible = false
 position = Vector2(-272, 365)
 scale = Vector2(0.7, 0.7)
 
@@ -137,17 +136,17 @@ shape = SubResource("RectangleShape2D_m8b5x")
 position = Vector2(654, 793)
 shape = SubResource("RectangleShape2D_m8b5x")
 
-[node name="bird" parent="." instance=ExtResource("7_0pfso")]
+[node name="bird" parent="." instance=ExtResource("6_to5ag")]
 position = Vector2(1166, 604)
 scale = Vector2(2.5, 2.5)
 
-[node name="Area2D" parent="." instance=ExtResource("7_fasun")]
+[node name="Area2D" parent="." instance=ExtResource("7_raxr8")]
 position = Vector2(1117, 465)
 scale = Vector2(2, 2)
 
 [node name="SceneTrigger" type="Area2D" parent="."]
 rotation = -0.00304224
-script = ExtResource("8_6rj5b")
+script = ExtResource("8_88nbp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
 position = Vector2(-66.7642, 579.8)
