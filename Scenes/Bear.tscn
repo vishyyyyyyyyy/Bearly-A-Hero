@@ -198,7 +198,7 @@ script = ExtResource("1_ct84p")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-13.3265, -1.97429)
 sprite_frames = SubResource("SpriteFrames_wwo73")
-animation = &"BearCaught"
+animation = &"BearIdle"
 
 [node name="CollisionShape_RobberIdle" type="CollisionShape2D" parent="."]
 position = Vector2(-15.7943, 0.329048)

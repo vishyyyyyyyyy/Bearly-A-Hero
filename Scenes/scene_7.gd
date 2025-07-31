@@ -12,7 +12,6 @@ func _ready() -> void:
 	var killColl = get_node("kill/killcoll")
 	killColl.disabled = true
 	var nextScene = get_node("Area2D2/CollisionShape2D")
-	nextScene.disabled = true
 
 	
 	# Ensure they are one-shot so we can alternate
@@ -55,16 +54,16 @@ func _on_kill_body_exited(body: CharacterBody2D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	var bunnySprite = get_node("bunny/AnimatedSprite2D")
-	bunnySprite.flip_h = true
+	var deerSprite = get_node("deerCry/AnimatedSprite2D")
+	deerSprite.flip_h = false
 	var killColl = get_node("kill/killcoll")
 	killColl.disabled = false
 	
 	safe_timer.start()  # Start the next phase after timer ends
 
 func _on_safe_timer_timeout() -> void:
-	var bunnySprite = get_node("bunny/AnimatedSprite2D")
-	bunnySprite.flip_h = false
+	var deerSprite = get_node("deerCry/AnimatedSprite2D")
+	deerSprite.flip_h = true
 	var killColl = get_node("kill/killcoll")
 	killColl.disabled = true
 	

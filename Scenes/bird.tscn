@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwb2t01jk7iby"]
+[gd_scene load_steps=10 format=3 uid="uid://bwb2t01jk7iby"]
 
+[ext_resource type="Script" uid="uid://c3s0744vvk3r1" path="res://Scenes/bird.gd" id="1_dnvpi"]
 [ext_resource type="Texture2D" uid="uid://ki1aa5ds0d6g" path="res://graphics/Bird/BirdCry.png" id="1_mcegt"]
 [ext_resource type="Texture2D" uid="uid://cshne0g0i7eg6" path="res://graphics/Bird/BirdHop.png" id="2_dnvpi"]
 
@@ -52,9 +53,10 @@ animations = [{
 }]
 
 [node name="bird" type="CharacterBody2D"]
+script = ExtResource("1_dnvpi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_oc6qe")
-animation = &"cry"
+animation = &"hop"
 autoplay = "hop"
-frame_progress = 0.142249
+frame_progress = 0.00860468

@@ -1,42 +1,38 @@
-[gd_scene load_steps=15 format=3 uid="uid://dyr4fpwt12eee"]
+[gd_scene load_steps=13 format=3 uid="uid://cqrw7i240jv3l"]
 
-[ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_nnvjd"]
-[ext_resource type="Script" uid="uid://c0qq1tly84tta" path="res://Scenes/scene_3.gd" id="1_sljpu"]
-[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="2_dl8gu"]
-[ext_resource type="PackedScene" uid="uid://b38qsufa5piu7" path="res://Scenes/bunny.tscn" id="4_msh5e"]
-[ext_resource type="Texture2D" uid="uid://ckild5a21347h" path="res://graphics/Tree.png" id="5_cvehr"]
-[ext_resource type="Texture2D" uid="uid://corngptc2fj0u" path="res://graphics/Bush.png" id="6_sljpu"]
-[ext_resource type="PackedScene" uid="uid://cgqnyjn7miwjw" path="res://Scenes/scarf.tscn" id="7_sljpu"]
-[ext_resource type="Script" uid="uid://cdvtxjyp86j55" path="res://Scenes/scene3to4.gd" id="8_gtq7m"]
+[ext_resource type="Script" uid="uid://co1nseyr6blei" path="res://Scenes/scene_7.gd" id="1_fasun"]
+[ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="2_6rj5b"]
+[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_hwkn7"]
+[ext_resource type="Texture2D" uid="uid://ckild5a21347h" path="res://graphics/Tree.png" id="4_7pdyc"]
+[ext_resource type="Texture2D" uid="uid://corngptc2fj0u" path="res://graphics/Bush.png" id="5_j3yrj"]
+[ext_resource type="PackedScene" uid="uid://c6x2phybxh6hv" path="res://Scenes/headphones.tscn" id="6_c4aij"]
+[ext_resource type="PackedScene" uid="uid://bwb2t01jk7iby" path="res://Scenes/bird.tscn" id="7_0pfso"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gtq7m"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdtto"]
 size = Vector2(1167, 320)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvehr"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1noh"]
 radius = 8.27208
 height = 43.5744
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sljpu"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwvaf"]
 radius = 14.5483
 height = 31.4718
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sljpu"]
-size = Vector2(214, 266.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdaeh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52eas"]
 size = Vector2(62, 725)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_88hlr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8b5x"]
 size = Vector2(1299, 152)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_sljpu")
+script = ExtResource("1_fasun")
 
 [node name="Forest1280x720" type="Sprite2D" parent="."]
 position = Vector2(641, 363)
-texture = ExtResource("1_nnvjd")
+texture = ExtResource("2_6rj5b")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_dl8gu")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_hwkn7")]
 z_index = 10
 position = Vector2(142, 555)
 scale = Vector2(4, 4)
@@ -49,14 +45,10 @@ limit_right = 1280
 limit_bottom = 720
 editor_draw_limits = true
 
-[node name="bunny" parent="." instance=ExtResource("4_msh5e")]
-position = Vector2(1209, 591)
-scale = Vector2(2, 2)
-
 [node name="Tree" type="Sprite2D" parent="."]
 position = Vector2(344, 318)
 scale = Vector2(6.89063, 6.97656)
-texture = ExtResource("5_cvehr")
+texture = ExtResource("4_7pdyc")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Tree"]
 
@@ -65,45 +57,31 @@ position = Vector2(0.290248, -2.38419e-07)
 polygon = PackedVector2Array(-10.449, -21.9306, -10.5941, -15.1937, -6.82086, -11.7536, -11.3197, -6.88018, -11.4648, -2.58007, -7.6916, 1.1467, -12.0453, 4.87346, -12.0453, 11.1803, -9.4331, 12.757, -2.32199, 13.0437, -1.59637, 16.0538, 3.33786, 15.6237, 3.33787, 13.0437, 7.98185, 13.0437, 11.7551, 7.88354, 11.7551, 3.44009, 6.09523, -0.430012, 8.56236, -2.58007, 8.70748, -8.74356, 3.33787, -13.4737, 6.24036, -16.4838, 6.53061, -22.3606, -1.7415, -23.9373)
 
 [node name="Bush" type="Sprite2D" parent="."]
-position = Vector2(538.312, 654.688)
+position = Vector2(707, 614)
 scale = Vector2(3.83399, 3.83399)
-texture = ExtResource("6_sljpu")
+texture = ExtResource("5_j3yrj")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Bush"]
 position = Vector2(-49.2112, -65.4491)
 scale = Vector2(1.75697, 1.68491)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bush/StaticBody2D4"]
-position = Vector2(27.6658, 39.6666)
+position = Vector2(27.8607, 40.2375)
 scale = Vector2(0.789794, 0.856617)
 polygon = PackedVector2Array(-13.8661, -2.27666, -12.9429, -7.07137, -5.15865, -11.3069, -0.369522, -11.3069, 4.12935, -8.01013, 6.16109, -4.57005, 9.49896, -5.14339, 13.9978, -4.71339, 18.7869, -1.41665, 20.6736, 0.87674, 20.3833, 7.75689, 19.3971, 11.0001, 16.465, 12.917, -16.9137, 13.0603, -20.6604, 10.4981, -20.3967, 5.89352, -16.1881, 2.59677, -11.9795, 2.59677)
-
-[node name="Tree2" type="Sprite2D" parent="."]
-position = Vector2(830, 369)
-scale = Vector2(6.07031, 7.11719)
-texture = ExtResource("5_cvehr")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Tree2"]
-position = Vector2(-66.5534, -7.72778)
-scale = Vector2(1.13514, 0.980242)
-
-[node name="TreeCollision2D" type="CollisionPolygon2D" parent="Tree2/StaticBody2D2"]
-position = Vector2(58.9204, 7.59687)
-scale = Vector2(0.999997, 0.999999)
-polygon = PackedVector2Array(-8.41723, -22.3606, -8.41723, -15.4804, -4.93424, -12.0403, -9.43311, -7.31019, -8.70748, -1.43337, -5.95011, 1.1467, -10.449, 4.30011, -10.449, 9.89026, -7.54648, 13.0437, -1.7415, 13.0437, -1.59637, 15.3371, 2.46712, 15.1937, 2.75736, 13.3303, 7.1111, 13.0437, 10.449, 8.17022, 10.3038, 4.73013, 5.51473, -0.430012, 7.83672, -3.15342, 7.83672, -8.8869, 3.33787, -13.4737, 5.51473, -16.6271, 6.53061, -22.3606, -0.580498, -24.7973)
 
 [node name="kill" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="killcoll" type="CollisionShape2D" parent="kill"]
 position = Vector2(584.5, 560)
-shape = SubResource("RectangleShape2D_gtq7m")
+shape = SubResource("RectangleShape2D_sdtto")
 
 [node name="killTimer" type="Timer" parent="kill"]
 wait_time = 0.6
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 autostart = true
 
 [node name="hideCollisions" type="Node" parent="."]
@@ -114,33 +92,17 @@ collision_layer = 2
 [node name="tree1coll" type="CollisionShape2D" parent="hideCollisions/tree1"]
 position = Vector2(278, 305)
 scale = Vector2(6.89065, 6.97657)
-shape = SubResource("CapsuleShape2D_cvehr")
+shape = SubResource("CapsuleShape2D_s1noh")
 
 [node name="remaining" type="Area2D" parent="hideCollisions"]
 
-[node name="tree2coll" type="CollisionShape2D" parent="hideCollisions/remaining"]
-position = Vector2(773, 341)
-scale = Vector2(6.89065, 6.97657)
-shape = SubResource("CapsuleShape2D_cvehr")
-
 [node name="bushcoll" type="CollisionShape2D" parent="hideCollisions/remaining"]
-position = Vector2(491, 691)
+position = Vector2(646, 618)
 scale = Vector2(6.7362, 6.45992)
-shape = SubResource("CapsuleShape2D_sljpu")
-
-[node name="Area2D" parent="." instance=ExtResource("7_sljpu")]
-position = Vector2(1036, 498)
-scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_gwvaf")
 
 [node name="safeTimer" type="Timer" parent="."]
 wait_time = 2.5
-
-[node name="Area2D2" type="Area2D" parent="."]
-script = ExtResource("8_gtq7m")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(-34, 578)
-shape = SubResource("RectangleShape2D_sljpu")
 
 [node name="Borders" type="Node2D" parent="."]
 position = Vector2(-272, 365)
@@ -152,7 +114,7 @@ scale = Vector2(1.42857, 1.42857)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D"]
 position = Vector2(-25, 364)
-shape = SubResource("RectangleShape2D_wdaeh")
+shape = SubResource("RectangleShape2D_52eas")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Borders"]
 position = Vector2(388.571, -521.429)
@@ -160,15 +122,23 @@ scale = Vector2(1.42857, 1.42857)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D2"]
 position = Vector2(1314, 374)
-shape = SubResource("RectangleShape2D_wdaeh")
+shape = SubResource("RectangleShape2D_52eas")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/StaticBody2D2"]
 position = Vector2(635, 253)
-shape = SubResource("RectangleShape2D_88hlr")
+shape = SubResource("RectangleShape2D_m8b5x")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders/StaticBody2D2"]
 position = Vector2(654, 793)
-shape = SubResource("RectangleShape2D_88hlr")
+shape = SubResource("RectangleShape2D_m8b5x")
+
+[node name="Area2D" parent="." instance=ExtResource("6_c4aij")]
+position = Vector2(969, 492)
+scale = Vector2(2, 2)
+
+[node name="bird" parent="." instance=ExtResource("7_0pfso")]
+position = Vector2(1166, 604)
+scale = Vector2(2.5, 2.5)
 
 [connection signal="body_entered" from="kill" to="." method="_on_kill_body_entered"]
 [connection signal="body_exited" from="kill" to="." method="_on_kill_body_exited"]
@@ -178,7 +148,4 @@ shape = SubResource("RectangleShape2D_88hlr")
 [connection signal="body_exited" from="hideCollisions/tree1" to="." method="_on_tree_1_body_exited"]
 [connection signal="body_entered" from="hideCollisions/remaining" to="." method="_on_remaining_body_entered"]
 [connection signal="body_exited" from="hideCollisions/remaining" to="." method="_on_remaining_body_exited"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="safeTimer" to="." method="_on_safe_timer_timeout"]
-[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]

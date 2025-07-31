@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6x2phybxh6hv"]
+
+[ext_resource type="Script" uid="uid://b748inihkwr6d" path="res://Scenes/headphones.gd" id="1_44o73"]
+[ext_resource type="Texture2D" uid="uid://cjurf5c35o134" path="res://graphics/Headphone.png" id="1_bueym"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_44o73"]
+radius = 24.0208
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_44o73")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bueym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -2)
+shape = SubResource("CircleShape2D_44o73")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
