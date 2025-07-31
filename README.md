@@ -12,6 +12,7 @@ Explore different scenes, collect stolen riches to restore balance and avoid get
 - Scene setup with timers and scripting
 - Scene change using a trigger zone
 - Experimentation with physics-based interaction using `CharacterBody2D`
+- Scene based progression with conditional scene triggers
 
 ## 🚀 Built With
 
