@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://cqrw7i240jv3l"]
+[gd_scene load_steps=15 format=3 uid="uid://cqrw7i240jv3l"]
 
-[ext_resource type="Script" uid="uid://co1nseyr6blei" path="res://Scenes/scene_7.gd" id="1_fasun"]
+[ext_resource type="Script" uid="uid://cwppctljlttxw" path="res://Scenes/scene11.gd" id="1_fasun"]
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="2_6rj5b"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_hwkn7"]
 [ext_resource type="Texture2D" uid="uid://ckild5a21347h" path="res://graphics/Tree.png" id="4_7pdyc"]
 [ext_resource type="Texture2D" uid="uid://corngptc2fj0u" path="res://graphics/Bush.png" id="5_j3yrj"]
 [ext_resource type="PackedScene" uid="uid://bwb2t01jk7iby" path="res://Scenes/bird.tscn" id="7_0pfso"]
 [ext_resource type="PackedScene" uid="uid://dpwb4om1w4xnv" path="res://Scenes/teddyBear.tscn" id="7_fasun"]
+[ext_resource type="Script" uid="uid://ft6woyvohtsh" path="res://Scenes/scene11to12.gd" id="8_6rj5b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdtto"]
 size = Vector2(1167, 320)
@@ -24,6 +25,9 @@ size = Vector2(62, 725)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8b5x"]
 size = Vector2(1299, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwkn7"]
+size = Vector2(214, 266.5)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_fasun")
@@ -141,6 +145,14 @@ scale = Vector2(2.5, 2.5)
 position = Vector2(1117, 465)
 scale = Vector2(2, 2)
 
+[node name="SceneTrigger" type="Area2D" parent="."]
+rotation = -0.00304224
+script = ExtResource("8_6rj5b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+position = Vector2(-66.7642, 579.8)
+shape = SubResource("RectangleShape2D_hwkn7")
+
 [connection signal="body_entered" from="kill" to="." method="_on_kill_body_entered"]
 [connection signal="body_exited" from="kill" to="." method="_on_kill_body_exited"]
 [connection signal="timeout" from="kill/killTimer" to="." method="_on_kill_timer_timeout"]
@@ -150,3 +162,5 @@ scale = Vector2(2, 2)
 [connection signal="body_entered" from="hideCollisions/remaining" to="." method="_on_remaining_body_entered"]
 [connection signal="body_exited" from="hideCollisions/remaining" to="." method="_on_remaining_body_exited"]
 [connection signal="timeout" from="safeTimer" to="." method="_on_safe_timer_timeout"]
+[connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]
+[connection signal="body_exited" from="SceneTrigger" to="SceneTrigger" method="_on_body_exited"]
