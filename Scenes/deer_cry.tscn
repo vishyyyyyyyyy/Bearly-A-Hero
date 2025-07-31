@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://wd7rs51l584p"]
 
-[ext_resource type="Script" uid="uid://dy5ba4qburf5f" path="res://Scenes/deer_cry.gd" id="1_bidkm"]
+[ext_resource type="Script" path="res://Scenes/deer_cry.gd" id="1_bidkm"]
 [ext_resource type="Texture2D" uid="uid://i2wn83vjk3ph" path="res://graphics/Deer/DeerCry.png" id="1_p8yaq"]
 [ext_resource type="Texture2D" uid="uid://cnsaehxcn5cpv" path="res://graphics/Deer/DeerWalk.png" id="2_cy77b"]
 
@@ -57,4 +57,5 @@ script = ExtResource("1_bidkm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_si0bx")
-animation = &"cry"
+animation = &"walk"
+autoplay = "walk"
