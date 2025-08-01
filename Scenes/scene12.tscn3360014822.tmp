@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bu1fmvdwkuhr0"]
+[gd_scene load_steps=20 format=3 uid="uid://bu1fmvdwkuhr0"]
 
 [ext_resource type="Script" uid="uid://4ukt326qfoi3" path="res://Scenes/scene12.gd" id="1_nj7m8"]
 [ext_resource type="Texture2D" uid="uid://bvwai7tysst01" path="res://graphics/Cave.png" id="2_nj7m8"]
@@ -9,10 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://cjurf5c35o134" path="res://graphics/Headphone.png" id="7_buv8g"]
 [ext_resource type="Texture2D" uid="uid://cp56ugi21g6ye" path="res://graphics/TeddyBear.png" id="8_lgtbx"]
 [ext_resource type="Script" uid="uid://k7nphqkptfpm" path="res://Scenes/transition.gd" id="9_5bjqc"]
-[ext_resource type="Texture2D" uid="uid://co8g772aa4770" path="res://graphics/pile.png" id="10_lgtbx"]
-[ext_resource type="Texture2D" uid="uid://dm7yvjyl45om8" path="res://graphics/pfp/textplaceholder.png" id="11_vvpnt"]
-[ext_resource type="Texture2D" uid="uid://ceuwssco6htey" path="res://graphics/pfp/pfpplaceholder.png" id="12_wyx4r"]
-[ext_resource type="Texture2D" uid="uid://cxlhmv0fg77x2" path="res://graphics/pfp/robberpfp.png" id="13_a0s3e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmg1m"]
 size = Vector2(73, 764)
@@ -43,17 +39,37 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../S12-text3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+
+[sub_resource type="Animation" id="Animation_nj7m8"]
+resource_name = "fade_to_black"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lgtbx"]
+resource_name = "fade_to_normal"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.53333, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.697672), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_buv8g"]
@@ -66,77 +82,18 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 4, 5),
+"times": PackedFloat32Array(0, 1, 3, 5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../S12-text3:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../S12-text3:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_buv8g"]
 _data = {
 &"RESET": SubResource("Animation_5bjqc"),
-&"cutscene": SubResource("Animation_buv8g")
-}
-
-[sub_resource type="Animation" id="Animation_vvpnt"]
-resource_name = "S12-text4"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 1.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_wyx4r"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_a0s3e"]
-_data = {
-&"RESET": SubResource("Animation_wyx4r"),
-&"S12-text4": SubResource("Animation_vvpnt")
+&"cutscene": SubResource("Animation_buv8g"),
+&"fade_to_black": SubResource("Animation_nj7m8"),
+&"fade_to_normal": SubResource("Animation_lgtbx")
 }
 
 [node name="Node2D2" type="Node2D"]
@@ -168,6 +125,16 @@ shape = SubResource("RectangleShape2D_ltkk0")
 [node name="topWall" type="CollisionShape2D" parent="border/Area2D3"]
 position = Vector2(645.5, 173)
 shape = SubResource("RectangleShape2D_arvwu")
+
+[node name="S5-text2" type="Label" parent="."]
+visible = false
+offset_left = 497.0
+offset_top = 250.0
+offset_right = 841.0
+offset_bottom = 303.0
+theme_override_fonts/font = ExtResource("4_h4n8a")
+theme_override_font_sizes/font_size = 32
+text = "Exit the cave."
 
 [node name="S5-text1" type="Label" parent="."]
 offset_left = 11.0
@@ -228,84 +195,8 @@ libraries = {
 &"": SubResource("AnimationLibrary_buv8g")
 }
 
-[node name="S12-text3" type="Label" parent="transition"]
-visible = false
-offset_left = 32.0
-offset_top = 189.0
-offset_right = 1255.0
-offset_bottom = 556.0
-theme_override_fonts/font = ExtResource("4_h4n8a")
-theme_override_font_sizes/font_size = 32
-text = "After countless heists, 
-
-the woodland creatures 
-
-had been stripped of all they had."
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Pile" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(271, 497)
-scale = Vector2(8.88281, 8.88281)
-texture = ExtResource("10_lgtbx")
-
-[node name="Textplaceholder" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(665.905, 40.0625)
-scale = Vector2(9.36309, 5.56445)
-texture = ExtResource("11_vvpnt")
-
-[node name="Pfpplaceholder" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(158.75, 91)
-scale = Vector2(2.98437, 2.98437)
-texture = ExtResource("12_wyx4r")
-
-[node name="Robberpfp" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(155.75, 128)
-scale = Vector2(4.46094, 4.46094)
-texture = ExtResource("13_a0s3e")
-
-[node name="S12-text4" type="Label" parent="."]
-visible = false
-offset_left = 273.0
-offset_top = 49.0
-offset_right = 1095.0
-offset_bottom = 153.0
-theme_override_fonts/font = ExtResource("4_h4n8a")
-theme_override_font_sizes/font_size = 24
-text = "\"This forest is full of weaklings. 
-Everything is mine to take.\""
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="S12-text4"]
-libraries = {
-&"": SubResource("AnimationLibrary_a0s3e")
-}
-autoplay = "S12-text4"
-
-[node name="S12-text5" type="Label" parent="."]
-offset_left = 273.0
-offset_top = 49.0
-offset_right = 1095.0
-offset_bottom = 153.0
-theme_override_fonts/font = ExtResource("4_h4n8a")
-theme_override_font_sizes/font_size = 24
-text = "\"This is getting boring.
-Let me check one "
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="S12-text5"]
-libraries = {
-&"": SubResource("AnimationLibrary_a0s3e")
-}
-autoplay = "S12-text4"
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="ExitTrigger" to="ExitTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="ExitTrigger" to="ExitTrigger" method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
