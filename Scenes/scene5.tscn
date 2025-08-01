@@ -13,8 +13,8 @@ size = Vector2(73, 764)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ltkk0"]
 size = Vector2(1324, 37)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_arvwu"]
-size = Vector2(1360.5, 444)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0a3l8"]
+size = Vector2(1360.5, 521)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ngrw"]
 size = Vector2(88.5, 293)
@@ -49,8 +49,8 @@ shape = SubResource("RectangleShape2D_ltkk0")
 [node name="Area2D3" type="StaticBody2D" parent="border"]
 
 [node name="topWall" type="CollisionShape2D" parent="border/Area2D3"]
-position = Vector2(645.5, 173)
-shape = SubResource("RectangleShape2D_arvwu")
+position = Vector2(645.5, 211.5)
+shape = SubResource("RectangleShape2D_0a3l8")
 
 [node name="S5-text2" type="Label" parent="."]
 visible = false
