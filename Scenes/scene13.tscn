@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://buji06yxa6v0t"]
+[gd_scene load_steps=9 format=3 uid="uid://buji06yxa6v0t"]
 
 [ext_resource type="Script" uid="uid://dkdmvroj10i3s" path="res://Scenes/scene2.gd" id="1_lxaoe"]
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="2_obagw"]
@@ -32,84 +32,6 @@ func _process(delta):
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgdfv"]
 size = Vector2(298, 381.5)
-
-[sub_resource type="Animation" id="Animation_ge1nq"]
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Text1:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_13otf"]
-resource_name = "S2-text1"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 1.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Text1:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 1.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_ixcn2"]
-resource_name = "S6-text"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 1.0, 1.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1lp82"]
-_data = {
-&"RESET": SubResource("Animation_ge1nq"),
-&"S2-text1": SubResource("Animation_13otf"),
-&"S6-text": SubResource("Animation_ixcn2")
-}
 
 [node name="Node2D2" type="Node2D"]
 script = ExtResource("1_lxaoe")
@@ -176,14 +98,6 @@ offset_bottom = 162.0
 theme_override_fonts/font = ExtResource("5_gsmet")
 theme_override_font_sizes/font_size = 32
 text = "Find something to steal."
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Text1"]
-libraries = {
-&"": SubResource("AnimationLibrary_1lp82")
-}
-autoplay = "S6-text"
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
