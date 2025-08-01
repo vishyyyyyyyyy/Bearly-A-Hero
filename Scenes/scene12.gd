@@ -18,7 +18,6 @@ func _input(event):
 func drop_teddy(): 
 	$TeddyBear.visible = true  # or queue_free() if you want to delete it
 	print("teddy dropped!")
-	$ExitTrigger.set_teddy_dropped()
 	$"S5-text1".visible = false
 	#$"S5-text2".visible = true
 
@@ -37,3 +36,14 @@ func secondhalf():
 	$Robberpfp.visible = true
 	$"S12-text4".visible = true
 	$"S12-text4/AnimationPlayer".play("S12-text4")
+	await get_tree().create_timer(3.0).timeout
+	$"S12-text4".visible = false
+	$"S12-text5".visible = true 
+	$"S12-text5/AnimationPlayer".play("S12-text5")
+	await get_tree().create_timer(3.0).timeout
+	$"S12-text5".visible = false 
+	$Textplaceholder.visible = false
+	$Pfpplaceholder.visible = false
+	$Robberpfp.visible = false
+	$"S5-text2".visible = true 
+	$ExitTrigger.playfinaltext()
