@@ -8,4 +8,8 @@ func _on_body_entered(body: Node2D) -> void:
 		var trigger = get_parent().get_node("SceneTrigger") # Adjust this if needed
 		trigger.set_scarf_picked_up()
 
+		$"../S3-text4".visible = false
+		$"../S3-text5".visible = true
+
 		queue_free() # Remove scarf from scene
+		

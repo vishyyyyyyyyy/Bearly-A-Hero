@@ -256,9 +256,9 @@ offset_right = 1243.0
 offset_bottom = 178.0
 theme_override_fonts/font = ExtResource("9_wdaeh")
 theme_override_font_sizes/font_size = 32
-text = "Hide behind the bushes and trees. 
-Don't get caught sneaking up on her
-when she's facing you"
+text = "Hide behind the bushes and trees so
+
+Bunny doesn't catch you!"
 horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
@@ -283,6 +283,25 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="S3-text4"]
+libraries = {
+&"": SubResource("AnimationLibrary_wbd3l")
+}
+autoplay = "s3-text1"
+
+[node name="S3-text5" type="Label" parent="."]
+visible = false
+offset_left = 15.0
+offset_top = 94.0
+offset_right = 1249.0
+offset_bottom = 148.0
+theme_override_fonts/font = ExtResource("9_wdaeh")
+theme_override_font_sizes/font_size = 32
+text = "Escape without being seen!"
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="S3-text5"]
 libraries = {
 &"": SubResource("AnimationLibrary_wbd3l")
 }
