@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://d2k0jv5tcegfw"]
+[gd_scene load_steps=44 format=3 uid="uid://d2k0jv5tcegfw"]
 
 [ext_resource type="Script" uid="uid://drh7dywxmkrls" path="res://Scenes/scene14.gd" id="1_2t82s"]
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_d84gk"]
@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cku85u6qxgjvl" path="res://graphics/Bear/BearDie.png" id="7_uvv2w"]
 [ext_resource type="Texture2D" uid="uid://0jq0tsl5721j" path="res://graphics/Bear/RobberIdle.png" id="8_up2md"]
 [ext_resource type="Texture2D" uid="uid://iypuf3dmimld" path="res://graphics/Bear/RobberRun.png" id="9_ymoho"]
+[ext_resource type="Texture2D" uid="uid://ceuwssco6htey" path="res://graphics/pfp/pfpplaceholder.png" id="10_bstqb"]
+[ext_resource type="Texture2D" uid="uid://cxlhmv0fg77x2" path="res://graphics/pfp/robberpfp.png" id="11_smluj"]
+[ext_resource type="Texture2D" uid="uid://dm7yvjyl45om8" path="res://graphics/pfp/textplaceholder.png" id="12_lxjib"]
+[ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="13_jpjm5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5y07"]
 size = Vector2(51, 727)
@@ -173,6 +177,97 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0x48q"]
 size = Vector2(80.5, 237)
 
+[sub_resource type="Animation" id="Animation_bstqb"]
+resource_name = "S14-text1"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_smluj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lxjib"]
+_data = {
+&"RESET": SubResource("Animation_smluj"),
+&"S14-text1": SubResource("Animation_bstqb")
+}
+
+[sub_resource type="Animation" id="Animation_lxjib"]
+resource_name = "S14-text2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_jpjm5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_n6s8v"]
+resource_name = "s14-text3"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jpjm5"]
+_data = {
+&"RESET": SubResource("Animation_jpjm5"),
+&"S14-text2": SubResource("Animation_lxjib"),
+&"s14-text3": SubResource("Animation_n6s8v")
+}
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2t82s")
 
@@ -231,5 +326,72 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(955, 533)
 shape = SubResource("RectangleShape2D_0x48q")
+
+[node name="Pfpplaceholder" type="Sprite2D" parent="."]
+position = Vector2(158.75, 91)
+scale = Vector2(2.98437, 2.98437)
+texture = ExtResource("10_bstqb")
+
+[node name="Robberpfp" type="Sprite2D" parent="."]
+position = Vector2(155.75, 128)
+scale = Vector2(4.46094, 4.46094)
+texture = ExtResource("11_smluj")
+
+[node name="Textplaceholder" type="Sprite2D" parent="."]
+position = Vector2(665.905, 40.0625)
+scale = Vector2(9.36309, 5.56445)
+texture = ExtResource("12_lxjib")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 262.0
+offset_top = 73.0
+offset_right = 1084.0
+offset_bottom = 146.0
+theme_override_fonts/font = ExtResource("13_jpjm5")
+theme_override_font_sizes/font_size = 24
+text = "\"The sword that Fox has looks VERY
+expensive.\""
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_lxjib")
+}
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = 271.0
+offset_top = 91.0
+offset_right = 472.0
+offset_bottom = 115.0
+theme_override_fonts/font = ExtResource("13_jpjm5")
+theme_override_font_sizes/font_size = 24
+text = "\"I want it\""
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label2"]
+libraries = {
+&"": SubResource("AnimationLibrary_jpjm5")
+}
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+offset_left = 542.0
+offset_top = 182.0
+offset_right = 743.0
+offset_bottom = 206.0
+theme_override_fonts/font = ExtResource("13_jpjm5")
+theme_override_font_sizes/font_size = 24
+text = "\"Why did you attack me?\""
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label3"]
+root_node = NodePath("../../Label3")
+libraries = {
+&"": SubResource("AnimationLibrary_jpjm5")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
