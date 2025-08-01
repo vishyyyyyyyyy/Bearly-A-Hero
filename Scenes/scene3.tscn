@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dyr4fpwt12eee"]
+[gd_scene load_steps=21 format=3 uid="uid://dyr4fpwt12eee"]
 
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_nnvjd"]
 [ext_resource type="Script" uid="uid://c0qq1tly84tta" path="res://Scenes/scene_3.gd" id="1_sljpu"]
@@ -61,9 +61,26 @@ tracks/0/keys = {
 "values": [0.0, 1.0, 1.0]
 }
 
+[sub_resource type="Animation" id="Animation_wbd3l"]
+resource_name = "S3-text3"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wbd3l"]
 _data = {
 &"RESET": SubResource("Animation_88hlr"),
+&"S3-text3": SubResource("Animation_wbd3l"),
 &"s3-text1": SubResource("Animation_wdaeh")
 }
 
@@ -256,9 +273,9 @@ offset_right = 1243.0
 offset_bottom = 178.0
 theme_override_fonts/font = ExtResource("9_wdaeh")
 theme_override_font_sizes/font_size = 32
-text = "Hide behind the bushes and trees. 
-Don't get caught sneaking up on her
-when she's facing you"
+text = "Hide behind the bushes and trees so
+
+Bunny doesn't catch you!"
 horizontal_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
@@ -283,6 +300,25 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="S3-text4"]
+libraries = {
+&"": SubResource("AnimationLibrary_wbd3l")
+}
+autoplay = "s3-text1"
+
+[node name="S3-text5" type="Label" parent="."]
+visible = false
+offset_left = 15.0
+offset_top = 94.0
+offset_right = 1249.0
+offset_bottom = 148.0
+theme_override_fonts/font = ExtResource("9_wdaeh")
+theme_override_font_sizes/font_size = 32
+text = "Escape without being seen!"
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="S3-text5"]
 libraries = {
 &"": SubResource("AnimationLibrary_wbd3l")
 }
