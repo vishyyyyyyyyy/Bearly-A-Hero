@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1kmjn4274if8"]
+
+[ext_resource type="Texture2D" uid="uid://bb887xbktdas1" path="res://graphics/treasureRoomEmpty.png" id="1_0trae"]
+[ext_resource type="Texture2D" uid="uid://ovbohkwx8qys" path="res://graphics/HoneyPot.png" id="2_d3hnt"]
+[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_vwm2g"]
+[ext_resource type="Texture2D" uid="uid://d1od5coru4pg3" path="res://graphics/palaceDoor.png" id="4_kni74"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0ofg"]
+size = Vector2(36, 247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxj16"]
+size = Vector2(180, 43)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TreasureRoomEmpty" type="Sprite2D" parent="."]
+position = Vector2(223, -253)
+texture = ExtResource("1_0trae")
+
+[node name="HoneyPot" type="Sprite2D" parent="."]
+position = Vector2(108, 105)
+scale = Vector2(2.25, 2.20313)
+texture = ExtResource("2_d3hnt")
+
+[node name="HoneyPot2" type="Sprite2D" parent="."]
+position = Vector2(233, 105)
+scale = Vector2(2.25, 2.20313)
+texture = ExtResource("2_d3hnt")
+
+[node name="HoneyPot3" type="Sprite2D" parent="."]
+position = Vector2(356, 107)
+scale = Vector2(2.25, 2.20313)
+texture = ExtResource("2_d3hnt")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_vwm2g")]
+position = Vector2(242, 195)
+scale = Vector2(1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(3, 3)
+limit_left = 0
+limit_top = 0
+limit_right = 455
+limit_bottom = 240
+editor_draw_limits = true
+
+[node name="PalaceDoor" type="Sprite2D" parent="."]
+position = Vector2(218, -33)
+scale = Vector2(6.07813, 5.03125)
+texture = ExtResource("4_kni74")
+
+[node name="borders" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(-8, 113.5)
+shape = SubResource("RectangleShape2D_f0ofg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(459, 121)
+shape = SubResource("RectangleShape2D_f0ofg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(352, 249.5)
+shape = SubResource("RectangleShape2D_qxj16")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(92, 248)
+shape = SubResource("RectangleShape2D_qxj16")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(93, -21)
+shape = SubResource("RectangleShape2D_qxj16")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(359, -22)
+shape = SubResource("RectangleShape2D_qxj16")

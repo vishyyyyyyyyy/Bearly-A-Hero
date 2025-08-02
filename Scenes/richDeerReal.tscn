@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://bi25xnse8x1v5"]
+
+[ext_resource type="Script" uid="uid://dmfxutc61kmnh" path="res://Scenes/richBunnyReal.gd" id="1_7ymub"]
+[ext_resource type="Texture2D" uid="uid://hphhwpa0ofe2" path="res://graphics/Deer/richDeerBackward.png" id="2_7ymub"]
+[ext_resource type="Texture2D" uid="uid://bofi5h688vqqs" path="res://graphics/Deer/DeerRich.png" id="3_q5dvb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvxra"]
+atlas = ExtResource("2_7ymub")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yo6y2"]
+atlas = ExtResource("2_7ymub")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw03r"]
+atlas = ExtResource("3_q5dvb")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kghjw"]
+atlas = ExtResource("3_q5dvb")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ig67"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvxra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yo6y2")
+}],
+"loop": true,
+"name": &"backards",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw03r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kghjw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_7ymub")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6ig67")
+animation = &"backards"
+autoplay = "backards"
+frame = 1
+frame_progress = 0.0824414
+
+[node name="RayCastUp" type="RayCast2D" parent="."]
+target_position = Vector2(0, 42)
+
+[node name="RayCastDon" type="RayCast2D" parent="."]
+target_position = Vector2(0, -72)
