@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://yk25bkcherhl"]
 
-[ext_resource type="Script" path="res://Scenes/scene_22New.gd" id="1_in3yb"]
+[ext_resource type="Script" uid="uid://xktdxl8rhgi8" path="res://Scenes/scene_22New.gd" id="1_in3yb"]
 [ext_resource type="Texture2D" uid="uid://bb887xbktdas1" path="res://graphics/treasureRoomEmpty.png" id="1_mdtta"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_in3yb"]
 [ext_resource type="Texture2D" uid="uid://dn1s0qgiltt42" path="res://graphics/Golden Cupcake.png" id="4_mdtta"]

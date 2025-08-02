@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bciwf0p4cu5fj" path="res://graphics/32x32 sprites/32x32_table.png" id="3_t0dvr"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="4_pex3i"]
 [ext_resource type="Texture2D" uid="uid://dxwd0vd0k1udp" path="res://graphics/richWall.png" id="5_tncwa"]
-[ext_resource type="PackedScene" uid="uid://b35hryuq6srk" path="res://Scenes/guard_dog_2.tscn" id="6_05622"]
+[ext_resource type="PackedScene" path="res://Scenes/guard_dog_2.tscn" id="6_05622"]
 [ext_resource type="Texture2D" uid="uid://cxepuw01cwb5x" path="res://graphics/32x32 sprites/32x32_chair01_purple.png" id="7_7arnk"]
 [ext_resource type="Texture2D" uid="uid://bag0v3upbna28" path="res://graphics/32x32 sprites/32x32_chair03_purple.png" id="8_44lbg"]
 [ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="9_t0dvr"]

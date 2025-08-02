@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dxwd0vd0k1udp" path="res://graphics/richWall.png" id="5_hpkbt"]
 [ext_resource type="Texture2D" uid="uid://cxepuw01cwb5x" path="res://graphics/32x32 sprites/32x32_chair01_purple.png" id="7_0mdra"]
 [ext_resource type="Script" uid="uid://dmwaa6ahwx5tb" path="res://Scenes/scene24to25.gd" id="8_tj8pm"]
-[ext_resource type="PackedScene" uid="uid://blyythmouhlgl" path="res://Scenes/guard_dog_3Real.tscn" id="9_a1c8a"]
+[ext_resource type="PackedScene" path="res://Scenes/guard_dog_3Real.tscn" id="9_a1c8a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3whqk"]
 size = Vector2(20, 12.1099)

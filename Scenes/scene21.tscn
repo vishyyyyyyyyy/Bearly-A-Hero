@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bd33x5l78lle1" path="res://graphics/32x32 sprites/16x32_pottedplant_beige.png" id="8_tdyu4"]
 [ext_resource type="Texture2D" uid="uid://bfs53yjrtkity" path="res://graphics/32x32 sprites/16x32_pendulumclock.png" id="9_o1ays"]
 [ext_resource type="Script" uid="uid://q27ys6d4p72" path="res://Scenes/scene21to22.gd" id="11_636f3"]
-[ext_resource type="PackedScene" uid="uid://dejv3icwt1vif" path="res://Scenes/richBirdReal.tscn" id="12_8le5o"]
+[ext_resource type="PackedScene" path="res://Scenes/richBirdReal.tscn" id="12_8le5o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhyak"]
 size = Vector2(55, 642)

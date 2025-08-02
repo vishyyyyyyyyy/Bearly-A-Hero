@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dqgfguc75b8bs" path="res://graphics/32x32 sprites/32x32_chair02_purple.png" id="7_t2t7b"]
 [ext_resource type="Texture2D" uid="uid://bd33x5l78lle1" path="res://graphics/32x32 sprites/16x32_pottedplant_beige.png" id="8_kuhi4"]
 [ext_resource type="Texture2D" uid="uid://bfs53yjrtkity" path="res://graphics/32x32 sprites/16x32_pendulumclock.png" id="9_offp2"]
-[ext_resource type="PackedScene" uid="uid://bi25xnse8x1v5" path="res://Scenes/richDeerReal.tscn" id="10_r054k"]
+[ext_resource type="PackedScene" path="res://Scenes/richDeerReal.tscn" id="10_r054k"]
 [ext_resource type="Script" uid="uid://dr10jmvmh7hlq" path="res://Scenes/scene25to26.gd" id="11_8jhpc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhyak"]
