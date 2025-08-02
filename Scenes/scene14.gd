@@ -82,6 +82,7 @@ func text():
 		$Pfpplaceholder2.visible= false
 		$Foxpfp.visible = false
 		$Textplaceholder.visible = false
+		$Label7.visible = false
 		$bearFox.start_auto_run()
 		
 		
