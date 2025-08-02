@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://buji06yxa6v0t"]
 
-[ext_resource type="Script" uid="uid://dkdmvroj10i3s" path="res://Scenes/scene2.gd" id="1_lxaoe"]
+[ext_resource type="Script" uid="uid://dcikvigpofp3d" path="res://Scenes/scene_13.gd" id="1_uckxh"]
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="2_obagw"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_t88gw"]
 [ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="5_gsmet"]
@@ -34,7 +34,7 @@ func _process(delta):
 size = Vector2(298, 381.5)
 
 [node name="Node2D4" type="Node2D"]
-script = ExtResource("1_lxaoe")
+script = ExtResource("1_uckxh")
 
 [node name="Forest1280x720" type="Sprite2D" parent="."]
 position = Vector2(642, 368)
