@@ -50,3 +50,8 @@ func beartext():
 	$Node2/AnimationPlayer.play("S15-text5")
 	await $Node2/AnimationPlayer.animation_finished
 	$Node2/AnimationPlayer/Label5.visible = false
+	animaltext()
+
+func animaltext():
+	$Node3/AnimationPlayer/Label.visible = true
+	$Node3/AnimationPlayer.play("bunny")
