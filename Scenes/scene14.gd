@@ -1,4 +1,10 @@
 extends Node2D
+
+var auto_moving = false
+var speed = 200.0
+
+
+
 func _ready():
 	$bearFox.can_move = false
 	$Label/AnimationPlayer.play("S14-text1")
@@ -15,6 +21,7 @@ func _ready():
 	$Robberpfp.visible = false
 	$Textplaceholder.visible = false
 	$bearFox.can_move = true
+
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $CharacterBody2D2/AnimatedSprite2D
 @onready var anim: AnimatedSprite2D = $bearFox/anim
@@ -70,7 +77,8 @@ func text():
 	$Label6.visible = false
 	$Label7.visible = true	
 	$Label7/AnimationPlayer.play("S14-text7")
-	
+	await get_tree().create_timer(4.0).timeout
+	$bearFox.start_auto_run()
 	
 
 	
