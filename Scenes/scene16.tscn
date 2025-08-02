@@ -1,17 +1,40 @@
-[gd_scene load_steps=7 format=3 uid="uid://u5iaf8hb8a5d"]
+[gd_scene load_steps=18 format=3 uid="uid://u5iaf8hb8a5d"]
 
 [ext_resource type="Texture2D" uid="uid://bam8wfo28tn02" path="res://graphics/richRoom1.png" id="1_b1c6i"]
 [ext_resource type="Script" uid="uid://2ytjkvy4814o" path="res://Scenes/scene_16.gd" id="1_x7ji7"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="2_x7ji7"]
+[ext_resource type="Texture2D" uid="uid://dxwd0vd0k1udp" path="res://graphics/richWall.png" id="4_aohib"]
+[ext_resource type="PackedScene" uid="uid://cd7qbvy188ngf" path="res://Scenes/guard_dog_1.tscn" id="5_325jt"]
+[ext_resource type="Texture2D" uid="uid://cxepuw01cwb5x" path="res://graphics/32x32 sprites/32x32_chair01_purple.png" id="6_on8hn"]
+[ext_resource type="Texture2D" uid="uid://bciwf0p4cu5fj" path="res://graphics/32x32 sprites/32x32_table.png" id="7_h2p7x"]
+[ext_resource type="Texture2D" uid="uid://bag0v3upbna28" path="res://graphics/32x32 sprites/32x32_chair03_purple.png" id="8_h2p7x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3whqk"]
+size = Vector2(20, 12.1099)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7ji7"]
-size = Vector2(107, 328.5)
+size = Vector2(96.5, 376)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aohib"]
 size = Vector2(145, 77)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_325jt"]
-size = Vector2(351, 54)
+size = Vector2(311.75, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjhbh"]
+size = Vector2(94.7468, 38.2595)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_on8hn"]
+size = Vector2(693, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bdpu"]
+size = Vector2(11.28, 9.47968)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brae2"]
+size = Vector2(5.54667, 15.7235)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdn5v"]
+size = Vector2(7.58064, 6.82114)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_x7ji7")
@@ -20,9 +43,35 @@ script = ExtResource("1_x7ji7")
 position = Vector2(413, 434)
 texture = ExtResource("1_b1c6i")
 
+[node name="32x32Table" type="Sprite2D" parent="."]
+position = Vector2(516.5, 529.75)
+scale = Vector2(1.28125, 1.42187)
+texture = ExtResource("7_h2p7x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="32x32Table"]
+position = Vector2(-2.73171, -0.527474)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32Table/StaticBody2D"]
+position = Vector2(3.12195, -5.35165)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_3whqk")
+
+[node name="32x32Table2" type="Sprite2D" parent="."]
+position = Vector2(634, 298)
+scale = Vector2(1.28125, 1.42187)
+texture = ExtResource("7_h2p7x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="32x32Table2"]
+position = Vector2(-2.73171, -0.527474)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32Table2/StaticBody2D"]
+position = Vector2(3.12195, -5.35165)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_3whqk")
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_x7ji7")]
-position = Vector2(413, 803)
-scale = Vector2(2.2, 2.2)
+position = Vector2(399, 803)
+scale = Vector2(1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(2, 2)
@@ -32,26 +81,168 @@ limit_right = 795
 limit_bottom = 935
 editor_draw_limits = true
 
-[node name="Node" type="Node" parent="."]
+[node name="borders" type="Node" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node"]
+[node name="StaticBody2D" type="StaticBody2D" parent="borders"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/StaticBody2D"]
 position = Vector2(478, 771)
 shape = SubResource("RectangleShape2D_x7ji7")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Node/StaticBody2D"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(788.25, 353)
+shape = SubResource("RectangleShape2D_x7ji7")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(-4, 352)
+shape = SubResource("RectangleShape2D_x7ji7")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders/StaticBody2D"]
 position = Vector2(387.5, 897.5)
 shape = SubResource("RectangleShape2D_aohib")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Node/StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders/StaticBody2D"]
 position = Vector2(605.5, 581)
 shape = SubResource("RectangleShape2D_325jt")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Node/StaticBody2D"]
-position = Vector2(166, 580)
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(613.875, 132)
 shape = SubResource("RectangleShape2D_325jt")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node/StaticBody2D"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(166, 134)
+shape = SubResource("RectangleShape2D_325jt")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(166, 592)
+shape = SubResource("RectangleShape2D_325jt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders/StaticBody2D"]
 position = Vector2(294, 766)
 shape = SubResource("RectangleShape2D_x7ji7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(329, 456)
+scale = Vector2(5.75833, 2.22167)
+texture = ExtResource("4_aohib")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-6.56294, -37.1342)
+shape = SubResource("RectangleShape2D_tjhbh")
+
+[node name="guardDog1" parent="." instance=ExtResource("5_325jt")]
+position = Vector2(96, 513)
+scale = Vector2(0.7, 0.7)
+
+[node name="Area2D" type="Area2D" parent="guardDog1"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="guardDog1/Area2D"]
+position = Vector2(-363.5, -28)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_on8hn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="guardDog1/Area2D"]
+position = Vector2(378, -25.7142)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_on8hn")
+
+[node name="killTimer" type="Timer" parent="guardDog1/Area2D"]
+wait_time = 0.6
+
+[node name="guardDog2" parent="." instance=ExtResource("5_325jt")]
+position = Vector2(91, 255)
+scale = Vector2(0.7, 0.7)
+
+[node name="Area2D" type="Area2D" parent="guardDog2"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="guardDog2/Area2D"]
+position = Vector2(-363.5, -28)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_on8hn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="guardDog2/Area2D"]
+position = Vector2(378, -27)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_on8hn")
+
+[node name="killTimer" type="Timer" parent="guardDog2/Area2D"]
+wait_time = 0.6
+
+[node name="32x32Chair01Purple" type="Sprite2D" parent="."]
+position = Vector2(335, 449)
+scale = Vector2(2.34375, 1.92188)
+texture = ExtResource("6_on8hn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="32x32Chair01Purple"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32Chair01Purple/StaticBody2D"]
+position = Vector2(-1.90735e-06, 9.36583)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_4bdpu")
+
+[node name="32x32Chair01Purple3" type="Sprite2D" parent="."]
+position = Vector2(526, 163)
+scale = Vector2(2.34375, 1.92188)
+texture = ExtResource("6_on8hn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="32x32Chair01Purple3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32Chair01Purple3/StaticBody2D"]
+position = Vector2(-1.90735e-06, 9.36583)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_4bdpu")
+
+[node name="32x32Chair01Purple4" type="Sprite2D" parent="."]
+position = Vector2(306, 265)
+scale = Vector2(2.34375, 1.92188)
+texture = ExtResource("6_on8hn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="32x32Chair01Purple4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32Chair01Purple4/StaticBody2D"]
+position = Vector2(-1.90735e-06, 9.36583)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_4bdpu")
+
+[node name="32x32Chair01Purple2" type="Sprite2D" parent="."]
+position = Vector2(134, 538)
+scale = Vector2(2.34375, 1.92188)
+texture = ExtResource("6_on8hn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="32x32Chair01Purple2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32Chair01Purple2/StaticBody2D"]
+position = Vector2(-2.22921e-05, 2.60162)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_brae2")
+
+[node name="32x32Chair03Purple" type="Sprite2D" parent="."]
+position = Vector2(544, 440)
+scale = Vector2(1.93751, 1.92187)
+texture = ExtResource("8_h2p7x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="32x32Chair03Purple"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32Chair03Purple/StaticBody2D"]
+position = Vector2(-2.06451, 8.6138)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_rdn5v")
+
+[node name="32x32Chair03Purple2" type="Sprite2D" parent="."]
+position = Vector2(158, 178)
+scale = Vector2(1.93751, 1.92187)
+texture = ExtResource("8_h2p7x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="32x32Chair03Purple2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32Chair03Purple2/StaticBody2D"]
+position = Vector2(-2.06451, 8.6138)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_rdn5v")
+
+[connection signal="body_entered" from="guardDog1/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="guardDog1/Area2D/killTimer" to="." method="_on_kill_timer_timeout"]
+[connection signal="body_entered" from="guardDog2/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="guardDog2/Area2D/killTimer" to="." method="_on_kill_timer_timeout"]

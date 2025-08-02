@@ -1,6 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://blxpgym8emad5"]
+[gd_scene load_steps=8 format=3 uid="uid://blxpgym8emad5"]
 
+[ext_resource type="Texture2D" uid="uid://doiwji6fxlsob" path="res://graphics/Bunny/BunnyRichBackwardt.png" id="1_ifiid"]
 [ext_resource type="Texture2D" uid="uid://c2qd68bktb6pd" path="res://graphics/Bunny/BunnyRich.png" id="1_s0enb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dnyu"]
+atlas = ExtResource("1_ifiid")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6d7v1"]
+atlas = ExtResource("1_ifiid")
+region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ifiid"]
 atlas = ExtResource("1_s0enb")
@@ -12,6 +21,17 @@ region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2dnyu"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dnyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6d7v1")
+}],
+"loop": true,
+"name": &"backwards",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ifiid")
@@ -28,4 +48,4 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2dnyu")
-frame_progress = 0.39001
+animation = &"backwards"
