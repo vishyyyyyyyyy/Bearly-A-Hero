@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cqpsut5ykb7nh" path="res://graphics/treasureRoom.png" id="1_l7khq"]
 [ext_resource type="Script" uid="uid://di2v1pqui1lh1" path="res://treasure_room.gd" id="2_o5dvy"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_sxtmj"]
-[ext_resource type="Script" path="res://Scenes/scene26to27.gd" id="4_o5dvy"]
+[ext_resource type="Script" uid="uid://dxgfxf6ghe1ko" path="res://Scenes/scene26to27.gd" id="4_o5dvy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7khq"]
 size = Vector2(48, 238)

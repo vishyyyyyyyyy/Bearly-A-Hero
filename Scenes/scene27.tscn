@@ -1,544 +1,240 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[gd_scene load_steps=33 format=3 uid="uid://dmxjcbmy65gm0"]
+[gd_scene load_steps=27 format=3 uid="uid://benns4p1bn0xw"]
 
-[ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_4k0p7"]
-[ext_resource type="Script" path="res://scene_27.gd" id="1_4284a"]
-=======
-[gd_scene load_steps=42 format=3 uid="uid://8hgwr1jdgnwe"]
+[ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_aflyi"]
+[ext_resource type="Texture2D" uid="uid://co8g772aa4770" path="res://graphics/pile.png" id="2_h4yik"]
+[ext_resource type="Texture2D" uid="uid://cnsaehxcn5cpv" path="res://graphics/Deer/DeerWalk.png" id="3_tquf8"]
+[ext_resource type="Texture2D" uid="uid://8fadrl76bwao" path="res://graphics/Bunny/BunnyHop.png" id="4_8j6vr"]
+[ext_resource type="Texture2D" uid="uid://cshne0g0i7eg6" path="res://graphics/Bird/BirdHop.png" id="5_ks6fa"]
+[ext_resource type="Texture2D" uid="uid://dn1s0qgiltt42" path="res://graphics/Golden Cupcake.png" id="6_p2l3n"]
+[ext_resource type="Texture2D" uid="uid://ovbohkwx8qys" path="res://graphics/HoneyPot.png" id="7_gs2tt"]
+[ext_resource type="Texture2D" uid="uid://cenbnodor10n7" path="res://graphics/Treasure Chest.png" id="8_nvncq"]
+[ext_resource type="Texture2D" uid="uid://br5bcm156kbwo" path="res://graphics/Flowers/FlowerWhite.png" id="9_03hfr"]
+[ext_resource type="Texture2D" uid="uid://bn3cxmynuqq1k" path="res://graphics/Flowers/FlowerRed.png" id="10_b443x"]
+[ext_resource type="Texture2D" uid="uid://dv4imqmfehio8" path="res://graphics/Flowers/FlowerBlue.png" id="11_m6fuo"]
+[ext_resource type="Texture2D" uid="uid://dglgua061db8w" path="res://graphics/Flowers/FlowerPink.png" id="12_6jn6n"]
+[ext_resource type="Texture2D" uid="uid://b01t7r301yr4l" path="res://graphics/Flowers/FlowerPurple.png" id="13_opnr3"]
+[ext_resource type="Texture2D" uid="uid://ijhvh6c4xqbv" path="res://graphics/Bear/BearIdle.png" id="14_tquf8"]
 
-[ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_4k0p7"]
-[ext_resource type="Script" uid="uid://bfyvuckxiujqe" path="res://Scenes/scene_27.gd" id="1_4284a"]
->>>>>>> Stashed changes
-=======
-[gd_scene load_steps=42 format=3 uid="uid://8hgwr1jdgnwe"]
-
-[ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_4k0p7"]
-[ext_resource type="Script" uid="uid://bfyvuckxiujqe" path="res://Scenes/scene_27.gd" id="1_4284a"]
->>>>>>> Stashed changes
-=======
-[gd_scene load_steps=42 format=3 uid="uid://8hgwr1jdgnwe"]
-
-[ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_4k0p7"]
-[ext_resource type="Script" uid="uid://bfyvuckxiujqe" path="res://Scenes/scene_27.gd" id="1_4284a"]
->>>>>>> Stashed changes
-[ext_resource type="Texture2D" uid="uid://co8g772aa4770" path="res://graphics/pile.png" id="2_4swmp"]
-[ext_resource type="Texture2D" uid="uid://cnsaehxcn5cpv" path="res://graphics/Deer/DeerWalk.png" id="2_cyduf"]
-[ext_resource type="Texture2D" uid="uid://8fadrl76bwao" path="res://graphics/Bunny/BunnyHop.png" id="3_47bkx"]
-[ext_resource type="Texture2D" uid="uid://cshne0g0i7eg6" path="res://graphics/Bird/BirdHop.png" id="4_22l1w"]
-[ext_resource type="Texture2D" uid="uid://dn1s0qgiltt42" path="res://graphics/Golden Cupcake.png" id="6_e3evi"]
-[ext_resource type="Texture2D" uid="uid://ovbohkwx8qys" path="res://graphics/HoneyPot.png" id="7_6pntx"]
-[ext_resource type="Texture2D" uid="uid://cenbnodor10n7" path="res://graphics/Treasure Chest.png" id="8_1pqu2"]
-[ext_resource type="Texture2D" uid="uid://ijhvh6c4xqbv" path="res://graphics/Bear/BearIdle.png" id="9_dgbwu"]
-[ext_resource type="Texture2D" uid="uid://dv4imqmfehio8" path="res://graphics/Flowers/FlowerBlue.png" id="10_idqxv"]
-[ext_resource type="Texture2D" uid="uid://dglgua061db8w" path="res://graphics/Flowers/FlowerPink.png" id="11_88wf3"]
-[ext_resource type="Texture2D" uid="uid://b01t7r301yr4l" path="res://graphics/Flowers/FlowerPurple.png" id="12_4284a"]
-[ext_resource type="Texture2D" uid="uid://bn3cxmynuqq1k" path="res://graphics/Flowers/FlowerRed.png" id="13_wtail"]
-[ext_resource type="Texture2D" uid="uid://br5bcm156kbwo" path="res://graphics/Flowers/FlowerWhite.png" id="14_snole"]
-[ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="16_wtail"]
-[ext_resource type="Texture2D" uid="uid://ceuwssco6htey" path="res://graphics/pfp/pfpplaceholder.png" id="17_m6fuo"]
-[ext_resource type="Texture2D" uid="uid://dm7yvjyl45om8" path="res://graphics/pfp/textplaceholder.png" id="18_6jn6n"]
-[ext_resource type="Texture2D" uid="uid://c3p3yi8sjrgqo" path="res://graphics/pfp/birdnocry.png" id="20_m6fuo"]
-[ext_resource type="Texture2D" uid="uid://cacm8yk48jhvm" path="res://graphics/pfp/bunnynocry.png" id="21_6jn6n"]
-[ext_resource type="Texture2D" uid="uid://cvkn5nb83rune" path="res://graphics/pfp/bearpfp.png" id="22_gfgax"]
-[ext_resource type="Texture2D" uid="uid://cibyva2bafxml" path="res://graphics/pfp/deernocry.png" id="22_opnr3"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y6qvk"]
-atlas = ExtResource("2_cyduf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnfdi"]
+atlas = ExtResource("3_tquf8")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4swmp"]
-atlas = ExtResource("2_cyduf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_22f5i"]
+atlas = ExtResource("3_tquf8")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_e3evi"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gfgax"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y6qvk")
+"texture": SubResource("AtlasTexture_pnfdi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4swmp")
+"texture": SubResource("AtlasTexture_22f5i")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6pntx"]
-atlas = ExtResource("3_47bkx")
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2qqo"]
+atlas = ExtResource("4_8j6vr")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1pqu2"]
-atlas = ExtResource("3_47bkx")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mlo4"]
+atlas = ExtResource("4_8j6vr")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dgbwu"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_a7dxs"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6pntx")
+"texture": SubResource("AtlasTexture_p2qqo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1pqu2")
+"texture": SubResource("AtlasTexture_7mlo4")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_idqxv"]
-atlas = ExtResource("4_22l1w")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjhl4"]
+atlas = ExtResource("5_ks6fa")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_88wf3"]
-atlas = ExtResource("4_22l1w")
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3glw"]
+atlas = ExtResource("5_ks6fa")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4284a"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_n0u8r"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_idqxv")
+"texture": SubResource("AtlasTexture_fjhl4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_88wf3")
+"texture": SubResource("AtlasTexture_u3glw")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4284a"]
-atlas = ExtResource("9_dgbwu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j6vr"]
+atlas = ExtResource("14_tquf8")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wtail"]
-atlas = ExtResource("9_dgbwu")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ks6fa"]
+atlas = ExtResource("14_tquf8")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_snole"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_p2l3n"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4284a")
+"texture": SubResource("AtlasTexture_8j6vr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wtail")
+"texture": SubResource("AtlasTexture_ks6fa")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="Animation" id="Animation_oeo0r"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/Label2:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer/Label3:visible_ratio")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer/Label4:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AnimationPlayer/Label6:visible_ratio")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_snole"]
-resource_name = "new_animation"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Label:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.16667, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 1.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_4284a"]
-resource_name = "new_animation_2"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Label2:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 1.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_m6fuo"]
-resource_name = "new_animation_3"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Label3:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 1.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_pnfdi"]
-resource_name = "new_animation_4"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Label4:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 1.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_22f5i"]
-resource_name = "new_animation_5"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Label6:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 1.0, 1.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xk5s2"]
-_data = {
-&"RESET": SubResource("Animation_oeo0r"),
-&"new_animation": SubResource("Animation_snole"),
-&"new_animation_2": SubResource("Animation_4284a"),
-&"new_animation_3": SubResource("Animation_m6fuo"),
-&"new_animation_4": SubResource("Animation_pnfdi"),
-&"new_animation_5": SubResource("Animation_22f5i")
-}
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_4284a")
 
 [node name="Forest1280x720" type="Sprite2D" parent="."]
-position = Vector2(641, 361)
-texture = ExtResource("1_4k0p7")
+position = Vector2(641, 360)
+texture = ExtResource("1_aflyi")
 
 [node name="Pile" type="Sprite2D" parent="."]
-position = Vector2(232, 346)
-scale = Vector2(6.90625, 6.39063)
-texture = ExtResource("2_4swmp")
+position = Vector2(211, 347)
+scale = Vector2(6.95313, 6.26563)
+texture = ExtResource("2_h4yik")
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
-position = Vector2(610.5, 401.25)
-scale = Vector2(3.26562, 3.03906)
-sprite_frames = SubResource("SpriteFrames_e3evi")
+position = Vector2(592.5, 372.625)
+scale = Vector2(4.29688, 3.70703)
+sprite_frames = SubResource("SpriteFrames_gfgax")
 autoplay = "default"
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Node2D"]
-position = Vector2(643, 568)
-scale = Vector2(3.26562, 3.03906)
-sprite_frames = SubResource("SpriteFrames_e3evi")
+position = Vector2(683, 582)
+scale = Vector2(4.29688, 3.70703)
+sprite_frames = SubResource("SpriteFrames_gfgax")
 autoplay = "default"
 flip_h = true
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D"]
-position = Vector2(221, 502)
-scale = Vector2(3.26562, 3.03906)
-sprite_frames = SubResource("SpriteFrames_e3evi")
+position = Vector2(148, 520)
+scale = Vector2(4.29688, 3.70703)
+sprite_frames = SubResource("SpriteFrames_gfgax")
 autoplay = "default"
 flip_h = true
 
 [node name="Node2D2" type="Node2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D2"]
-position = Vector2(897, 572)
-scale = Vector2(2.10938, 1.9375)
-sprite_frames = SubResource("SpriteFrames_dgbwu")
+position = Vector2(522, 454)
+scale = Vector2(2.14063, 2.21875)
+sprite_frames = SubResource("SpriteFrames_a7dxs")
 autoplay = "default"
-flip_h = true
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D2"]
-position = Vector2(344, 527)
-scale = Vector2(2.10938, 1.9375)
-sprite_frames = SubResource("SpriteFrames_dgbwu")
-autoplay = "default"
-flip_h = true
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Node2D2"]
-position = Vector2(431, 591)
-scale = Vector2(2.10938, 1.9375)
-sprite_frames = SubResource("SpriteFrames_dgbwu")
+position = Vector2(364, 582)
+scale = Vector2(2.14063, 2.21875)
+sprite_frames = SubResource("SpriteFrames_a7dxs")
 autoplay = "default"
 flip_h = true
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Node2D2"]
-position = Vector2(450, 494)
-scale = Vector2(2.10938, 1.9375)
-sprite_frames = SubResource("SpriteFrames_dgbwu")
+position = Vector2(846, 559)
+scale = Vector2(2.14063, 2.21875)
+sprite_frames = SubResource("SpriteFrames_a7dxs")
 autoplay = "default"
+flip_h = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D2"]
+position = Vector2(250, 615)
+scale = Vector2(2.14063, 2.21875)
+sprite_frames = SubResource("SpriteFrames_a7dxs")
+autoplay = "default"
+flip_h = true
 
 [node name="Node2D3" type="Node2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D3"]
-position = Vector2(726, 485)
-scale = Vector2(1.78125, 1.64062)
-sprite_frames = SubResource("SpriteFrames_4284a")
+position = Vector2(736, 451)
+scale = Vector2(1.57813, 1.57813)
+sprite_frames = SubResource("SpriteFrames_n0u8r")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D3"]
+position = Vector2(295, 511)
+scale = Vector2(1.57813, 1.57813)
+sprite_frames = SubResource("SpriteFrames_n0u8r")
 autoplay = "default"
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Node2D3"]
-position = Vector2(800, 585)
-scale = Vector2(1.78125, 1.64062)
-sprite_frames = SubResource("SpriteFrames_4284a")
+position = Vector2(835, 655)
+scale = Vector2(1.57813, 1.57813)
+sprite_frames = SubResource("SpriteFrames_n0u8r")
 autoplay = "default"
-flip_h = true
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Node2D3"]
-position = Vector2(174, 649)
-scale = Vector2(1.78125, 1.64062)
-sprite_frames = SubResource("SpriteFrames_4284a")
-autoplay = "default"
-flip_h = true
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D3"]
-position = Vector2(264, 620)
-scale = Vector2(1.78125, 1.64062)
-sprite_frames = SubResource("SpriteFrames_4284a")
+position = Vector2(314, 660)
+scale = Vector2(1.57813, 1.57813)
+sprite_frames = SubResource("SpriteFrames_n0u8r")
 autoplay = "default"
 
 [node name="GoldenCupcake" type="Sprite2D" parent="."]
-position = Vector2(735, 643)
-scale = Vector2(3.78906, 3.89844)
-texture = ExtResource("6_e3evi")
+position = Vector2(761, 650)
+scale = Vector2(3.54688, 3.76563)
+texture = ExtResource("6_p2l3n")
 
 [node name="HoneyPot" type="Sprite2D" parent="."]
-position = Vector2(860, 427)
-scale = Vector2(3.46875, 3.8125)
-texture = ExtResource("7_6pntx")
+position = Vector2(973, 431)
+scale = Vector2(4.84375, 4.29688)
+texture = ExtResource("7_gs2tt")
 
 [node name="TreasureChest" type="Sprite2D" parent="."]
-position = Vector2(1009, 624)
-scale = Vector2(3.59375, 4.54688)
-texture = ExtResource("8_1pqu2")
+position = Vector2(1022, 627)
+scale = Vector2(2.72656, 3.98438)
+texture = ExtResource("8_nvncq")
+
+[node name="FlowerWhite" type="Sprite2D" parent="."]
+position = Vector2(114, 618)
+scale = Vector2(3.07813, 3.01563)
+texture = ExtResource("9_03hfr")
+
+[node name="FlowerRed" type="Sprite2D" parent="."]
+position = Vector2(445, 401)
+scale = Vector2(2.79688, 2.85938)
+texture = ExtResource("10_b443x")
+
+[node name="FlowerBlue" type="Sprite2D" parent="."]
+position = Vector2(473, 583)
+scale = Vector2(3.40625, 3.10938)
+texture = ExtResource("11_m6fuo")
+
+[node name="FlowerPink" type="Sprite2D" parent="."]
+position = Vector2(1202, 623)
+scale = Vector2(2.875, 3.04688)
+texture = ExtResource("12_6jn6n")
+
+[node name="FlowerPurple" type="Sprite2D" parent="."]
+position = Vector2(1004, 593)
+scale = Vector2(3.19531, 3.23438)
+texture = ExtResource("13_opnr3")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(1143, 407)
-scale = Vector2(3.60938, 4.20313)
-sprite_frames = SubResource("SpriteFrames_snole")
+position = Vector2(1188, 397)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_p2l3n")
 autoplay = "default"
-
-[node name="FlowerBlue" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(551.5, 461.5)
-scale = Vector2(2.67187, 2.73438)
-texture = ExtResource("10_idqxv")
-
-[node name="FlowerPink" type="Sprite2D" parent="."]
-position = Vector2(354.75, 619.75)
-scale = Vector2(2.25781, 2.33594)
-texture = ExtResource("11_88wf3")
-
-[node name="FlowerPurple" type="Sprite2D" parent="."]
-position = Vector2(85.5, 542.5)
-scale = Vector2(2.45313, 2.48438)
-texture = ExtResource("12_4284a")
-
-[node name="FlowerRed" type="Sprite2D" parent="."]
-position = Vector2(998, 503)
-scale = Vector2(2.1875, 2.3125)
-texture = ExtResource("13_wtail")
-
-[node name="FlowerWhite" type="Sprite2D" parent="."]
-position = Vector2(1227, 578)
-scale = Vector2(2.64063, 2.8125)
-texture = ExtResource("14_snole")
-
-[node name="Node" type="Node" parent="."]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node"]
-libraries = {
-&"": SubResource("AnimationLibrary_xk5s2")
-}
-
-[node name="Label" type="Label" parent="Node/AnimationPlayer"]
-visible = false
-offset_left = 48.0
-offset_top = 26.0
-offset_right = 1252.0
-offset_bottom = 105.0
-theme_override_fonts/font = ExtResource("16_wtail")
-theme_override_font_sizes/font_size = 32
-text = "Everyone in the forest is happy that they got all
-the treasure and their stuff back!"
-horizontal_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label2" type="Label" parent="Node/AnimationPlayer"]
-visible = false
-offset_left = 148.0
-offset_top = 57.0
-offset_right = 1180.0
-offset_bottom = 108.0
-theme_override_fonts/font = ExtResource("16_wtail")
-theme_override_font_sizes/font_size = 32
-text = "Bear and the forest animals have a party!"
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label3" type="Label" parent="Node/AnimationPlayer"]
-visible = false
-offset_left = 254.0
-offset_top = 73.0
-offset_right = 1106.0
-offset_bottom = 124.0
-theme_override_fonts/font = ExtResource("16_wtail")
-theme_override_font_sizes/font_size = 24
-text = "“I never knew giving back could feel this
-good. Maybe...this is what real treasure is.”"
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label4" type="Label" parent="Node/AnimationPlayer"]
-visible = false
-offset_left = 254.0
-offset_top = 73.0
-offset_right = 1106.0
-offset_bottom = 124.0
-theme_override_fonts/font = ExtResource("16_wtail")
-theme_override_font_sizes/font_size = 24
-text = "“Yay! My scarf is finally home again. The 
-forest feels warm and cozy now!”"
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label5" type="Label" parent="Node/AnimationPlayer"]
-visible = false
-offset_left = 262.0
-offset_top = 74.0
-offset_right = 1114.0
-offset_bottom = 125.0
-theme_override_fonts/font = ExtResource("16_wtail")
-theme_override_font_sizes/font_size = 24
-text = "\"Thanks to our hero, Bear, the forest is
-once again thriving\""
-
-[node name="Label6" type="Label" parent="Node/AnimationPlayer"]
-offset_left = 262.0
-offset_top = 74.0
-offset_right = 1114.0
-offset_bottom = 125.0
-theme_override_fonts/font = ExtResource("16_wtail")
-theme_override_font_sizes/font_size = 24
-text = "\"There's finally enough
-food to feed my family.\""
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Pfpplaceholder" type="Sprite2D" parent="."]
-position = Vector2(158.75, 91)
-scale = Vector2(2.98437, 2.98437)
-texture = ExtResource("17_m6fuo")
-
-[node name="Textplaceholder" type="Sprite2D" parent="."]
-position = Vector2(665.905, 40.0625)
-scale = Vector2(9.36309, 5.56445)
-texture = ExtResource("18_6jn6n")
-
-[node name="Bearpfp" type="Sprite2D" parent="."]
-position = Vector2(155.688, 102.688)
-scale = Vector2(4.32227, 4.32227)
-texture = ExtResource("22_gfgax")
-
-[node name="Pfpplaceholder2" type="Sprite2D" parent="."]
-position = Vector2(1197, 93)
-scale = Vector2(2.92378, 2.92378)
-texture = ExtResource("17_m6fuo")
-
-[node name="Birdpfp" type="Sprite2D" parent="."]
-position = Vector2(1192, 106)
-scale = Vector2(3.625, 3.625)
-texture = ExtResource("20_m6fuo")
-
-[node name="Bunnypfp" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1191.63, 97.5)
-scale = Vector2(2.98047, 3.01562)
-texture = ExtResource("21_6jn6n")
-
-[node name="Deerpfp" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1187.38, 96.375)
-scale = Vector2(3.05078, 3.05078)
-texture = ExtResource("22_opnr3")
