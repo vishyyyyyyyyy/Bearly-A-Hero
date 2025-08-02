@@ -1,17 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1kmjn4274if8"]
+[gd_scene load_steps=14 format=3 uid="uid://brdsgva0m8h6t"]
 
 [ext_resource type="Texture2D" uid="uid://bb887xbktdas1" path="res://graphics/treasureRoomEmpty.png" id="1_0trae"]
+[ext_resource type="Script" uid="uid://dakndw3q0gclc" path="res://Scenes/scene_18.gd" id="1_kni74"]
 [ext_resource type="Texture2D" uid="uid://ovbohkwx8qys" path="res://graphics/HoneyPot.png" id="2_d3hnt"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_vwm2g"]
 [ext_resource type="Texture2D" uid="uid://d1od5coru4pg3" path="res://graphics/palaceDoor.png" id="4_kni74"]
+[ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="5_f0ofg"]
+[ext_resource type="Script" uid="uid://bdo58ku8688to" path="res://Scenes/collecthoney1.gd" id="6_qxj16"]
+[ext_resource type="Script" uid="uid://cuhqnnbnb864r" path="res://Scenes/scene18to19.gd" id="8_f0ofg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0ofg"]
 size = Vector2(36, 247)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qxj16"]
-size = Vector2(180, 43)
+size = Vector2(185, 36.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kni74"]
+size = Vector2(106.5, 20)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oql1t"]
+radius = 24.0
+height = 102.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gr4yw"]
+size = Vector2(77, 69)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_kni74")
 
 [node name="TreasureRoomEmpty" type="Sprite2D" parent="."]
 position = Vector2(223, -253)
@@ -33,7 +48,7 @@ scale = Vector2(2.25, 2.20313)
 texture = ExtResource("2_d3hnt")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_vwm2g")]
-position = Vector2(242, 195)
+position = Vector2(242, 200)
 scale = Vector2(1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
@@ -66,13 +81,56 @@ position = Vector2(352, 249.5)
 shape = SubResource("RectangleShape2D_qxj16")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="borders/StaticBody2D"]
-position = Vector2(92, 248)
+position = Vector2(94.5, 244.75)
 shape = SubResource("RectangleShape2D_qxj16")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="borders/StaticBody2D"]
 position = Vector2(93, -21)
 shape = SubResource("RectangleShape2D_qxj16")
 
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(227, 236)
+shape = SubResource("RectangleShape2D_kni74")
+
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="borders/StaticBody2D"]
 position = Vector2(359, -22)
 shape = SubResource("RectangleShape2D_qxj16")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 113.0
+offset_top = 35.0
+offset_right = 351.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("5_f0ofg")
+theme_override_font_sizes/font_size = 8
+text = "Steal the Golden Honey to give
+the forest animals a better life."
+horizontal_alignment = 1
+
+[node name="honeypickup" type="Area2D" parent="."]
+script = ExtResource("6_qxj16")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="honeypickup"]
+position = Vector2(353, 118)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_oql1t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="honeypickup"]
+position = Vector2(230, 116)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_oql1t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="honeypickup"]
+position = Vector2(106, 115)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_oql1t")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("8_f0ofg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(225, -13)
+shape = SubResource("RectangleShape2D_gr4yw")
+
+[connection signal="body_entered" from="honeypickup" to="honeypickup" method="_on_body_entered"]
+[connection signal="body_exited" from="honeypickup" to="honeypickup" method="_on_body_exited"]
