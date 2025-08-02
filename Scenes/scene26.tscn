@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkvpsjdbhqh8e"]
+[gd_scene load_steps=9 format=3 uid="uid://dkvpsjdbhqh8e"]
 
 [ext_resource type="Texture2D" uid="uid://cqpsut5ykb7nh" path="res://graphics/treasureRoom.png" id="1_l7khq"]
-[ext_resource type="Script" uid="uid://di2v1pqui1lh1" path="res://treasure_room.gd" id="2_o5dvy"]
+[ext_resource type="Script" path="res://treasure_room.gd" id="2_o5dvy"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_sxtmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7khq"]
@@ -12,6 +12,9 @@ size = Vector2(191, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sxtmj"]
 size = Vector2(454, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ty1ys"]
+size = Vector2(97, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3mb3"]
 size = Vector2(98.5, 78.5)
@@ -52,10 +55,6 @@ shape = SubResource("RectangleShape2D_l7khq")
 position = Vector2(357.5, 253.5)
 shape = SubResource("RectangleShape2D_o5dvy")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="borders/StaticBody2D"]
-position = Vector2(231, 261)
-shape = SubResource("RectangleShape2D_o5dvy")
-
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="borders/StaticBody2D"]
 position = Vector2(92, 251)
 shape = SubResource("RectangleShape2D_o5dvy")
@@ -63,6 +62,10 @@ shape = SubResource("RectangleShape2D_o5dvy")
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="borders/StaticBody2D"]
 position = Vector2(229, -3)
 shape = SubResource("RectangleShape2D_sxtmj")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(228.5, 246.5)
+shape = SubResource("RectangleShape2D_ty1ys")
 
 [node name="partyTransition" type="StaticBody2D" parent="."]
 
