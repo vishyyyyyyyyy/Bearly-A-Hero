@@ -79,8 +79,11 @@ func text():
 		$Label7.visible = true	
 		$Label7/AnimationPlayer.play("S14-text7")
 		await get_tree().create_timer(4.0).timeout
+		$Pfpplaceholder2.visible= false
+		$Foxpfp.visible = false
+		$Textplaceholder.visible = false
 		$bearFox.start_auto_run()
-		$bearFox.start_auto_run()
+		
 		
 
 		

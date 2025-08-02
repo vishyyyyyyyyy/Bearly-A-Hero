@@ -56,3 +56,5 @@ func start_auto_run():
 	print("auto running start!")  # add this
 	can_move = false
 	auto_run = true
+	var area_node = get_node("../SceneTrigger") # replace with your actual path
+	area_node.set_bearautorun()
