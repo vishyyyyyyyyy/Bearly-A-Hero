@@ -2,6 +2,7 @@ extends Node2D
 
 
 func _ready():
+
 	$Timer1.start()
 	$Textplaceholder.visible = true
 	$Text1.visible = true
