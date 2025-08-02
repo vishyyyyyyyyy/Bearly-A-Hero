@@ -1,9 +1,16 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=33 format=3 uid="uid://dmxjcbmy65gm0"]
 
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_4k0p7"]
 [ext_resource type="Script" path="res://scene_27.gd" id="1_4284a"]
+=======
+[gd_scene load_steps=42 format=3 uid="uid://8hgwr1jdgnwe"]
+
+[ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_4k0p7"]
+[ext_resource type="Script" uid="uid://bfyvuckxiujqe" path="res://Scenes/scene_27.gd" id="1_4284a"]
+>>>>>>> Stashed changes
 =======
 [gd_scene load_steps=42 format=3 uid="uid://8hgwr1jdgnwe"]
 
