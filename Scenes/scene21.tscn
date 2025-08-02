@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://2qgubg3tulaw"]
+[gd_scene load_steps=28 format=3 uid="uid://2qgubg3tulaw"]
 
 [ext_resource type="Script" uid="uid://bvuscnxrw3i4h" path="res://Scenes/scene_17.gd" id="1_8le5o"]
 [ext_resource type="Texture2D" uid="uid://ci7x6ddruvvrf" path="res://graphics/richRoom2.png" id="2_myjlk"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dqgfguc75b8bs" path="res://graphics/32x32 sprites/32x32_chair02_purple.png" id="7_152bt"]
 [ext_resource type="Texture2D" uid="uid://bd33x5l78lle1" path="res://graphics/32x32 sprites/16x32_pottedplant_beige.png" id="8_tdyu4"]
 [ext_resource type="Texture2D" uid="uid://bfs53yjrtkity" path="res://graphics/32x32 sprites/16x32_pendulumclock.png" id="9_o1ays"]
+[ext_resource type="Script" uid="uid://q27ys6d4p72" path="res://Scenes/scene21to22.gd" id="11_636f3"]
 [ext_resource type="PackedScene" uid="uid://dejv3icwt1vif" path="res://Scenes/richBirdReal.tscn" id="12_8le5o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhyak"]
@@ -60,6 +61,9 @@ height = 56.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ehn6b"]
 radius = 35.0
 height = 70.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8le5o"]
+size = Vector2(87, 68)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_8le5o")
@@ -116,7 +120,7 @@ position = Vector2(-0.551727, -5)
 shape = SubResource("RectangleShape2D_8fr0d")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_fecst")]
-position = Vector2(222, 681)
+position = Vector2(222, 697)
 scale = Vector2(1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
@@ -227,8 +231,17 @@ shape = SubResource("CapsuleShape2D_ehn6b")
 position = Vector2(97, 644)
 shape = SubResource("CapsuleShape2D_h1axl")
 
+[node name="TriggerScene" type="Area2D" parent="."]
+script = ExtResource("11_636f3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerScene"]
+position = Vector2(225, 90)
+shape = SubResource("RectangleShape2D_8le5o")
+
 [connection signal="body_entered" from="Node2D/kill" to="." method="_on_kill_body_entered"]
 [connection signal="body_exited" from="Node2D/kill" to="." method="_on_kill_body_exited"]
 [connection signal="timeout" from="Node2D/kill/killTimer" to="." method="_on_kill_timer_timeout"]
 [connection signal="body_entered" from="hdie/hideColl" to="." method="_on_hide_coll_body_entered"]
 [connection signal="body_exited" from="hdie/hideColl" to="." method="_on_hide_coll_body_exited"]
+[connection signal="body_entered" from="TriggerScene" to="TriggerScene" method="_on_body_entered"]
+[connection signal="body_exited" from="TriggerScene" to="TriggerScene" method="_on_body_exited"]
