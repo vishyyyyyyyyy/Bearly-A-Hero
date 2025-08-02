@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://gi23nu2dgu47"]
+[gd_scene load_steps=11 format=3 uid="uid://gi23nu2dgu47"]
 
 [ext_resource type="Script" uid="uid://knoroyavvbxt" path="res://scene19.gd" id="1_lc5gk"]
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="2_p24f4"]
@@ -6,12 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="4_e40bu"]
 [ext_resource type="Texture2D" uid="uid://dv4imqmfehio8" path="res://graphics/Flowers/FlowerBlue.png" id="5_0ti0d"]
 [ext_resource type="Texture2D" uid="uid://bn3cxmynuqq1k" path="res://graphics/Flowers/FlowerRed.png" id="6_e40bu"]
+[ext_resource type="Script" uid="uid://dtnnhq8a5808o" path="res://Scenes/scene23to24.gd" id="7_e40bu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rijuv"]
 size = Vector2(101, 733)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60kjn"]
 size = Vector2(1275.5, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqp7e"]
+size = Vector2(252, 234.5)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lc5gk")
@@ -24,10 +28,6 @@ texture = ExtResource("2_p24f4")
 position = Vector2(665, 433)
 scale = Vector2(3.03125, 2.53125)
 texture = ExtResource("3_0ti0d")
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_e40bu")]
-position = Vector2(137, 499)
-scale = Vector2(4, 4)
 
 [node name="borders" type="Node" parent="."]
 
@@ -58,3 +58,17 @@ texture = ExtResource("5_0ti0d")
 position = Vector2(928, 565)
 scale = Vector2(3.07813, 2.59375)
 texture = ExtResource("6_e40bu")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_e40bu")]
+position = Vector2(137, 499)
+scale = Vector2(4, 4)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("7_e40bu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1348, 574)
+shape = SubResource("RectangleShape2D_cqp7e")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
