@@ -32,6 +32,11 @@ script = ExtResource("1_kni74")
 position = Vector2(223, -253)
 texture = ExtResource("1_0trae")
 
+[node name="PalaceDoor" type="Sprite2D" parent="."]
+position = Vector2(218, -33)
+scale = Vector2(6.07813, 5.03125)
+texture = ExtResource("4_kni74")
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_vwm2g")]
 position = Vector2(242, 200)
 scale = Vector2(1, 1)
@@ -43,11 +48,6 @@ limit_top = 0
 limit_right = 455
 limit_bottom = 240
 editor_draw_limits = true
-
-[node name="PalaceDoor" type="Sprite2D" parent="."]
-position = Vector2(218, -33)
-scale = Vector2(6.07813, 5.03125)
-texture = ExtResource("4_kni74")
 
 [node name="borders" type="Node" parent="."]
 
@@ -90,6 +90,17 @@ theme_override_fonts/font = ExtResource("5_f0ofg")
 theme_override_font_sizes/font_size = 8
 text = "Steal the Golden Honey to give
 the forest animals a better life."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = 113.0
+offset_top = 184.0
+offset_right = 351.0
+offset_bottom = 209.0
+theme_override_fonts/font = ExtResource("5_f0ofg")
+theme_override_font_sizes/font_size = 8
+text = "Exit palace."
 horizontal_alignment = 1
 
 [node name="honeypickup" type="Area2D" parent="."]
@@ -137,3 +148,4 @@ shape = SubResource("RectangleShape2D_gr4yw")
 
 [connection signal="body_entered" from="honeypickup" to="honeypickup" method="_on_body_entered"]
 [connection signal="body_exited" from="honeypickup" to="honeypickup" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
