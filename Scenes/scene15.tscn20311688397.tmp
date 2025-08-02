@@ -814,6 +814,3 @@ shape = SubResource("RectangleShape2D_f2umo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTrigger"]
 position = Vector2(1316.5, 531)
 shape = SubResource("RectangleShape2D_f2umo")
-
-[connection signal="body_entered" from="ExitTrigger" to="ExitTrigger" method="_on_body_entered"]
-[connection signal="body_exited" from="ExitTrigger" to="ExitTrigger" method="_on_body_exited"]
