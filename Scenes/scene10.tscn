@@ -149,7 +149,7 @@ rotation = -0.00304224
 script = ExtResource("8_88nbp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
-position = Vector2(-66.7642, 579.8)
+position = Vector2(-77.7642, 579.766)
 shape = SubResource("RectangleShape2D_hwkn7")
 
 [connection signal="body_entered" from="kill" to="." method="_on_kill_body_entered"]
