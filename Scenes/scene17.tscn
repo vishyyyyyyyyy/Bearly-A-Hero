@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://d3m4jcd2m73c2"]
+[gd_scene load_steps=35 format=3 uid="uid://d3m4jcd2m73c2"]
 
 [ext_resource type="Texture2D" uid="uid://ci7x6ddruvvrf" path="res://graphics/richRoom2.png" id="1_14rb3"]
 [ext_resource type="Script" uid="uid://bvuscnxrw3i4h" path="res://Scenes/scene_17.gd" id="1_pgjl0"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://cxepuw01cwb5x" path="res://graphics/32x32 sprites/32x32_chair01_purple.png" id="10_h1axl"]
 [ext_resource type="Texture2D" uid="uid://c5daw3m3pdl4p" path="res://graphics/32x32 sprites/32x32_chair04_purple.png" id="11_ic8bx"]
 [ext_resource type="PackedScene" uid="uid://bl7cgh8b35ry2" path="res://Scenes/richBunnyReal.tscn" id="12_rxido"]
+[ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="13_mo0x6"]
+[ext_resource type="Script" uid="uid://dbn00jyv4a5cg" path="res://Scenes/scene17to18.gd" id="14_m1hm4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhyak"]
 size = Vector2(55, 642)
@@ -75,6 +77,9 @@ height = 60.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2ok2"]
 size = Vector2(373, 181)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uydvv"]
+size = Vector2(87, 68)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_pgjl0")
@@ -287,8 +292,40 @@ shape = SubResource("RectangleShape2D_g2ok2")
 [node name="killTimer" type="Timer" parent="Node2D/kill"]
 wait_time = 0.6
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 279.0
+offset_top = 694.0
+offset_right = 406.0
+offset_bottom = 724.0
+theme_override_fonts/font = ExtResource("13_mo0x6")
+theme_override_font_sizes/font_size = 8
+text = "Don't get cuaght by 
+Rich Bunny guarding 
+the room."
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 11.0
+offset_top = 703.0
+offset_right = 176.0
+offset_bottom = 727.0
+theme_override_fonts/font = ExtResource("13_mo0x6")
+theme_override_font_sizes/font_size = 8
+text = "Reach the end of the
+room for treasure!"
+horizontal_alignment = 1
+
+[node name="TriggerScene" type="Area2D" parent="."]
+script = ExtResource("14_m1hm4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerScene"]
+position = Vector2(225, 90)
+shape = SubResource("RectangleShape2D_uydvv")
+
 [connection signal="body_entered" from="hdie/hideColl" to="." method="_on_hide_coll_body_entered"]
 [connection signal="body_exited" from="hdie/hideColl" to="." method="_on_hide_coll_body_exited"]
 [connection signal="body_entered" from="Node2D/kill" to="." method="_on_kill_body_entered"]
 [connection signal="body_exited" from="Node2D/kill" to="." method="_on_kill_body_exited"]
 [connection signal="timeout" from="Node2D/kill/killTimer" to="." method="_on_kill_timer_timeout"]
+[connection signal="body_entered" from="TriggerScene" to="TriggerScene" method="_on_body_entered"]
+[connection signal="body_exited" from="TriggerScene" to="TriggerScene" method="_on_body_exited"]

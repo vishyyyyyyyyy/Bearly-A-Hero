@@ -6,7 +6,8 @@ var bodyCounter = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$CharacterBody2D.can_move = true # Replace with function body.
-
+	
+	$TriggerScene.change_scene()
 
 
 func _on_kill_body_entered(body: CharacterBody2D) -> void:
