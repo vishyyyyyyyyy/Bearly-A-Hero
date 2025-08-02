@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bearly A Hero"
-run/main_scene="uid://cjpc3qpekowva"
+run/main_scene="uid://dw81vqr8fdt4l"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,8 @@ AudioPlayer="*res://Scenes/audio_player.tscn"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
+window/stretch/mode="viewport"
 
 [input]
 
