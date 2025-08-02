@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3lj8dtb6ciwe"]
+[gd_scene load_steps=3 format=3 uid="uid://d3lj8dtb6ciwe"]
 
+[ext_resource type="AudioStream" uid="uid://fqsv48imo8bp" path="res://music/8-bit-background-music-for-arcade-game-come-on-mario-164702.mp3" id="1_6suua"]
 [ext_resource type="Script" uid="uid://djla0nc56cycu" path="res://audioPlayer.gd" id="1_30owj"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_6suua")
 autoplay = true
 script = ExtResource("1_30owj")

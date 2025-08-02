@@ -109,7 +109,7 @@ editor_draw_limits = true
 
 [node name="bunny" parent="." instance=ExtResource("4_msh5e")]
 position = Vector2(1209, 591)
-scale = Vector2(3.5175, 3.5175)
+scale = Vector2(3.9975, 3.9975)
 
 [node name="Tree" type="Sprite2D" parent="."]
 position = Vector2(344, 318)

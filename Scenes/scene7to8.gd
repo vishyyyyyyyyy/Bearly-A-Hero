@@ -21,4 +21,4 @@ func _on_body_exited(body: CharacterBody2D) -> void:
 	
 func check_exit_condition():
 	if entered and headphone_picked_up:
-		get_tree().change_scene_to_file("res://Scenes/scene8.tscn")
+		get_tree().change_scene_to_file("res://Scenes/scene7half.tscn")
