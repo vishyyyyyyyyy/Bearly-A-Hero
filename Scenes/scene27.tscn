@@ -1,7 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://8hgwr1jdgnwe"]
+[gd_scene load_steps=33 format=3 uid="uid://dmxjcbmy65gm0"]
 
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_4k0p7"]
-[ext_resource type="Script" uid="uid://bfyvuckxiujqe" path="res://scene_27.gd" id="1_4284a"]
+[ext_resource type="Script" path="res://scene_27.gd" id="1_4284a"]
 [ext_resource type="Texture2D" uid="uid://co8g772aa4770" path="res://graphics/pile.png" id="2_4swmp"]
 [ext_resource type="Texture2D" uid="uid://cnsaehxcn5cpv" path="res://graphics/Deer/DeerWalk.png" id="2_cyduf"]
 [ext_resource type="Texture2D" uid="uid://8fadrl76bwao" path="res://graphics/Bunny/BunnyHop.png" id="3_47bkx"]
