@@ -1,6 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://c1wu1xp7vgbmu"]
+[gd_scene load_steps=20 format=3 uid="uid://c1wu1xp7vgbmu"]
 
-[ext_resource type="Script" uid="uid://2ytjkvy4814o" path="res://Scenes/scene_16.gd" id="1_05622"]
+[ext_resource type="Script" uid="uid://cnodmf4bf4vmi" path="res://Scenes/scene20.gd" id="1_05622"]
 [ext_resource type="Texture2D" uid="uid://bam8wfo28tn02" path="res://graphics/richRoom1.png" id="2_v8w5g"]
 [ext_resource type="Texture2D" uid="uid://bciwf0p4cu5fj" path="res://graphics/32x32 sprites/32x32_table.png" id="3_t0dvr"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="4_pex3i"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://b35hryuq6srk" path="res://Scenes/guard_dog_2.tscn" id="6_05622"]
 [ext_resource type="Texture2D" uid="uid://cxepuw01cwb5x" path="res://graphics/32x32 sprites/32x32_chair01_purple.png" id="7_7arnk"]
 [ext_resource type="Texture2D" uid="uid://bag0v3upbna28" path="res://graphics/32x32 sprites/32x32_chair03_purple.png" id="8_44lbg"]
+[ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="9_t0dvr"]
+[ext_resource type="Script" uid="uid://6d4c3ibj7kvf" path="res://Scenes/scene20to21.gd" id="10_pex3i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3whqk"]
 size = Vector2(20, 12.1099)
@@ -32,6 +34,9 @@ size = Vector2(11.28, 9.47968)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdn5v"]
 size = Vector2(7.58064, 6.82114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tncwa"]
+size = Vector2(137, 137)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_05622")
@@ -184,7 +189,50 @@ texture = ExtResource("8_44lbg")
 position = Vector2(-2.06451, 8.6138)
 shape = SubResource("RectangleShape2D_rdn5v")
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 184.0
+offset_top = 703.0
+offset_right = 311.0
+offset_bottom = 735.0
+theme_override_fonts/font = ExtResource("9_t0dvr")
+theme_override_font_sizes/font_size = 8
+text = "Avoid getting caught
+ by the dogs to 
+steal the treasure."
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 465.0
+offset_top = 630.0
+offset_right = 592.0
+offset_bottom = 662.0
+theme_override_fonts/font = ExtResource("9_t0dvr")
+theme_override_font_sizes/font_size = 8
+text = "Get to the end
+of the room safely."
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 470.0
+offset_top = 787.0
+offset_right = 604.0
+offset_bottom = 811.0
+theme_override_fonts/font = ExtResource("9_t0dvr")
+theme_override_font_sizes/font_size = 8
+text = "Rich Bird palace is
+roaming with guard dogs. "
+horizontal_alignment = 1
+
+[node name="TriggerScene" type="Area2D" parent="."]
+script = ExtResource("10_pex3i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerScene"]
+position = Vector2(387, 85)
+shape = SubResource("RectangleShape2D_tncwa")
+
 [connection signal="body_entered" from="guardDog3/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="guardDog3/Area2D/killTimer" to="." method="_on_kill_timer_timeout"]
 [connection signal="body_entered" from="guardDog4/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="guardDog4/Area2D/killTimer" to="." method="_on_kill_timer_timeout"]
+[connection signal="body_entered" from="TriggerScene" to="TriggerScene" method="_on_body_entered"]
+[connection signal="body_exited" from="TriggerScene" to="TriggerScene" method="_on_body_exited"]
