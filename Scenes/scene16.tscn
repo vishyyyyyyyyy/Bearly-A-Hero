@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://u5iaf8hb8a5d"]
+[gd_scene load_steps=25 format=3 uid="uid://u5iaf8hb8a5d"]
 
 [ext_resource type="Texture2D" uid="uid://bam8wfo28tn02" path="res://graphics/richRoom1.png" id="1_b1c6i"]
 [ext_resource type="Script" uid="uid://2ytjkvy4814o" path="res://Scenes/scene_16.gd" id="1_x7ji7"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bag0v3upbna28" path="res://graphics/32x32 sprites/32x32_chair03_purple.png" id="8_h2p7x"]
 [ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="9_4bdpu"]
 [ext_resource type="Script" uid="uid://c6a0xft8fgkcn" path="res://Scenes/scene16to17.gd" id="10_brae2"]
+[ext_resource type="Texture2D" uid="uid://dc2e77sgpwu7s" path="res://graphics/Empty.png" id="11_3whqk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3whqk"]
 size = Vector2(20, 12.1099)
@@ -40,6 +41,43 @@ size = Vector2(7.58064, 6.82114)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyxtp"]
 size = Vector2(137, 137)
+
+[sub_resource type="Animation" id="Animation_brae2"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(396, 179), Vector2(396, 760)]
+}
+
+[sub_resource type="Animation" id="Animation_3whqk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(396, 179)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rdn5v"]
+_data = {
+&"RESET": SubResource("Animation_3whqk"),
+&"new_animation": SubResource("Animation_brae2")
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_x7ji7")
@@ -275,6 +313,20 @@ script = ExtResource("10_brae2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerScene"]
 position = Vector2(387, 85)
 shape = SubResource("RectangleShape2D_qyxtp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(396, 179)
+texture = ExtResource("11_3whqk")
+
+[node name="panCamera" type="Camera2D" parent="Sprite2D2"]
+position = Vector2(-3, 5)
+zoom = Vector2(2, 2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D2"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_rdn5v")
+}
 
 [connection signal="body_entered" from="guardDog1/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="guardDog1/Area2D/killTimer" to="." method="_on_kill_timer_timeout"]

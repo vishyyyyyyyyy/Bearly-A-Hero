@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d4dhumkl0556a"]
+[gd_scene load_steps=20 format=3 uid="uid://d4dhumkl0556a"]
 
 [ext_resource type="Script" uid="uid://7xyd0781pblp" path="res://Scenes/scene24.gd" id="1_tj8pm"]
 [ext_resource type="Texture2D" uid="uid://bam8wfo28tn02" path="res://graphics/richRoom1.png" id="2_a1c8a"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dxwd0vd0k1udp" path="res://graphics/richWall.png" id="5_hpkbt"]
 [ext_resource type="Texture2D" uid="uid://cxepuw01cwb5x" path="res://graphics/32x32 sprites/32x32_chair01_purple.png" id="7_0mdra"]
 [ext_resource type="Script" uid="uid://dmwaa6ahwx5tb" path="res://Scenes/scene24to25.gd" id="8_tj8pm"]
-[ext_resource type="PackedScene" path="res://Scenes/guard_dog_3Real.tscn" id="9_a1c8a"]
+[ext_resource type="PackedScene" uid="uid://blyythmouhlgl" path="res://Scenes/guard_dog_3Real.tscn" id="9_a1c8a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3whqk"]
 size = Vector2(20, 12.1099)
@@ -32,6 +32,43 @@ size = Vector2(11.28, 9.47968)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1c8a"]
 size = Vector2(137, 137)
+
+[sub_resource type="Animation" id="Animation_tj8pm"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(396, 179), Vector2(396, 760)]
+}
+
+[sub_resource type="Animation" id="Animation_a1c8a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(396, 179)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y3rgj"]
+_data = {
+&"RESET": SubResource("Animation_a1c8a"),
+&"new_animation": SubResource("Animation_tj8pm")
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tj8pm")
@@ -179,6 +216,17 @@ script = ExtResource("8_tj8pm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerScene"]
 position = Vector2(387, 85)
 shape = SubResource("RectangleShape2D_a1c8a")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(396, 179)
+
+[node name="panCamera" type="Camera2D" parent="Sprite2D2"]
+zoom = Vector2(2, 2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D2"]
+libraries = {
+&"": SubResource("AnimationLibrary_y3rgj")
+}
 
 [connection signal="body_entered" from="guardDog5/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="guardDog5/Area2D/killTimer" to="." method="_on_kill_timer_timeout"]
