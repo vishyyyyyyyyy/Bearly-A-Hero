@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://b4alowxx8wg01"]
+[gd_scene load_steps=49 format=3 uid="uid://b4alowxx8wg01"]
 
 [ext_resource type="Script" uid="uid://d35nfqakcsgl7" path="res://Scenes/scene_15.gd" id="1_q4gr4"]
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_tpmob"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://behm26se6nyr2" path="res://graphics/pfp/birdpfp.png" id="11_dgqc0"]
 [ext_resource type="Texture2D" uid="uid://c7k3tdq2suvo6" path="res://graphics/pfp/bunnypfp.png" id="12_jbvna"]
 [ext_resource type="Texture2D" uid="uid://l7hdxsqylr33" path="res://graphics/pfp/deerpfp.png" id="13_71444"]
+[ext_resource type="Script" uid="uid://c5mcyfdiei62i" path="res://Scenes/scene15to16.gd" id="14_ks43m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qa6cq"]
 atlas = ExtResource("2_by38v")
@@ -270,9 +271,105 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.825]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Label3:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_hepaj"]
 resource_name = "bunny"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_10neh"]
+resource_name = "deer2"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_qkkko"]
+resource_name = "bird"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label3:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qkkko"]
+_data = {
+&"RESET": SubResource("Animation_l3v3r"),
+&"bird": SubResource("Animation_qkkko"),
+&"bunny": SubResource("Animation_hepaj"),
+&"deer2": SubResource("Animation_10neh")
+}
+
+[sub_resource type="Animation" id="Animation_7xmnn"]
+resource_name = "1"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_mpa2n"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -283,22 +380,133 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.825]
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Label3:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Label5:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Label4:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_qkkko"]
-resource_name = "deer"
+[sub_resource type="Animation" id="Animation_0hp4y"]
+resource_name = "2"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
 
-[sub_resource type="Animation" id="Animation_10neh"]
-resource_name = "bird"
+[sub_resource type="Animation" id="Animation_1ywwj"]
+resource_name = "3"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label3:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qkkko"]
+[sub_resource type="Animation" id="Animation_v22uo"]
+resource_name = "5"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label5:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_rvdqs"]
+resource_name = "4"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label4:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i04mp"]
 _data = {
-&"RESET": SubResource("Animation_l3v3r"),
-&"bird": SubResource("Animation_10neh"),
-&"bunny": SubResource("Animation_hepaj"),
-&"deer": SubResource("Animation_qkkko")
+&"1": SubResource("Animation_7xmnn"),
+&"2": SubResource("Animation_0hp4y"),
+&"3": SubResource("Animation_1ywwj"),
+&"4": SubResource("Animation_rvdqs"),
+&"5": SubResource("Animation_v22uo"),
+&"RESET": SubResource("Animation_mpa2n")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2umo"]
+size = Vector2(171, 381.5)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_q4gr4")
@@ -340,7 +548,7 @@ sprite_frames = SubResource("SpriteFrames_tsqj1")
 autoplay = "default"
 
 [node name="CharacterBody2D4" parent="." instance=ExtResource("5_by38v")]
-position = Vector2(1216, 521)
+position = Vector2(1171, 545)
 scale = Vector2(4, 4)
 
 [node name="Node" type="Node" parent="."]
@@ -401,7 +609,6 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Label2" type="Label" parent="Node2/AnimationPlayer"]
-visible = false
 offset_left = 262.0
 offset_top = 73.0
 offset_right = 1084.0
@@ -414,7 +621,6 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Label3" type="Label" parent="Node2/AnimationPlayer"]
-visible = false
 offset_left = 264.0
 offset_top = 82.0
 offset_right = 1086.0
@@ -426,7 +632,6 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Label4" type="Label" parent="Node2/AnimationPlayer"]
-visible = false
 offset_left = 261.0
 offset_top = 75.0
 offset_right = 1149.0
@@ -439,7 +644,6 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Label5" type="Label" parent="Node2/AnimationPlayer"]
-visible = false
 offset_left = 261.0
 offset_top = 87.0
 offset_right = 1089.0
@@ -481,10 +685,137 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="Node3/AnimationPlayer"]
-offset_right = 40.0
-offset_bottom = 23.0
+visible = false
+offset_left = 260.0
+offset_top = 75.0
+offset_right = 1073.0
+offset_bottom = 126.0
 theme_override_fonts/font = ExtResource("10_71444")
 theme_override_font_sizes/font_size = 24
-text = "poop"
-visible_characters = 3
+text = "\"Without my scarf… now the wind feels 
+colder than ever.”"
+visible_characters = 47
 visible_ratio = 0.825
+
+[node name="Label2" type="Label" parent="Node3/AnimationPlayer"]
+visible = false
+offset_left = 276.0
+offset_top = 70.0
+offset_right = 1089.0
+offset_bottom = 148.0
+theme_override_fonts/font = ExtResource("10_71444")
+theme_override_font_sizes/font_size = 24
+text = "\"Those headphones comforted me at night...
+ now I’m always scared.\""
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label3" type="Label" parent="Node3/AnimationPlayer"]
+visible = false
+offset_left = 269.0
+offset_top = 70.0
+offset_right = 1094.0
+offset_bottom = 148.0
+theme_override_fonts/font = ExtResource("10_71444")
+theme_override_font_sizes/font_size = 24
+text = "“My teddy bear… it was the only thing that
+helped me sleep."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Node4" type="Node" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node4"]
+libraries = {
+&"": SubResource("AnimationLibrary_i04mp")
+}
+
+[node name="Label" type="Label" parent="Node4/AnimationPlayer"]
+visible = false
+offset_left = 268.0
+offset_top = 75.0
+offset_right = 1162.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("10_71444")
+theme_override_font_sizes/font_size = 24
+text = "\"That scarf... those headphones... the
+teddy... I took all of it.\""
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label2" type="Label" parent="Node4/AnimationPlayer"]
+visible = false
+offset_left = 259.0
+offset_top = 75.0
+offset_right = 1600.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("10_71444")
+theme_override_font_sizes/font_size = 24
+text = "\"I thought stealing made me feel powerful... 
+but now I just feel empty.\""
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label3" type="Label" parent="Node4/AnimationPlayer"]
+visible = false
+offset_left = 262.0
+offset_top = 82.0
+offset_right = 1156.0
+offset_bottom = 133.0
+theme_override_fonts/font = ExtResource("10_71444")
+theme_override_font_sizes/font_size = 24
+text = "\"What am I even doing with my life?\""
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label4" type="Label" parent="Node4/AnimationPlayer"]
+visible = false
+offset_left = 261.0
+offset_top = 78.0
+offset_right = 1008.0
+offset_bottom = 174.0
+theme_override_fonts/font = ExtResource("10_71444")
+theme_override_font_sizes/font_size = 24
+text = "\"Maybe it’s time I stole back something 
+that actually matters...\""
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label5" type="Label" parent="Node4/AnimationPlayer"]
+visible = false
+offset_left = 262.0
+offset_top = 80.0
+offset_right = 1156.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("10_71444")
+theme_override_font_sizes/font_size = 24
+text = "\"From now on... I take from the rich and
+give to those who need it most.\""
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label6" type="Label" parent="."]
+visible = false
+offset_left = 363.0
+offset_top = 81.0
+offset_right = 995.0
+offset_bottom = 138.0
+theme_override_fonts/font = ExtResource("10_71444")
+theme_override_font_sizes/font_size = 32
+text = "Find where the rich live. "
+
+[node name="ExitTrigger" type="Area2D" parent="."]
+collision_layer = 4
+script = ExtResource("14_ks43m")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ExitTrigger"]
+position = Vector2(-54, 529)
+shape = SubResource("RectangleShape2D_f2umo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTrigger"]
+position = Vector2(1316.5, 531)
+shape = SubResource("RectangleShape2D_f2umo")
+
+[connection signal="body_entered" from="ExitTrigger" to="." method="_on_exit_trigger_body_entered"]
+[connection signal="body_entered" from="ExitTrigger" to="ExitTrigger" method="_on_body_entered"]
+[connection signal="body_exited" from="ExitTrigger" to="ExitTrigger" method="_on_body_exited"]
