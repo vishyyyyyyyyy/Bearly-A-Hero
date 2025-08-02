@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bq1g50dcq4m46"]
+[gd_scene load_steps=10 format=3 uid="uid://bq1g50dcq4m46"]
 
-[ext_resource type="Script" path="res://node_2d.gd" id="1_5wj1j"]
+[ext_resource type="Script" uid="uid://knoroyavvbxt" path="res://scene19.gd" id="1_5wj1j"]
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="2_7483v"]
+[ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="5_6fm4u"]
+[ext_resource type="Script" uid="uid://dvwp5jgm2qbcf" path="res://Scenes/scene19to20.gd" id="6_ojdlh"]
 [ext_resource type="Texture2D" uid="uid://br5bcm156kbwo" path="res://graphics/Flowers/FlowerWhite.png" id="7_1audr"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="8_ysenq"]
 
@@ -10,6 +12,9 @@ size = Vector2(101, 733)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60kjn"]
 size = Vector2(1275.5, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wj1j"]
+size = Vector2(252, 234.5)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_5wj1j")
@@ -46,3 +51,22 @@ shape = SubResource("RectangleShape2D_60kjn")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="borders/StaticBody2D"]
 position = Vector2(642, 266)
 shape = SubResource("RectangleShape2D_60kjn")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 148.0
+offset_right = 1272.0
+offset_bottom = 247.0
+theme_override_fonts/font = ExtResource("5_6fm4u")
+theme_override_font_sizes/font_size = 32
+text = "Find the next rich animal's palace to steal from. "
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("6_ojdlh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1348, 574)
+shape = SubResource("RectangleShape2D_5wj1j")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
