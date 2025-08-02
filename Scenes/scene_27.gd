@@ -4,13 +4,24 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_animatedText() # Replace with function body.
-
-
+	$Pfpplaceholder.visible = true
+	$Textplaceholder.visible = true
+	$Bearpfp.visible = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 func _animatedText():
+	$Node/AnimationPlayer/Label3.visible = true
+	$Node/AnimationPlayer.play("new_animation_3")
+	await $Node/AnimationPlayer.animation_finished
+	$Node/AnimationPlayer/Label3.visible = false
+	$Bearpfp.visible = false
+	$Pfpplaceholder.visible = false
+	
+	
+	
+	
 	$Node/AnimationPlayer/Label.visible = true
 	$Node/AnimationPlayer.play("new_animation")
 	await $Node/AnimationPlayer.animation_finished
