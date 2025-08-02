@@ -10,17 +10,18 @@ func _ready():
 	anim.play("default")
 
 func _process(_delta):
-	if anim.animation == "death":
-		# If in death animation, ignore inputs and movement
+	# Only block if death animation AND NOT auto_run
+	if anim.animation == "death" and not auto_run:
+		print("ded :(")  # add this
 		return
 
 	if auto_run:
-		# Auto-run mode: move left automatically
+		print("auto run!")  # add this
 		velocity.x = -auto_run_speed
 		velocity.y = 0
 		move_and_slide()
 		anim.play("run")
-		anim.flip_h = true  # Facing left
+		anim.flip_h = true
 		return
 
 	if not can_move:
@@ -52,5 +53,6 @@ func _process(_delta):
 
 # Call this function from your main script to trigger auto run
 func start_auto_run():
+	print("auto running start!")  # add this
 	can_move = false
 	auto_run = true
