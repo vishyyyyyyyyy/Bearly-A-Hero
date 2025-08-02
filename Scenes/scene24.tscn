@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d4dhumkl0556a"]
+[gd_scene load_steps=17 format=3 uid="uid://d4dhumkl0556a"]
 
 [ext_resource type="Script" uid="uid://2ytjkvy4814o" path="res://Scenes/scene_16.gd" id="1_tj8pm"]
 [ext_resource type="Texture2D" uid="uid://bam8wfo28tn02" path="res://graphics/richRoom1.png" id="2_a1c8a"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="4_tnv32"]
 [ext_resource type="Texture2D" uid="uid://dxwd0vd0k1udp" path="res://graphics/richWall.png" id="5_hpkbt"]
 [ext_resource type="Texture2D" uid="uid://cxepuw01cwb5x" path="res://graphics/32x32 sprites/32x32_chair01_purple.png" id="7_0mdra"]
+[ext_resource type="Script" uid="uid://dmwaa6ahwx5tb" path="res://Scenes/scene24to25.gd" id="8_tj8pm"]
 [ext_resource type="PackedScene" uid="uid://blyythmouhlgl" path="res://Scenes/guard_dog_3Real.tscn" id="9_a1c8a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3whqk"]
@@ -28,6 +29,9 @@ size = Vector2(693, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bdpu"]
 size = Vector2(11.28, 9.47968)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1c8a"]
+size = Vector2(137, 137)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tj8pm")
@@ -169,7 +173,16 @@ shape = SubResource("RectangleShape2D_on8hn")
 [node name="killTimer" type="Timer" parent="guardDog3/Area2D"]
 wait_time = 0.6
 
+[node name="TriggerScene" type="Area2D" parent="."]
+script = ExtResource("8_tj8pm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerScene"]
+position = Vector2(387, 85)
+shape = SubResource("RectangleShape2D_a1c8a")
+
 [connection signal="body_entered" from="guardDog5/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="guardDog5/Area2D/killTimer" to="." method="_on_kill_timer_timeout"]
 [connection signal="body_entered" from="guardDog3/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="guardDog3/Area2D/killTimer" to="." method="_on_kill_timer_timeout"]
+[connection signal="body_entered" from="TriggerScene" to="TriggerScene" method="_on_body_entered"]
+[connection signal="body_exited" from="TriggerScene" to="TriggerScene" method="_on_body_exited"]
