@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	AudioPlayer.play_music_level()
 	$Timer.start()
 	$CharacterBody2D.visible = false
 
