@@ -1,6 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://benns4p1bn0xw"]
+[gd_scene load_steps=44 format=3 uid="uid://cftl2sgpgoom0"]
 
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_aflyi"]
+[ext_resource type="Script" uid="uid://bfyvuckxiujqe" path="res://Scenes/scene_27.gd" id="1_b443x"]
 [ext_resource type="Texture2D" uid="uid://co8g772aa4770" path="res://graphics/pile.png" id="2_h4yik"]
 [ext_resource type="Texture2D" uid="uid://cnsaehxcn5cpv" path="res://graphics/Deer/DeerWalk.png" id="3_tquf8"]
 [ext_resource type="Texture2D" uid="uid://8fadrl76bwao" path="res://graphics/Bunny/BunnyHop.png" id="4_8j6vr"]
@@ -14,6 +15,13 @@
 [ext_resource type="Texture2D" uid="uid://dglgua061db8w" path="res://graphics/Flowers/FlowerPink.png" id="12_6jn6n"]
 [ext_resource type="Texture2D" uid="uid://b01t7r301yr4l" path="res://graphics/Flowers/FlowerPurple.png" id="13_opnr3"]
 [ext_resource type="Texture2D" uid="uid://ijhvh6c4xqbv" path="res://graphics/Bear/BearIdle.png" id="14_tquf8"]
+[ext_resource type="Texture2D" uid="uid://ceuwssco6htey" path="res://graphics/pfp/pfpplaceholder.png" id="16_m6fuo"]
+[ext_resource type="Texture2D" uid="uid://dm7yvjyl45om8" path="res://graphics/pfp/textplaceholder.png" id="17_6jn6n"]
+[ext_resource type="Texture2D" uid="uid://cvkn5nb83rune" path="res://graphics/pfp/bearpfp.png" id="18_opnr3"]
+[ext_resource type="Texture2D" uid="uid://c3p3yi8sjrgqo" path="res://graphics/pfp/birdnocry.png" id="19_pnfdi"]
+[ext_resource type="Texture2D" uid="uid://cacm8yk48jhvm" path="res://graphics/pfp/bunnynocry.png" id="20_22f5i"]
+[ext_resource type="Texture2D" uid="uid://cibyva2bafxml" path="res://graphics/pfp/deernocry.png" id="21_gfgax"]
+[ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="22_m6fuo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pnfdi"]
 atlas = ExtResource("3_tquf8")
@@ -103,7 +111,231 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_6jn6n"]
+resource_name = "1"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.06667, 4.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_opnr3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/Label3:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/Label4:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer/Label6:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimationPlayer/Label7:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimationPlayer/Label5:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_pnfdi"]
+resource_name = "2"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.03333, 5.06667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_22f5i"]
+resource_name = "3"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label3:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.06667, 4.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_gfgax"]
+resource_name = "4"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label4:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.1, 4.93333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_p2qqo"]
+resource_name = "5"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label4:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 2.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Label5:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.03, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_7mlo4"]
+resource_name = "6"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label6:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4.03333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_a7dxs"]
+resource_name = "7"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label7:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fjhl4"]
+_data = {
+&"1": SubResource("Animation_6jn6n"),
+&"2": SubResource("Animation_pnfdi"),
+&"3": SubResource("Animation_22f5i"),
+&"4": SubResource("Animation_gfgax"),
+&"5": SubResource("Animation_p2qqo"),
+&"6": SubResource("Animation_7mlo4"),
+&"7": SubResource("Animation_a7dxs"),
+&"RESET": SubResource("Animation_opnr3")
+}
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_b443x")
 
 [node name="Forest1280x720" type="Sprite2D" parent="."]
 position = Vector2(641, 360)
@@ -238,3 +470,141 @@ position = Vector2(1188, 397)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_p2l3n")
 autoplay = "default"
+
+[node name="Pfpplaceholder" type="Sprite2D" parent="."]
+position = Vector2(158.75, 91)
+scale = Vector2(2.98437, 2.98437)
+texture = ExtResource("16_m6fuo")
+
+[node name="Textplaceholder" type="Sprite2D" parent="."]
+position = Vector2(665.905, 40.0625)
+scale = Vector2(9.36309, 5.56445)
+texture = ExtResource("17_6jn6n")
+
+[node name="Pfpplaceholder2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1197, 93)
+scale = Vector2(2.92378, 2.92378)
+texture = ExtResource("16_m6fuo")
+
+[node name="Bearpfp" type="Sprite2D" parent="."]
+position = Vector2(155, 104)
+scale = Vector2(4.51563, 4.51563)
+texture = ExtResource("18_opnr3")
+
+[node name="Birdnocry" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1196, 107)
+scale = Vector2(3.54688, 3.54688)
+texture = ExtResource("19_pnfdi")
+
+[node name="Bunnynocry" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1188, 98)
+scale = Vector2(3.03125, 3.03125)
+texture = ExtResource("20_22f5i")
+
+[node name="Deernocry" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1187, 97.5)
+scale = Vector2(3.0625, 3.0625)
+texture = ExtResource("21_gfgax")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node"]
+libraries = {
+&"": SubResource("AnimationLibrary_fjhl4")
+}
+
+[node name="Label" type="Label" parent="Node/AnimationPlayer"]
+offset_left = 250.0
+offset_top = 75.0
+offset_right = 1126.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("22_m6fuo")
+theme_override_font_sizes/font_size = 24
+text = "“I never knew giving back could feel this
+good. Maybe... this is what real treasure is.”  "
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label2" type="Label" parent="Node/AnimationPlayer"]
+visible = false
+offset_left = 262.0
+offset_top = 75.0
+offset_right = 1080.0
+offset_bottom = 180.0
+theme_override_fonts/font = ExtResource("22_m6fuo")
+theme_override_font_sizes/font_size = 24
+text = "\"I finally have my scarf again! The forest
+feels warm and cozy now!”
+
+"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label3" type="Label" parent="Node/AnimationPlayer"]
+visible = false
+offset_left = 262.0
+offset_top = 75.0
+offset_right = 1080.0
+offset_bottom = 180.0
+theme_override_fonts/font = ExtResource("22_m6fuo")
+theme_override_font_sizes/font_size = 24
+text = "\"There's now enough food to feed my family!
+I'm so happy.\""
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label4" type="Label" parent="Node/AnimationPlayer"]
+visible = false
+offset_left = 262.0
+offset_top = 75.0
+offset_right = 1080.0
+offset_bottom = 180.0
+theme_override_fonts/font = ExtResource("22_m6fuo")
+theme_override_font_sizes/font_size = 24
+text = "\"Thanks to Bear, our hero, the forest is
+thriving and lively again.\""
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label5" type="Label" parent="Node/AnimationPlayer"]
+visible = false
+offset_left = 157.0
+offset_top = 63.0
+offset_right = 1181.0
+offset_bottom = 168.0
+theme_override_fonts/font = ExtResource("22_m6fuo")
+theme_override_font_sizes/font_size = 32
+text = "All the forest critters are happy."
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label6" type="Label" parent="Node/AnimationPlayer"]
+visible = false
+offset_left = 157.0
+offset_top = 63.0
+offset_right = 1181.0
+offset_bottom = 168.0
+theme_override_fonts/font = ExtResource("22_m6fuo")
+theme_override_font_sizes/font_size = 32
+text = "They celebrate with a little forest party!"
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label7" type="Label" parent="Node/AnimationPlayer"]
+visible = false
+offset_left = 157.0
+offset_top = 63.0
+offset_right = 1181.0
+offset_bottom = 168.0
+theme_override_fonts/font = ExtResource("22_m6fuo")
+theme_override_font_sizes/font_size = 32
+text = "The End."
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
