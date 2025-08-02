@@ -1,6 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://dbh0mo6vetf36"]
+[gd_scene load_steps=28 format=3 uid="uid://dbh0mo6vetf36"]
 
-[ext_resource type="Script" uid="uid://bvuscnxrw3i4h" path="res://Scenes/scene_17.gd" id="1_r054k"]
+[ext_resource type="Script" uid="uid://bm1h3talhbfoy" path="res://Scenes/scene25.gd" id="1_sxymh"]
 [ext_resource type="Texture2D" uid="uid://ci7x6ddruvvrf" path="res://graphics/richRoom2.png" id="2_sxymh"]
 [ext_resource type="Texture2D" uid="uid://c36juflptpa0d" path="res://graphics/32x32 sprites/32x32_table_wcloth.png" id="3_8jhpc"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="4_wemod"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bd33x5l78lle1" path="res://graphics/32x32 sprites/16x32_pottedplant_beige.png" id="8_kuhi4"]
 [ext_resource type="Texture2D" uid="uid://bfs53yjrtkity" path="res://graphics/32x32 sprites/16x32_pendulumclock.png" id="9_offp2"]
 [ext_resource type="PackedScene" uid="uid://bi25xnse8x1v5" path="res://Scenes/richDeerReal.tscn" id="10_r054k"]
+[ext_resource type="Script" uid="uid://dr10jmvmh7hlq" path="res://Scenes/scene25to26.gd" id="11_8jhpc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhyak"]
 size = Vector2(55, 642)
@@ -61,8 +62,11 @@ height = 70.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2ok2"]
 size = Vector2(373, 181)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wemod"]
+size = Vector2(87, 68)
+
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_r054k")
+script = ExtResource("1_sxymh")
 
 [node name="RichRoom2" type="Sprite2D" parent="."]
 position = Vector2(214, 244)
@@ -116,7 +120,7 @@ position = Vector2(-0.551727, -5)
 shape = SubResource("RectangleShape2D_8fr0d")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_wemod")]
-position = Vector2(222, 681)
+position = Vector2(222, 698)
 scale = Vector2(1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
@@ -182,32 +186,32 @@ texture = ExtResource("9_offp2")
 position = Vector2(0.195122, 9.13483)
 shape = SubResource("RectangleShape2D_shts8")
 
-[node name="hdie" type="Node" parent="."]
+[node name="hide" type="Node" parent="."]
 
-[node name="hideColl" type="Area2D" parent="hdie"]
+[node name="hideColl" type="Area2D" parent="hide"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hdie/hideColl"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hide/hideColl"]
 position = Vector2(312, 642)
 shape = SubResource("CapsuleShape2D_h1axl")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="hdie/hideColl"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="hide/hideColl"]
 position = Vector2(334, 492)
 shape = SubResource("CapsuleShape2D_ic8bx")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="hdie/hideColl"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="hide/hideColl"]
 position = Vector2(89, 416)
 shape = SubResource("CapsuleShape2D_8fr0d")
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="hdie/hideColl"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="hide/hideColl"]
 position = Vector2(292, 265)
 shape = SubResource("CapsuleShape2D_6q5j1")
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="hdie/hideColl"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="hide/hideColl"]
 position = Vector2(132, 288)
 shape = SubResource("CapsuleShape2D_ehn6b")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="hdie/hideColl"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="hide/hideColl"]
 position = Vector2(97, 644)
 shape = SubResource("CapsuleShape2D_h1axl")
 
@@ -227,8 +231,17 @@ shape = SubResource("RectangleShape2D_g2ok2")
 [node name="killTimer" type="Timer" parent="Node2D/kill"]
 wait_time = 0.6
 
-[connection signal="body_entered" from="hdie/hideColl" to="." method="_on_hide_coll_body_entered"]
-[connection signal="body_exited" from="hdie/hideColl" to="." method="_on_hide_coll_body_exited"]
+[node name="TriggerScene" type="Area2D" parent="."]
+script = ExtResource("11_8jhpc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerScene"]
+position = Vector2(225, 90)
+shape = SubResource("RectangleShape2D_wemod")
+
+[connection signal="body_entered" from="hide/hideColl" to="." method="_on_hide_coll_body_entered"]
+[connection signal="body_exited" from="hide/hideColl" to="." method="_on_hide_coll_body_exited"]
 [connection signal="body_entered" from="Node2D/kill" to="." method="_on_kill_body_entered"]
 [connection signal="body_exited" from="Node2D/kill" to="." method="_on_kill_body_exited"]
 [connection signal="timeout" from="Node2D/kill/killTimer" to="." method="_on_kill_timer_timeout"]
+[connection signal="body_entered" from="TriggerScene" to="TriggerScene" method="_on_body_entered"]
+[connection signal="body_exited" from="TriggerScene" to="TriggerScene" method="_on_body_exited"]
