@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://u5iaf8hb8a5d"]
+[gd_scene load_steps=21 format=3 uid="uid://u5iaf8hb8a5d"]
 
 [ext_resource type="Texture2D" uid="uid://bam8wfo28tn02" path="res://graphics/richRoom1.png" id="1_b1c6i"]
 [ext_resource type="Script" uid="uid://2ytjkvy4814o" path="res://Scenes/scene_16.gd" id="1_x7ji7"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bciwf0p4cu5fj" path="res://graphics/32x32 sprites/32x32_table.png" id="7_h2p7x"]
 [ext_resource type="Texture2D" uid="uid://bag0v3upbna28" path="res://graphics/32x32 sprites/32x32_chair03_purple.png" id="8_h2p7x"]
 [ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="9_4bdpu"]
+[ext_resource type="Script" uid="uid://c6a0xft8fgkcn" path="res://Scenes/scene16to17.gd" id="10_brae2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3whqk"]
 size = Vector2(20, 12.1099)
@@ -36,6 +37,9 @@ size = Vector2(5.54667, 15.7235)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdn5v"]
 size = Vector2(7.58064, 6.82114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyxtp"]
+size = Vector2(137, 137)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_x7ji7")
@@ -265,7 +269,16 @@ text = "The palace is roaming
 with guard dogs. "
 horizontal_alignment = 1
 
+[node name="TriggerScene" type="Area2D" parent="."]
+script = ExtResource("10_brae2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerScene"]
+position = Vector2(387, 85)
+shape = SubResource("RectangleShape2D_qyxtp")
+
 [connection signal="body_entered" from="guardDog1/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="guardDog1/Area2D/killTimer" to="." method="_on_kill_timer_timeout"]
 [connection signal="body_entered" from="guardDog2/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="guardDog2/Area2D/killTimer" to="." method="_on_kill_timer_timeout"]
+[connection signal="body_entered" from="TriggerScene" to="TriggerScene" method="_on_body_entered"]
+[connection signal="body_exited" from="TriggerScene" to="TriggerScene" method="_on_body_exited"]

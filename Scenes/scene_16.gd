@@ -6,7 +6,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$CharacterBody2D.can_move = true # Replace with function body.
-
+	$TriggerScene.change_scene()
 
 
 
@@ -19,3 +19,8 @@ func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 func _on_kill_timer_timeout() -> void:
 	Engine.time_scale = 1.0 # Replace with function body.
 	get_tree().reload_current_scene()
+	
+	
+	
+	
+	

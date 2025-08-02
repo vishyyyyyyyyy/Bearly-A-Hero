@@ -131,7 +131,7 @@ position = Vector2(-0.551727, -5)
 shape = SubResource("RectangleShape2D_8fr0d")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_pgjl0")]
-position = Vector2(222, 681)
+position = Vector2(222, 695)
 scale = Vector2(1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
