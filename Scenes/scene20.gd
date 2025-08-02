@@ -8,6 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioPlayer.play_palacemusic()
 	pan_camera.make_current()
 	$Sprite2D2/AnimationPlayer.play("new_animation")
 	await $Sprite2D2/AnimationPlayer.animation_finished

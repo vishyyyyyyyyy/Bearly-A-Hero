@@ -16,5 +16,7 @@ func show_text_and_tile():
 
 func _on_timer_timeout():
 	$"S1-text1".visible = false
+	$"S5-text2".visible = false
 	$CharacterBody2D.visible = true
 	$CharacterBody2D.can_move = true
+	

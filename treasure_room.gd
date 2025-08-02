@@ -4,6 +4,7 @@ extends Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioPlayer.play_music_level()
 	character_body_2d.can_move = true # Replace with function body.
 
 

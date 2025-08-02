@@ -120,6 +120,16 @@ shape = SubResource("RectangleShape2D_2ngrw")
 
 [node name="Node" type="Node" parent="."]
 
+[node name="S5-text2" type="Label" parent="."]
+visible = false
+offset_left = 497.0
+offset_top = 250.0
+offset_right = 841.0
+offset_bottom = 303.0
+theme_override_fonts/font = ExtResource("3_cx2iu")
+theme_override_font_sizes/font_size = 32
+text = "Exit the cave."
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
