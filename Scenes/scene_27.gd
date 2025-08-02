@@ -63,6 +63,7 @@ func _animatedText():
 	$Node/AnimationPlayer.play("7")
 	await $Node/AnimationPlayer.animation_finished
 	
+	get_tree().change_scene_to_file("res://Scenes/scene28.tscn")
 	
 	
 	
