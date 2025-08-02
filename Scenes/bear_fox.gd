@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 var can_move = false
 var auto_run = false
-var auto_run_speed = 300.0
+var auto_run_speed = 500
 
 func _ready():
 	anim.play("default")
