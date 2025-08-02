@@ -157,19 +157,19 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer/Label4:visible_ratio")
+tracks/3/path = NodePath("AnimationPlayer/Label5:visible_ratio")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.0]
+"values": [0.0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AnimationPlayer/Label5:visible_ratio")
+tracks/4/path = NodePath("AnimationPlayer/Label4:visible_ratio")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -213,7 +213,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ks43m"]
 resource_name = "S15-text4"
-length = 3.0
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -221,7 +221,7 @@ tracks/0/path = NodePath("AnimationPlayer/Label4:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 3),
+"times": PackedFloat32Array(0, 3, 3.96667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 1.0, 1.0]
@@ -263,6 +263,14 @@ texture = ExtResource("1_tpmob")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(627, 365)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_2mg4t")
+autoplay = "default"
+
+[node name="CharacterBody2D5" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D5"]
 position = Vector2(627, 365)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_2mg4t")
@@ -335,7 +343,6 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="Node2/AnimationPlayer"]
-visible = false
 offset_left = 264.0
 offset_top = 88.0
 offset_right = 1086.0
@@ -374,14 +381,18 @@ visible_ratio = 0.0
 [node name="Label4" type="Label" parent="Node2/AnimationPlayer"]
 visible = false
 offset_left = 261.0
-offset_top = 87.0
-offset_right = 1089.0
-offset_bottom = 160.0
+offset_top = 75.0
+offset_right = 1149.0
+offset_bottom = 126.0
 theme_override_fonts/font = ExtResource("10_71444")
 theme_override_font_sizes/font_size = 24
-text = "\"Aren't these animals I stole from earlier?\""
+text = "\"Aren't these the animals I stole
+from earlier?\""
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Label5" type="Label" parent="Node2/AnimationPlayer"]
+visible = false
 offset_left = 261.0
 offset_top = 87.0
 offset_right = 1089.0
