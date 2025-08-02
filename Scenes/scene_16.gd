@@ -6,8 +6,6 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$CharacterBody2D.can_move = true # Replace with function body.
-	$TriggerScene.change_scene()
-
 
 
 
