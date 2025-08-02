@@ -32,21 +32,6 @@ script = ExtResource("1_kni74")
 position = Vector2(223, -253)
 texture = ExtResource("1_0trae")
 
-[node name="HoneyPot" type="Sprite2D" parent="."]
-position = Vector2(108, 105)
-scale = Vector2(2.25, 2.20313)
-texture = ExtResource("2_d3hnt")
-
-[node name="HoneyPot2" type="Sprite2D" parent="."]
-position = Vector2(233, 105)
-scale = Vector2(2.25, 2.20313)
-texture = ExtResource("2_d3hnt")
-
-[node name="HoneyPot3" type="Sprite2D" parent="."]
-position = Vector2(356, 107)
-scale = Vector2(2.25, 2.20313)
-texture = ExtResource("2_d3hnt")
-
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_vwm2g")]
 position = Vector2(242, 200)
 scale = Vector2(1, 1)
@@ -115,15 +100,33 @@ position = Vector2(353, 118)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_oql1t")
 
+[node name="HoneyPot" type="Sprite2D" parent="honeypickup/CollisionShape2D3"]
+position = Vector2(-12.9991, 245)
+rotation = -1.5708
+scale = Vector2(2.25, 2.20313)
+texture = ExtResource("2_d3hnt")
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="honeypickup"]
 position = Vector2(230, 116)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_oql1t")
 
+[node name="HoneyPot2" type="Sprite2D" parent="honeypickup/CollisionShape2D2"]
+position = Vector2(-11, -2.99995)
+rotation = -1.5708
+scale = Vector2(2.25, 2.20313)
+texture = ExtResource("2_d3hnt")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="honeypickup"]
 position = Vector2(106, 115)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_oql1t")
+
+[node name="HoneyPot3" type="Sprite2D" parent="honeypickup/CollisionShape2D"]
+position = Vector2(-8.00091, -250)
+rotation = -1.5708
+scale = Vector2(2.25, 2.20313)
+texture = ExtResource("2_d3hnt")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("8_f0ofg")

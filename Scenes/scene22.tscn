@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://yk25bkcherhl"]
+[gd_scene load_steps=10 format=3 uid="uid://yk25bkcherhl"]
 
+[ext_resource type="Script" uid="uid://xktdxl8rhgi8" path="res://Scenes/scene_22New.gd" id="1_in3yb"]
 [ext_resource type="Texture2D" uid="uid://bb887xbktdas1" path="res://graphics/treasureRoomEmpty.png" id="1_mdtta"]
 [ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_in3yb"]
 [ext_resource type="Texture2D" uid="uid://dn1s0qgiltt42" path="res://graphics/Golden Cupcake.png" id="4_mdtta"]
+[ext_resource type="Script" uid="uid://55d54k058rvi" path="res://Scenes/area_2dScene22.gd" id="4_nuvuj"]
 [ext_resource type="Texture2D" uid="uid://d1od5coru4pg3" path="res://graphics/palaceDoor.png" id="4_w02gc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0ofg"]
@@ -11,7 +13,11 @@ size = Vector2(36, 247)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qxj16"]
 size = Vector2(180, 43)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_in3yb"]
+size = Vector2(383, 127)
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_in3yb")
 
 [node name="TreasureRoomEmpty" type="Sprite2D" parent="."]
 position = Vector2(223, -253)
@@ -62,66 +68,75 @@ shape = SubResource("RectangleShape2D_qxj16")
 position = Vector2(359, -22)
 shape = SubResource("RectangleShape2D_qxj16")
 
-[node name="GoldenCupcake" type="Sprite2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_nuvuj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(225.5, 92.5)
+shape = SubResource("RectangleShape2D_in3yb")
+
+[node name="GoldenCupcake" type="Sprite2D" parent="Area2D"]
 position = Vector2(51, 54)
 texture = ExtResource("4_mdtta")
 
-[node name="GoldenCupcake2" type="Sprite2D" parent="."]
+[node name="GoldenCupcake2" type="Sprite2D" parent="Area2D"]
 position = Vector2(89, 55)
 texture = ExtResource("4_mdtta")
 
-[node name="GoldenCupcake3" type="Sprite2D" parent="."]
+[node name="GoldenCupcake3" type="Sprite2D" parent="Area2D"]
 position = Vector2(125, 56)
 texture = ExtResource("4_mdtta")
 
-[node name="GoldenCupcake4" type="Sprite2D" parent="."]
+[node name="GoldenCupcake4" type="Sprite2D" parent="Area2D"]
 position = Vector2(160, 56)
 texture = ExtResource("4_mdtta")
 
-[node name="GoldenCupcake5" type="Sprite2D" parent="."]
+[node name="GoldenCupcake5" type="Sprite2D" parent="Area2D"]
 position = Vector2(198, 55)
 texture = ExtResource("4_mdtta")
 
-[node name="GoldenCupcake6" type="Sprite2D" parent="."]
+[node name="GoldenCupcake6" type="Sprite2D" parent="Area2D"]
 position = Vector2(236, 55)
 texture = ExtResource("4_mdtta")
 
-[node name="GoldenCupcake7" type="Sprite2D" parent="."]
-position = Vector2(268, 55)
-texture = ExtResource("4_mdtta")
-
-[node name="GoldenCupcake8" type="Sprite2D" parent="."]
+[node name="GoldenCupcake8" type="Sprite2D" parent="Area2D"]
 position = Vector2(299, 57)
 texture = ExtResource("4_mdtta")
 
-[node name="GoldenCupcake9" type="Sprite2D" parent="."]
+[node name="GoldenCupcake7" type="Sprite2D" parent="Area2D"]
+position = Vector2(268, 55)
+texture = ExtResource("4_mdtta")
+
+[node name="GoldenCupcake9" type="Sprite2D" parent="Area2D"]
 position = Vector2(332, 57)
 texture = ExtResource("4_mdtta")
 
-[node name="GoldenCupcake10" type="Sprite2D" parent="."]
+[node name="GoldenCupcake10" type="Sprite2D" parent="Area2D"]
 position = Vector2(366, 57)
 texture = ExtResource("4_mdtta")
 
-[node name="GoldenCupcake11" type="Sprite2D" parent="."]
+[node name="GoldenCupcake11" type="Sprite2D" parent="Area2D"]
 position = Vector2(397, 59)
 texture = ExtResource("4_mdtta")
 
-[node name="GoldenCupcake12" type="Sprite2D" parent="."]
+[node name="GoldenCupcake12" type="Sprite2D" parent="Area2D"]
 position = Vector2(116, 120)
 scale = Vector2(1.64063, 1.5)
 texture = ExtResource("4_mdtta")
 
-[node name="GoldenCupcake13" type="Sprite2D" parent="."]
+[node name="GoldenCupcake13" type="Sprite2D" parent="Area2D"]
 position = Vector2(182, 122)
 scale = Vector2(1.64063, 1.5)
 texture = ExtResource("4_mdtta")
 
-[node name="GoldenCupcake14" type="Sprite2D" parent="."]
+[node name="GoldenCupcake14" type="Sprite2D" parent="Area2D"]
 position = Vector2(240, 125)
 scale = Vector2(1.64063, 1.5)
 texture = ExtResource("4_mdtta")
 
-[node name="GoldenCupcake15" type="Sprite2D" parent="."]
+[node name="GoldenCupcake15" type="Sprite2D" parent="Area2D"]
 position = Vector2(299, 129)
 scale = Vector2(1.64063, 1.5)
 texture = ExtResource("4_mdtta")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -1,0 +1,341 @@
+[gd_scene load_steps=33 format=3 uid="uid://8hgwr1jdgnwe"]
+
+[ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_4k0p7"]
+[ext_resource type="Script" uid="uid://bfyvuckxiujqe" path="res://scene_27.gd" id="1_4284a"]
+[ext_resource type="Texture2D" uid="uid://co8g772aa4770" path="res://graphics/pile.png" id="2_4swmp"]
+[ext_resource type="Texture2D" uid="uid://cnsaehxcn5cpv" path="res://graphics/Deer/DeerWalk.png" id="2_cyduf"]
+[ext_resource type="Texture2D" uid="uid://8fadrl76bwao" path="res://graphics/Bunny/BunnyHop.png" id="3_47bkx"]
+[ext_resource type="Texture2D" uid="uid://cshne0g0i7eg6" path="res://graphics/Bird/BirdHop.png" id="4_22l1w"]
+[ext_resource type="Texture2D" uid="uid://dn1s0qgiltt42" path="res://graphics/Golden Cupcake.png" id="6_e3evi"]
+[ext_resource type="Texture2D" uid="uid://ovbohkwx8qys" path="res://graphics/HoneyPot.png" id="7_6pntx"]
+[ext_resource type="Texture2D" uid="uid://cenbnodor10n7" path="res://graphics/Treasure Chest.png" id="8_1pqu2"]
+[ext_resource type="Texture2D" uid="uid://ijhvh6c4xqbv" path="res://graphics/Bear/BearIdle.png" id="9_dgbwu"]
+[ext_resource type="Texture2D" uid="uid://dv4imqmfehio8" path="res://graphics/Flowers/FlowerBlue.png" id="10_idqxv"]
+[ext_resource type="Texture2D" uid="uid://dglgua061db8w" path="res://graphics/Flowers/FlowerPink.png" id="11_88wf3"]
+[ext_resource type="Texture2D" uid="uid://b01t7r301yr4l" path="res://graphics/Flowers/FlowerPurple.png" id="12_4284a"]
+[ext_resource type="Texture2D" uid="uid://bn3cxmynuqq1k" path="res://graphics/Flowers/FlowerRed.png" id="13_wtail"]
+[ext_resource type="Texture2D" uid="uid://br5bcm156kbwo" path="res://graphics/Flowers/FlowerWhite.png" id="14_snole"]
+[ext_resource type="FontFile" uid="uid://cg7cgxd42u3a5" path="res://fonts/PixelOperator8.ttf" id="16_wtail"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6qvk"]
+atlas = ExtResource("2_cyduf")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4swmp"]
+atlas = ExtResource("2_cyduf")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e3evi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6qvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4swmp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pntx"]
+atlas = ExtResource("3_47bkx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pqu2"]
+atlas = ExtResource("3_47bkx")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dgbwu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pntx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pqu2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idqxv"]
+atlas = ExtResource("4_22l1w")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88wf3"]
+atlas = ExtResource("4_22l1w")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4284a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idqxv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88wf3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4284a"]
+atlas = ExtResource("9_dgbwu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtail"]
+atlas = ExtResource("9_dgbwu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_snole"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4284a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtail")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_oeo0r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Label2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_snole"]
+resource_name = "new_animation"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_4284a"]
+resource_name = "new_animation_2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Label2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xk5s2"]
+_data = {
+&"RESET": SubResource("Animation_oeo0r"),
+&"new_animation": SubResource("Animation_snole"),
+&"new_animation_2": SubResource("Animation_4284a")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4284a")
+
+[node name="Forest1280x720" type="Sprite2D" parent="."]
+position = Vector2(641, 361)
+texture = ExtResource("1_4k0p7")
+
+[node name="Pile" type="Sprite2D" parent="."]
+position = Vector2(232, 346)
+scale = Vector2(6.90625, 6.39063)
+texture = ExtResource("2_4swmp")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(610.5, 401.25)
+scale = Vector2(3.26562, 3.03906)
+sprite_frames = SubResource("SpriteFrames_e3evi")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(643, 568)
+scale = Vector2(3.26562, 3.03906)
+sprite_frames = SubResource("SpriteFrames_e3evi")
+autoplay = "default"
+flip_h = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(221, 502)
+scale = Vector2(3.26562, 3.03906)
+sprite_frames = SubResource("SpriteFrames_e3evi")
+autoplay = "default"
+flip_h = true
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D2"]
+position = Vector2(897, 572)
+scale = Vector2(2.10938, 1.9375)
+sprite_frames = SubResource("SpriteFrames_dgbwu")
+autoplay = "default"
+flip_h = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D2"]
+position = Vector2(344, 527)
+scale = Vector2(2.10938, 1.9375)
+sprite_frames = SubResource("SpriteFrames_dgbwu")
+autoplay = "default"
+flip_h = true
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Node2D2"]
+position = Vector2(431, 591)
+scale = Vector2(2.10938, 1.9375)
+sprite_frames = SubResource("SpriteFrames_dgbwu")
+autoplay = "default"
+flip_h = true
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Node2D2"]
+position = Vector2(450, 494)
+scale = Vector2(2.10938, 1.9375)
+sprite_frames = SubResource("SpriteFrames_dgbwu")
+autoplay = "default"
+
+[node name="Node2D3" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D3"]
+position = Vector2(726, 485)
+scale = Vector2(1.78125, 1.64062)
+sprite_frames = SubResource("SpriteFrames_4284a")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Node2D3"]
+position = Vector2(800, 585)
+scale = Vector2(1.78125, 1.64062)
+sprite_frames = SubResource("SpriteFrames_4284a")
+autoplay = "default"
+flip_h = true
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Node2D3"]
+position = Vector2(174, 649)
+scale = Vector2(1.78125, 1.64062)
+sprite_frames = SubResource("SpriteFrames_4284a")
+autoplay = "default"
+flip_h = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D3"]
+position = Vector2(264, 620)
+scale = Vector2(1.78125, 1.64062)
+sprite_frames = SubResource("SpriteFrames_4284a")
+autoplay = "default"
+
+[node name="GoldenCupcake" type="Sprite2D" parent="."]
+position = Vector2(735, 643)
+scale = Vector2(3.78906, 3.89844)
+texture = ExtResource("6_e3evi")
+
+[node name="HoneyPot" type="Sprite2D" parent="."]
+position = Vector2(860, 427)
+scale = Vector2(3.46875, 3.8125)
+texture = ExtResource("7_6pntx")
+
+[node name="TreasureChest" type="Sprite2D" parent="."]
+position = Vector2(1009, 624)
+scale = Vector2(3.59375, 4.54688)
+texture = ExtResource("8_1pqu2")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(1143, 407)
+scale = Vector2(3.60938, 4.20313)
+sprite_frames = SubResource("SpriteFrames_snole")
+autoplay = "default"
+
+[node name="FlowerBlue" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(551.5, 461.5)
+scale = Vector2(2.67187, 2.73438)
+texture = ExtResource("10_idqxv")
+
+[node name="FlowerPink" type="Sprite2D" parent="."]
+position = Vector2(354.75, 619.75)
+scale = Vector2(2.25781, 2.33594)
+texture = ExtResource("11_88wf3")
+
+[node name="FlowerPurple" type="Sprite2D" parent="."]
+position = Vector2(85.5, 542.5)
+scale = Vector2(2.45313, 2.48438)
+texture = ExtResource("12_4284a")
+
+[node name="FlowerRed" type="Sprite2D" parent="."]
+position = Vector2(998, 503)
+scale = Vector2(2.1875, 2.3125)
+texture = ExtResource("13_wtail")
+
+[node name="FlowerWhite" type="Sprite2D" parent="."]
+position = Vector2(1227, 578)
+scale = Vector2(2.64063, 2.8125)
+texture = ExtResource("14_snole")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node"]
+libraries = {
+&"": SubResource("AnimationLibrary_xk5s2")
+}
+
+[node name="Label" type="Label" parent="Node/AnimationPlayer"]
+offset_left = 48.0
+offset_top = 26.0
+offset_right = 1252.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("16_wtail")
+theme_override_font_sizes/font_size = 32
+text = "Everyone in the forest is happy that they got all
+this treasure and stuff back!"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label2" type="Label" parent="Node/AnimationPlayer"]
+offset_left = 381.0
+offset_top = 29.0
+offset_right = 917.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("16_wtail")
+theme_override_font_sizes/font_size = 32
+text = "So it's a forest party!"
+visible_characters = 0
+visible_ratio = 0.0

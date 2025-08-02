@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://b4alowxx8wg01"]
+[gd_scene load_steps=49 format=3 uid="uid://bta6qgyvnnfds"]
 
 [ext_resource type="Script" uid="uid://d35nfqakcsgl7" path="res://Scenes/scene_15.gd" id="1_q4gr4"]
 [ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="1_tpmob"]
