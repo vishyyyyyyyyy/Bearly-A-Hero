@@ -1,13 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://u5iaf8hb8a5d"]
+[gd_scene load_steps=17 format=3 uid="uid://c1wu1xp7vgbmu"]
 
-[ext_resource type="Texture2D" uid="uid://bam8wfo28tn02" path="res://graphics/richRoom1.png" id="1_b1c6i"]
-[ext_resource type="Script" uid="uid://2ytjkvy4814o" path="res://Scenes/scene_16.gd" id="1_x7ji7"]
-[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="2_x7ji7"]
-[ext_resource type="Texture2D" uid="uid://dxwd0vd0k1udp" path="res://graphics/richWall.png" id="4_aohib"]
-[ext_resource type="PackedScene" uid="uid://cd7qbvy188ngf" path="res://Scenes/guard_dog_1.tscn" id="5_325jt"]
-[ext_resource type="Texture2D" uid="uid://cxepuw01cwb5x" path="res://graphics/32x32 sprites/32x32_chair01_purple.png" id="6_on8hn"]
-[ext_resource type="Texture2D" uid="uid://bciwf0p4cu5fj" path="res://graphics/32x32 sprites/32x32_table.png" id="7_h2p7x"]
-[ext_resource type="Texture2D" uid="uid://bag0v3upbna28" path="res://graphics/32x32 sprites/32x32_chair03_purple.png" id="8_h2p7x"]
+[ext_resource type="Script" uid="uid://2ytjkvy4814o" path="res://Scenes/scene_16.gd" id="1_05622"]
+[ext_resource type="Texture2D" uid="uid://bam8wfo28tn02" path="res://graphics/richRoom1.png" id="2_v8w5g"]
+[ext_resource type="Texture2D" uid="uid://bciwf0p4cu5fj" path="res://graphics/32x32 sprites/32x32_table.png" id="3_t0dvr"]
+[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="4_pex3i"]
+[ext_resource type="Texture2D" uid="uid://dxwd0vd0k1udp" path="res://graphics/richWall.png" id="5_tncwa"]
+[ext_resource type="PackedScene" uid="uid://b35hryuq6srk" path="res://Scenes/guard_dog_2.tscn" id="6_05622"]
+[ext_resource type="Texture2D" uid="uid://cxepuw01cwb5x" path="res://graphics/32x32 sprites/32x32_chair01_purple.png" id="7_7arnk"]
+[ext_resource type="Texture2D" uid="uid://bag0v3upbna28" path="res://graphics/32x32 sprites/32x32_chair03_purple.png" id="8_44lbg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3whqk"]
 size = Vector2(20, 12.1099)
@@ -30,35 +30,20 @@ size = Vector2(693, 80)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bdpu"]
 size = Vector2(11.28, 9.47968)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_brae2"]
-size = Vector2(5.54667, 15.7235)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdn5v"]
 size = Vector2(7.58064, 6.82114)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_x7ji7")
+script = ExtResource("1_05622")
 
 [node name="RichRoom1" type="Sprite2D" parent="."]
 position = Vector2(413, 434)
-texture = ExtResource("1_b1c6i")
-
-[node name="32x32Table" type="Sprite2D" parent="."]
-position = Vector2(516.5, 529.75)
-scale = Vector2(1.28125, 1.42187)
-texture = ExtResource("7_h2p7x")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="32x32Table"]
-position = Vector2(-2.73171, -0.527474)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32Table/StaticBody2D"]
-position = Vector2(3.12195, -5.35165)
-shape = SubResource("RectangleShape2D_3whqk")
+texture = ExtResource("2_v8w5g")
 
 [node name="32x32Table2" type="Sprite2D" parent="."]
 position = Vector2(634, 298)
 scale = Vector2(1.28125, 1.42187)
-texture = ExtResource("7_h2p7x")
+texture = ExtResource("3_t0dvr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="32x32Table2"]
 position = Vector2(-2.73171, -0.527474)
@@ -67,7 +52,7 @@ position = Vector2(-2.73171, -0.527474)
 position = Vector2(3.12195, -5.35165)
 shape = SubResource("RectangleShape2D_3whqk")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_x7ji7")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_pex3i")]
 position = Vector2(399, 803)
 scale = Vector2(1, 1)
 
@@ -122,7 +107,7 @@ shape = SubResource("RectangleShape2D_x7ji7")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(329, 456)
 scale = Vector2(5.75833, 2.22167)
-texture = ExtResource("4_aohib")
+texture = ExtResource("5_tncwa")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
 
@@ -130,44 +115,48 @@ texture = ExtResource("4_aohib")
 position = Vector2(-6.56294, -37.1342)
 shape = SubResource("RectangleShape2D_tjhbh")
 
-[node name="guardDog1" parent="." instance=ExtResource("5_325jt")]
-position = Vector2(96, 513)
+[node name="guardDog3" parent="." instance=ExtResource("6_05622")]
+position = Vector2(96, 491)
 scale = Vector2(0.7, 0.7)
 
-[node name="Area2D" type="Area2D" parent="guardDog1"]
+[node name="Area2D" type="Area2D" parent="guardDog3"]
+position = Vector2(0, 31.4286)
+scale = Vector2(1, 1)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="guardDog1/Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="guardDog3/Area2D"]
 position = Vector2(-363.5, -28)
 shape = SubResource("RectangleShape2D_on8hn")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="guardDog1/Area2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="guardDog3/Area2D"]
 position = Vector2(378, -25.7142)
 shape = SubResource("RectangleShape2D_on8hn")
 
-[node name="killTimer" type="Timer" parent="guardDog1/Area2D"]
+[node name="killTimer" type="Timer" parent="guardDog3/Area2D"]
 wait_time = 0.6
 
-[node name="guardDog2" parent="." instance=ExtResource("5_325jt")]
-position = Vector2(91, 255)
+[node name="guardDog4" parent="." instance=ExtResource("6_05622")]
+position = Vector2(95, 265)
 scale = Vector2(0.7, 0.7)
 
-[node name="Area2D" type="Area2D" parent="guardDog2"]
+[node name="Area2D" type="Area2D" parent="guardDog4"]
+position = Vector2(0, 31.4286)
+scale = Vector2(1, 1)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="guardDog2/Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="guardDog4/Area2D"]
 position = Vector2(-363.5, -28)
 shape = SubResource("RectangleShape2D_on8hn")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="guardDog2/Area2D"]
-position = Vector2(378, -27)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="guardDog4/Area2D"]
+position = Vector2(378, -25.7142)
 shape = SubResource("RectangleShape2D_on8hn")
 
-[node name="killTimer" type="Timer" parent="guardDog2/Area2D"]
+[node name="killTimer" type="Timer" parent="guardDog4/Area2D"]
 wait_time = 0.6
 
 [node name="32x32Chair01Purple" type="Sprite2D" parent="."]
 position = Vector2(335, 449)
 scale = Vector2(2.34375, 1.92188)
-texture = ExtResource("6_on8hn")
+texture = ExtResource("7_7arnk")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="32x32Chair01Purple"]
 
@@ -178,7 +167,7 @@ shape = SubResource("RectangleShape2D_4bdpu")
 [node name="32x32Chair01Purple3" type="Sprite2D" parent="."]
 position = Vector2(526, 163)
 scale = Vector2(2.34375, 1.92188)
-texture = ExtResource("6_on8hn")
+texture = ExtResource("7_7arnk")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="32x32Chair01Purple3"]
 
@@ -186,32 +175,10 @@ texture = ExtResource("6_on8hn")
 position = Vector2(-1.90735e-06, 9.36583)
 shape = SubResource("RectangleShape2D_4bdpu")
 
-[node name="32x32Chair01Purple4" type="Sprite2D" parent="."]
-position = Vector2(306, 265)
-scale = Vector2(2.34375, 1.92188)
-texture = ExtResource("6_on8hn")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="32x32Chair01Purple4"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32Chair01Purple4/StaticBody2D"]
-position = Vector2(-1.90735e-06, 9.36583)
-shape = SubResource("RectangleShape2D_4bdpu")
-
-[node name="32x32Chair01Purple2" type="Sprite2D" parent="."]
-position = Vector2(134, 538)
-scale = Vector2(2.34375, 1.92188)
-texture = ExtResource("6_on8hn")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="32x32Chair01Purple2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32Chair01Purple2/StaticBody2D"]
-position = Vector2(-2.22921e-05, 2.60162)
-shape = SubResource("RectangleShape2D_brae2")
-
 [node name="32x32Chair03Purple" type="Sprite2D" parent="."]
 position = Vector2(544, 440)
 scale = Vector2(1.93751, 1.92187)
-texture = ExtResource("8_h2p7x")
+texture = ExtResource("8_44lbg")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="32x32Chair03Purple"]
 
@@ -219,18 +186,7 @@ texture = ExtResource("8_h2p7x")
 position = Vector2(-2.06451, 8.6138)
 shape = SubResource("RectangleShape2D_rdn5v")
 
-[node name="32x32Chair03Purple2" type="Sprite2D" parent="."]
-position = Vector2(158, 178)
-scale = Vector2(1.93751, 1.92187)
-texture = ExtResource("8_h2p7x")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="32x32Chair03Purple2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32Chair03Purple2/StaticBody2D"]
-position = Vector2(-2.06451, 8.6138)
-shape = SubResource("RectangleShape2D_rdn5v")
-
-[connection signal="body_entered" from="guardDog1/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="guardDog1/Area2D/killTimer" to="." method="_on_kill_timer_timeout"]
-[connection signal="body_entered" from="guardDog2/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="guardDog2/Area2D/killTimer" to="." method="_on_kill_timer_timeout"]
+[connection signal="body_entered" from="guardDog3/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="guardDog3/Area2D/killTimer" to="." method="_on_kill_timer_timeout"]
+[connection signal="body_entered" from="guardDog4/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="guardDog4/Area2D/killTimer" to="." method="_on_kill_timer_timeout"]

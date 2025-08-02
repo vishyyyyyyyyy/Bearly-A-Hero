@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://blyythmouhlgl"]
+
+[ext_resource type="Script" uid="uid://bmv0a3ewvb34k" path="res://Scenes/guard_dog_2.gd" id="1_3r2yd"]
+[ext_resource type="Texture2D" uid="uid://d3rwxnffkn3ce" path="res://graphics/Dog/GuardDog.png" id="2_diitp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r2yd"]
+atlas = ExtResource("2_diitp")
+region = Rect2(400, 0, 100, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_diitp"]
+atlas = ExtResource("2_diitp")
+region = Rect2(500, 0, 100, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gbyq6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r2yd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_diitp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="guardDog3" type="CharacterBody2D"]
+script = ExtResource("1_3r2yd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gbyq6")
+autoplay = "default"
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(40, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-44, 0)

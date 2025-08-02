@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkvpsjdbhqh8e"]
+
+[ext_resource type="Texture2D" uid="uid://cqpsut5ykb7nh" path="res://graphics/treasureRoom.png" id="1_l7khq"]
+[ext_resource type="Script" uid="uid://di2v1pqui1lh1" path="res://treasure_room.gd" id="2_o5dvy"]
+[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="3_sxtmj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7khq"]
+size = Vector2(48, 238)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5dvy"]
+size = Vector2(191, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxtmj"]
+size = Vector2(454, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3mb3"]
+size = Vector2(98.5, 78.5)
+
+[node name="Node" type="Node"]
+
+[node name="TreasureRoom" type="Sprite2D" parent="."]
+position = Vector2(224, -253)
+texture = ExtResource("1_l7khq")
+script = ExtResource("2_o5dvy")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_sxtmj")]
+position = Vector2(243, 197)
+scale = Vector2(1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(-15, 3)
+zoom = Vector2(2.8, 2.8)
+limit_left = 0
+limit_top = 0
+limit_right = 460
+limit_bottom = 245
+editor_draw_limits = true
+
+[node name="borders" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(-14, 120)
+shape = SubResource("RectangleShape2D_l7khq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(467, 121)
+shape = SubResource("RectangleShape2D_l7khq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(357.5, 253.5)
+shape = SubResource("RectangleShape2D_o5dvy")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(231, 261)
+shape = SubResource("RectangleShape2D_o5dvy")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(92, 251)
+shape = SubResource("RectangleShape2D_o5dvy")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(229, -3)
+shape = SubResource("RectangleShape2D_sxtmj")
+
+[node name="partyTransition" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="partyTransition"]
+position = Vector2(228, 118)
+shape = SubResource("RectangleShape2D_c3mb3")

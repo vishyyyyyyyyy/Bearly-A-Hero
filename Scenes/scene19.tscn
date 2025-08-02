@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdlgr0dmq2ow4"]
+
+[ext_resource type="Script" uid="uid://knoroyavvbxt" path="res://node_2d.gd" id="1_5wj1j"]
+[ext_resource type="Texture2D" uid="uid://cu2lhi7s14pev" path="res://graphics/Forest1280x720.png" id="2_7483v"]
+[ext_resource type="Texture2D" uid="uid://br5bcm156kbwo" path="res://graphics/Flowers/FlowerWhite.png" id="7_1audr"]
+[ext_resource type="PackedScene" uid="uid://dejs7fyatuaui" path="res://Scenes/Bear.tscn" id="8_ysenq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rijuv"]
+size = Vector2(101, 733)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60kjn"]
+size = Vector2(1275.5, 72)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_5wj1j")
+
+[node name="Forest1280x720" type="Sprite2D" parent="."]
+position = Vector2(640, 365)
+texture = ExtResource("2_7483v")
+
+[node name="FlowerWhite" type="Sprite2D" parent="."]
+position = Vector2(665, 433)
+scale = Vector2(3.03125, 2.53125)
+texture = ExtResource("7_1audr")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("8_ysenq")]
+position = Vector2(137, 499)
+scale = Vector2(4, 4)
+
+[node name="borders" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(-40.5, 356.5)
+shape = SubResource("RectangleShape2D_rijuv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(1327, 358)
+shape = SubResource("RectangleShape2D_rijuv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(642.25, 721)
+shape = SubResource("RectangleShape2D_60kjn")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="borders/StaticBody2D"]
+position = Vector2(642, 266)
+shape = SubResource("RectangleShape2D_60kjn")

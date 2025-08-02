@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var kill_timer: Timer = $guardDog1/Area2D/killTimer
+@onready var kill_timer: Timer = $guardDog3/Area2D/killTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
